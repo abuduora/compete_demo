@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:layout_marginTop="24dp"
+>
+    <!-- 用户头像和昵称部分 -->
+    <ImageView
+        android:id="@+id/imageAvatar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/landing_avatar"
+        android:contentDescription="User Avatar"
+        android:layout_constraintTop_toTopOf="parent"
+        android:layout_constraintStart_toStartOf="parent"
+        android:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textNickname"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+
+        android:text="未登录"
+        android:textColor="@color/white"
+        android:background="@color/green"
+        android:textSize="40dp"
+        android:gravity="center_horizontal" />
+
+    <!-- “我的积分”按钮 -->
+    <Button
+        android:id="@+id/btnMyPoints"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="我的积分"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:layout_marginTop="16dp"
+        android:layout_constraintTop_toBottomOf="@id/textNickname"
+        android:layout_constraintStart_toStartOf="parent"
+        android:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- 底部三个按钮 -->
+        <Button
+            android:id="@+id/btnCommunity"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="社区"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btnShare"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="共享"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btnMyPage"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="我的"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:layout_marginStart="8dp" />
+</LinearLayout>
