@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Good neighbor</string>
+    <string name="text_home">主页</string>
+    <string name="text_share">共享</string>
+    <string name="text_neighborhood_circle">友邻圈</string>
+    <string name="text_me">我的</string>
+    <string name="text_no_login">未登录</string>
+    <string name="text_integral">积分</string>
+    <string name="text_edit">编辑信息</string>
+    <string name="text_message">消息</string>
+    <string name="text_finish">完成</string>
+    <string name="text_back">返回</string>
+    <string name="text_shop">超市</string>
+    <string name="text_location">地点</string>
+    <string name="text_name">姓名</string>
+    <string name="text_new_name">请输入新姓名</string>
+    <string name="text_sex">性别</string>
+    <string name="text_buildnumber">楼号</string>
+    <string name="text_new_buildnumber">请输入新楼号</string>
+    <string name="text_phone">电话</string>
+    <string name="text_new_phone">请输入新电话</string>
+    
+    <string name="text_postings_publish">发布</string>
+    <string name="title">标题</string>
+    <string name="content">内容</string>
+
+</resources>

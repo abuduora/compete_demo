@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="16dp">
+
+    <!--iv图片视图 btn按键 et编辑文本框 cb复选框-->
+    <ImageView
+        android:id="@+id/iv_Logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/landing_avatar"/>
+
+    <EditText
+        android:id="@+id/et_Email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_Logo"
+        android:layout_marginTop="16dp"
+        android:hint="电子邮箱" />
+
+    <EditText
+        android:maxLength="20"
+        android:id="@+id/et_VerifyCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_Email"
+        android:layout_marginTop="16dp"
+        android:hint="验证码"
+        android:inputType="textPassword"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="获取验证码"
+        android:layout_below="@id/et_VerifyCode"
+        android:id="@+id/btn_VerifyCode"
+        />
+
+    <Button
+        android:id="@+id/btn_Login"
+        android:text="登录"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_VerifyCode"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+</RelativeLayout>
+
+
+
+
+
+

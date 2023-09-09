@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+        >
+    <!-- 用户头像和昵称部分 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/iv_imageAvatar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/landing_avatar"/>
+
+        <Button
+            android:id="@+id/btn_Nickname"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/green"
+            android:gravity="center"
+            android:text="@string/text_no_login"
+            android:textColor="@color/white"
+            android:textSize="40dp" />
+    </LinearLayout>
+    <!--积分 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/iv_goldcoin"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/coin" />
+
+        <TextView
+            android:id="@+id/tv_integral"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/text_integral"
+            android:textColor="@color/golden"
+            android:gravity="center"/>
+    </LinearLayout>
+
+
+    <!--编辑信息和关于按键 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="531dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_About"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="关于"
+            android:textColor="@color/black"
+            android:textSize="23dp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

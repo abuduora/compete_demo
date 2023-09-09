@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+<!-- 下拉页面控制-->
+    <LinearLayout
+        android:id="@+id/tv_home_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFA500">
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:gravity="right|center"
+        android:text="小区位置："
+        android:textSize="25sp" />
+    <Spinner
+        android:id="@+id/Spiner_location"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:entries="@array/spinner"/>
+    </LinearLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/tv_home_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="270dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:text="筛选"
+            android:textColor="#00AAff"
+            >
+        </androidx.appcompat.widget.AppCompatButton>
+    </LinearLayout>
+
+        <!--滑动-->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/tv_window1"
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:background="#aaffff" />
+
+                <ImageView
+                    android:id="@+id/tv_window2"
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:background="#aaff00" />
+            </LinearLayout>
+        </ScrollView>
+</LinearLayout>
