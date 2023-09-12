@@ -9,11 +9,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <ImageView
-            android:id="@+id/iv_imageAvatar"
+        <ImageButton
+            android:id="@+id/ib_imageAvatar"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/landing_avatar"/>
+            android:layout_gravity="center"
+            android:scaleType="centerInside"
+            android:src="@drawable/landing_avatar" />
 
         <Button
             android:id="@+id/btn_Nickname"
@@ -61,6 +63,14 @@
             android:text="关于"
             android:textColor="@color/black"
             android:textSize="23dp" />
+
+        <Button
+            android:id="@+id/btn_exit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/exit"
+            android:textColor="@color/black"
+            android:textSize="23dp"/>
 
     </LinearLayout>
 

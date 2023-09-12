@@ -15,7 +15,9 @@
             android:id="@+id/btn_back"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:text="@string/text_back" />
+            android:text="@string/text_back"
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/black"/>
 
         <EditText
             android:id="@+id/tv_edit"
@@ -29,14 +31,17 @@
             android:id="@+id/btn_flish"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:text="@string/text_me" />
+            android:text="@string/text_me"
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/black"/>
+
     </LinearLayout>
 
 
     <!--更换头像，姓名，性别，楼号，电话-->
 
-    <ImageView
-        android:id="@+id/iv_image"
+    <ImageButton
+        android:id="@+id/ib_image"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center"

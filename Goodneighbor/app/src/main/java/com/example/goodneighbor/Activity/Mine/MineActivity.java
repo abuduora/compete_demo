@@ -15,9 +15,9 @@ public class MineActivity extends AppCompatActivity implements View.OnClickListe
 
     private int points = 0;
     private Button btn_Nickname;
-    private Button btn_About;
+    private Button btn_About,btn_exit;
     //底部四个按钮
-    private Button btn_circle,btn_main,btn_share,btn_mine;
+    //private Button btn_circle,btn_main,btn_share,btn_mine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,8 @@ public class MineActivity extends AppCompatActivity implements View.OnClickListe
         btn_Nickname.setOnClickListener(this);
         btn_About=findViewById(R.id.btn_About);
         btn_About.setOnClickListener(this);
+        btn_exit=findViewById(R.id.btn_exit);
+        btn_exit.setOnClickListener(this);
         /*//底部四个选择按钮的监听器
         btn_main=findViewById(R.id.btn_main);
         btn_main.setOnClickListener(this);
@@ -61,6 +63,10 @@ public class MineActivity extends AppCompatActivity implements View.OnClickListe
             btn_Nickname.setText("请编辑信息");
         } else if (v.getId() == R.id.btn_Nickname && !btn_Nickname.getText().equals("未登录")) {
             startActivity(new Intent(this,EditMessageActivity.class));
+        } else if (v.getId()==R.id.btn_About) {
+            startActivity(new Intent(this,AboutActivity.class));
+        } else if (v.getId()==R.id.btn_exit) {
+            startActivity(new Intent(this,LoginActivity.class));
         }
   /*      else if(v.getId()==R.id.btn_About){startActivity(new Intent(this,AboutActivity.class));}
         else if(v.getId()==R.id.btn_main){startActivity(new Intent(this,MainActivity.class));}

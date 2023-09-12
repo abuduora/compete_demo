@@ -19,9 +19,12 @@
     <string name="text_new_buildnumber">请输入新楼号</string>
     <string name="text_phone">电话</string>
     <string name="text_new_phone">请输入新电话</string>
-    
+
     <string name="text_postings_publish">发布</string>
     <string name="title">标题</string>
     <string name="content">内容</string>
+
+    <string name="circle">友邻圈</string>
+    <string name="exit">退出登录</string>
 
 </resources>

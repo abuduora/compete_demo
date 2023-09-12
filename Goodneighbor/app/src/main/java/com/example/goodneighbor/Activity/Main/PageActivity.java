@@ -46,14 +46,17 @@ public class PageActivity extends AppCompatActivity {
                 if(i==R.id.tv_share)
                 {
                     root.removeAllViews();
+                    //share_init()；
                 }
                 if(i==R.id.tv_message)
                 {
                     root.removeAllViews();
+                    //circle_init();
                 }
                 if(i==R.id.tv_me)
                 {
                     root.removeAllViews();
+                    //mine();
                 }
             }
         }
@@ -102,6 +105,17 @@ public class PageActivity extends AppCompatActivity {
                 startActivity(tv_window1);
             }
         });
+    }
+    private void share_init(){
+
+    }
+
+    private void circle(){
+
+    }
+
+    private void mine(){
+
     }
 
 

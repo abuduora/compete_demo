@@ -21,11 +21,9 @@ public class UserDBHelper extends SQLiteOpenHelper {
     private static UserDBHelper mHelper = null; // 数据库帮助器的实例
     private SQLiteDatabase mDB = null; // 数据库的实例
     public static final String TABLE_NAME = "user_info"; // 表的名称
-
     private UserDBHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
-
     private UserDBHelper(Context context, int version) {
         super(context, DB_NAME, null, version);
     }

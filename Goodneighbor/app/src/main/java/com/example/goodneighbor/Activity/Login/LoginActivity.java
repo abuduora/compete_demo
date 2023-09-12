@@ -1,6 +1,8 @@
 package com.example.goodneighbor.Activity.Login;
 
 import android.app.AlertDialog;
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -8,7 +10,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.goodneighbor.Activity.Main.MainActivity;
 import com.example.goodneighbor.R;
+import com.example.goodneighbor.database.PrefManager;
 import com.example.goodneighbor.database.UserDBHelper;
 
 import java.util.Random;
@@ -19,16 +23,23 @@ import java.util.Properties;
 
 public class LoginActivity extends AppCompatActivity
 {
+    private PrefManager prefManager;
     private EditText et_Email, et_VerifyCode;
     private UserDBHelper mHelper;
     private String mVerifyCode;
     private Button btn_VerifyCode;
     private Button btn_Login;
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_login);
+        prefManager=new PrefManager(this);
+        //判断是否已经登录
+        if(prefManager.isFirstTimeLaunch()){
+            prefManager.setFirstTimeLaunch(false);
+        }else{
+            startActivity(new Intent(this, MainActivity.class));
+        }
         //初始化
         et_Email = findViewById(R.id.et_Email);
         et_VerifyCode = findViewById(R.id.et_VerifyCode);
@@ -40,35 +51,47 @@ public class LoginActivity extends AppCompatActivity
 
         //验证码按钮设置监听器
         btn_VerifyCode.setOnClickListener((v)->{
-            String Email = et_Email.getText().toString();
-            final String senderEmail = "csy157486@163.com"; // 发件人邮箱
-            final String senderPassword = "Qscvbylkj157486"; // 发件人邮箱密码
-
-            Properties props = new Properties();
-            props.put("mail.smtp.auth", "true");
-            props.put("mail.smtp.starttls.enable", "true");
-            props.put("mail.smtp.host", "smtp.163.com"); // 使用163 SMTP服务器地址
-            props.put("mail.smtp.port", "465");//服务器端口
-
-            Session session = Session.getInstance(props, new Authenticator() {
+            new Thread(new Runnable() {
                 @Override
-                protected PasswordAuthentication getPasswordAuthentication() {
-                    return new PasswordAuthentication(senderEmail, senderPassword);
-                }
-            });
+                public void run() {
+                    // 在这里执行网络请求
+                    String Email = et_Email.getText().toString();
+                    final String senderEmail = "csy157486@163.com"; // 发件人邮箱
+                    final String senderPassword = "VLMIHPHGOZEFELBE"; // 发件人邮箱密码
 
-            try {
-                Message message = new MimeMessage(session);
-                message.setFrom(new InternetAddress(Email));
-                message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(Email));
-                message.setSubject("验证码");
-                mVerifyCode = String.format("%06d", new Random().nextInt(999999));
-                message.setText("您的验证码是: " + mVerifyCode);
-                Transport.send(message);
-                System.out.println("邮件已发送成功！");
-            } catch (MessagingException e) {
-                e.printStackTrace();
-            }
+                    Properties props = new Properties();
+                    props.put("mail.smtp.auth", "true");
+                   props.put("mail.smtp.starttls.enable", "false");
+                    props.put("mail.smtp.host", "smtp.163.com"); // 使用163 SMTP服务器地址
+                    props.put("mail.smtp.port", "25");//服务器端口
+
+                    Session session = Session.getInstance(props, new Authenticator() {
+                        @Override
+                        protected PasswordAuthentication getPasswordAuthentication() {
+                            return new PasswordAuthentication(senderEmail, senderPassword);
+                        }
+                    });
+                    try {
+                        Message message = new MimeMessage(session);
+                        message.setFrom(new InternetAddress(senderEmail));
+                        message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(Email));
+                        message.setSubject("验证码");
+                        mVerifyCode = String.format("%06d", new Random().nextInt(999999));
+                        message.setText("您的验证码是: " + mVerifyCode);
+                        Transport.send(message);
+                        System.out.println("邮件已发送成功！");
+                    } catch (MessagingException e) {
+                        e.printStackTrace();
+                    }
+                    // 在需要更新 UI 时，使用 runOnUiThread 方法
+                    /*runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+
+                        }
+                    });*/
+                }
+            }).start();
     });
 
         //登录按钮设置监听器
@@ -97,7 +120,6 @@ public class LoginActivity extends AppCompatActivity
         });*/
 
     }
-
 
     //登录的点击事件
     /*public void onClick(View v) {
