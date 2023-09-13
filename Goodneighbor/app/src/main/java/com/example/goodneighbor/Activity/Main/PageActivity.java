@@ -46,25 +46,22 @@ public class PageActivity extends AppCompatActivity {
                 if(i==R.id.tv_share)
                 {
                     root.removeAllViews();
-                    //share_init()；
                 }
                 if(i==R.id.tv_message)
                 {
                     root.removeAllViews();
-                    //circle_init();
                 }
                 if(i==R.id.tv_me)
                 {
                     root.removeAllViews();
-                    //mine();
                 }
             }
         }
         );
 
     }
-        private void initView() {
-            //初始化控件
+    private void initView() {
+        //初始化控件
         mRadioGroup=findViewById(R.id.tv_tab);
         tab1=findViewById(R.id.tv_home);
         tab2=findViewById(R.id.tv_share);
