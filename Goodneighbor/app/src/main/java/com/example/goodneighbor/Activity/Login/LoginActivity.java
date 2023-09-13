@@ -2,7 +2,6 @@ package com.example.goodneighbor.Activity.Login;
 
 import android.app.AlertDialog;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,9 +10,12 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.goodneighbor.Activity.Main.MainActivity;
+import com.example.goodneighbor.Activity.Main.PageActivity;
 import com.example.goodneighbor.R;
+import com.example.goodneighbor.bean.UserInfo;
 import com.example.goodneighbor.database.PrefManager;
 import com.example.goodneighbor.database.UserDBHelper;
+import com.example.goodneighbor.util.DateUtil;
 
 import java.util.Random;
 
@@ -29,6 +31,8 @@ public class LoginActivity extends AppCompatActivity
     private String mVerifyCode;
     private Button btn_VerifyCode;
     private Button btn_Login;
+        Intent intent = new Intent(this, PageActivity.class);
+    UserInfo userInfo = new UserInfo();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,15 +42,16 @@ public class LoginActivity extends AppCompatActivity
         if(prefManager.isFirstTimeLaunch()){
             prefManager.setFirstTimeLaunch(false);
         }else{
-            startActivity(new Intent(this, MainActivity.class));
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
         }
         //初始化
         et_Email = findViewById(R.id.et_Email);
         et_VerifyCode = findViewById(R.id.et_VerifyCode);
         btn_VerifyCode=findViewById(R.id.btn_VerifyCode);
         btn_Login=findViewById(R.id.btn_Login);
-
-        mHelper = UserDBHelper.getInstance(this, 1); // 获得用户数据库帮助器的实例
+        // 获得用户数据库帮助器的实例
+        mHelper = UserDBHelper.getInstance(this, 1);
         mHelper.openWriteLink(); //打开数据库连接
 
         //验证码按钮设置监听器
@@ -80,6 +85,9 @@ public class LoginActivity extends AppCompatActivity
                         message.setText("您的验证码是: " + mVerifyCode);
                         Transport.send(message);
                         System.out.println("邮件已发送成功！");
+                        userInfo.email=Email;
+                        userInfo.update_time= DateUtil.getNowTime();
+                        mHelper.insert(userInfo);
                     } catch (MessagingException e) {
                         e.printStackTrace();
                     }
@@ -227,7 +235,8 @@ public class LoginActivity extends AppCompatActivity
         builder.setMessage(desc);
         builder.setPositiveButton("确定返回", (dialog, which) -> {
             mHelper.closeLink();
-            finish(); // 结束当前的活动页面
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent); // 结束当前的活动页面
         });
         builder.setNegativeButton("我再看看", null);
         AlertDialog alert = builder.create();
