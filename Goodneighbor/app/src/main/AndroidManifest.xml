@@ -30,7 +30,6 @@
             android:name=".Activity.Main.PageActivity"
             android:exported="true">
 
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

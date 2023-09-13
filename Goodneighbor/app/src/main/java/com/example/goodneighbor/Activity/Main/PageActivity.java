@@ -4,24 +4,29 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.goodneighbor.R;
 import com.example.goodneighbor.bean.ImagePagerAdapter;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.List;
 
 public class PageActivity extends AppCompatActivity {
     private LinearLayout root;
     private RadioGroup mRadioGroup;
-    private ImageView tv_window1;
+    private LinearLayout tv_window1;
+    private TextView btn_postings;
 
     ArrayList<ImageView> images = new ArrayList<>();
 
@@ -77,11 +82,10 @@ public class PageActivity extends AppCompatActivity {
 
         images.add(imageView);
         images.add(imageView2);
-        images.add(new ImageView(getBaseContext()));
-        images.add(new ImageView(getBaseContext()));
-        images.add(new ImageView(getBaseContext()));
 
         home_init();
+
+
     }
 
     private void home_init(){
@@ -99,6 +103,19 @@ public class PageActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent tv_window1=new Intent(getBaseContext(),PostingsActivity.class);
                 startActivity(tv_window1);
+            }
+        });
+
+
+//        //添加求助帖子页面
+        btn_postings=home_layout.findViewById(R.id.tv_publish_ActionButton);
+
+        btn_postings.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Intent btn1=new Intent(getBaseContext(),PostingsActivity.class);
+                startActivity(btn1);
             }
         });
     }
