@@ -10,12 +10,16 @@ import android.widget.TextView;
 
 import com.example.goodneighbor.Activity.Login.LoginActivity;
 import com.example.goodneighbor.R;
+import com.example.goodneighbor.bean.UserInfo;
+import com.example.goodneighbor.database.UserDBHelper;
 
 public class MineActivity extends AppCompatActivity implements View.OnClickListener {
 
     private int points = 0;
     private Button btn_Nickname;
     private Button btn_About,btn_exit;
+    UserInfo userInfo = new UserInfo();
+    private UserDBHelper mHelper;
     //底部四个按钮
     //private Button btn_circle,btn_main,btn_share,btn_mine;
 
@@ -29,6 +33,8 @@ public class MineActivity extends AppCompatActivity implements View.OnClickListe
         btn_About.setOnClickListener(this);
         btn_exit=findViewById(R.id.btn_exit);
         btn_exit.setOnClickListener(this);
+        btn_Nickname.setText(userInfo.email);
+        mHelper = UserDBHelper.getInstance(this, 1);
         /*//底部四个选择按钮的监听器
         btn_main=findViewById(R.id.btn_main);
         btn_main.setOnClickListener(this);
@@ -58,10 +64,7 @@ public class MineActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.btn_Nickname && btn_Nickname.getText().equals("未登录")) {
-            startActivity(new Intent(this, LoginActivity.class));
-            btn_Nickname.setText("请编辑信息");
-        } else if (v.getId() == R.id.btn_Nickname && !btn_Nickname.getText().equals("未登录")) {
+        if (v.getId() == R.id.btn_Nickname && btn_Nickname.getText().equals(userInfo.email)) {
             startActivity(new Intent(this,EditMessageActivity.class));
         } else if (v.getId()==R.id.btn_About) {
             startActivity(new Intent(this,AboutActivity.class));

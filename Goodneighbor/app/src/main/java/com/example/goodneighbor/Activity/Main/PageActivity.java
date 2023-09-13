@@ -72,7 +72,6 @@ public class PageActivity extends AppCompatActivity {
         tab4=findViewById(R.id.tv_me);
         root=findViewById(R.id.tv_root);
 
-
         ImageView imageView=new ImageView(getBaseContext());
         imageView.setImageResource(R.drawable.activity_1);
 
@@ -107,7 +106,22 @@ public class PageActivity extends AppCompatActivity {
         });
     }
     private void share_init(){
+        /*LinearLayout home_layout=(LinearLayout) LayoutInflater.from(getBaseContext()).inflate(R.layout.share_share, null);
 
+        ViewPager viewPager = home_layout.findViewById(R.id.tv_home_viewPager);
+        viewPager.setAdapter(new ImagePagerAdapter(this, getBaseContext(), images));
+
+        root.addView(home_layout);
+
+        //图片点击事件
+        tv_window1=home_layout.findViewById(R.id.tv_window1);
+        tv_window1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent tv_window1=new Intent(getBaseContext(),PostingsActivity.class);
+                startActivity(tv_window1);
+            }
+        });*/
     }
 
     private void circle(){

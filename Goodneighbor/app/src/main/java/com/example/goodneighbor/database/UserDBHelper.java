@@ -69,7 +69,7 @@ public class UserDBHelper extends SQLiteOpenHelper {
         Log.d(TAG, "drop_sql:" + drop_sql);
         db.execSQL(drop_sql);
         String create_sql = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + " ("
-                + "_id INTEGER PRIMARY KEY  AUTOINCREMENT NOT NULL,"
+                + "email INTEGER PRIMARY KEY  AUTOINCREMENT NOT NULL,"
                 + "name VARCHAR NOT NULL," + "age INTEGER NOT NULL,"
                 + "height INTEGER NOT NULL," + "weight FLOAT NOT NULL,"
                 + "married INTEGER NOT NULL," + "update_time VARCHAR NOT NULL"
@@ -131,8 +131,8 @@ public class UserDBHelper extends SQLiteOpenHelper {
                 }
             }
             // 如果存在同样的手机号码，则更新记录
-            if (info.phone != null && info.phone.length() > 0) {
-                String condition = String.format("phone='%s'", info.phone);
+            if (info.email != null && info.email.length() > 0) {
+                String condition = String.format("phone='%s'", info.email);
                 tempList = query(condition);
                 if (tempList.size() > 0) {
                     update(info, condition);
@@ -143,12 +143,9 @@ public class UserDBHelper extends SQLiteOpenHelper {
             // 不存在唯一性重复的记录，则插入新记录
             ContentValues cv = new ContentValues();
             cv.put("name", info.name);
-            cv.put("age", info.age);
-            cv.put("height", info.height);
-            cv.put("weight", info.weight);
-            cv.put("married", info.married);
+            cv.put("age", info.age);;
             cv.put("update_time", info.update_time);
-            cv.put("phone", info.phone);
+            cv.put("phone", info.email);
             // 执行插入记录动作，该语句返回插入记录的行号
             result = mDB.insert(TABLE_NAME, "", cv);
             if (result == -1) { // 添加成功则返回行号，添加失败则返回-1
@@ -163,11 +160,8 @@ public class UserDBHelper extends SQLiteOpenHelper {
         ContentValues cv = new ContentValues();
         cv.put("name", info.name);
         cv.put("age", info.age);
-        cv.put("height", info.height);
-        cv.put("weight", info.weight);
-        cv.put("married", info.married);
         cv.put("update_time", info.update_time);
-        cv.put("phone", info.phone);
+        cv.put("email", info.email);
         // 执行更新记录动作，该语句返回更新的记录数量
         return mDB.update(TABLE_NAME, cv, condition, null);
     }
@@ -192,12 +186,10 @@ public class UserDBHelper extends SQLiteOpenHelper {
             info.xuhao = cursor.getInt(1); // 取出整型数
             info.name = cursor.getString(2); // 取出字符串
             info.age = cursor.getInt(3); // 取出整型数
-            info.height = cursor.getLong(4); // 取出长整型数
-            info.weight = cursor.getFloat(5); // 取出浮点数
             //SQLite没有布尔型，用0表示false，用1表示true
-            info.married = (cursor.getInt(6) == 0) ? false : true;
+            //info.married = (cursor.getInt(6) == 0) ? false : true;
             info.update_time = cursor.getString(7); // 取出字符串
-            info.phone = cursor.getString(8); // 取出字符串
+            info.email = cursor.getString(8); // 取出字符串
             infoList.add(info);
         }
         cursor.close(); // 查询完毕，关闭数据库游标
@@ -205,9 +197,9 @@ public class UserDBHelper extends SQLiteOpenHelper {
     }
 
     // 根据手机号码查询指定记录
-    public UserInfo queryByPhone(String phone) {
+    public UserInfo queryByPhone(String email) {
         UserInfo info = null;
-        List<UserInfo> infoList = query(String.format("phone='%s'", phone));
+        List<UserInfo> infoList = query(String.format("email='%s'", email));
         if (infoList.size() > 0) { // 存在该号码的登录信息
             info = infoList.get(0);
         }
