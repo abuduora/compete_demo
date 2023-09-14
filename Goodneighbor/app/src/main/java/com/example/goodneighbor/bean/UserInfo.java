@@ -12,7 +12,7 @@ public class UserInfo {
 
     public UserInfo() {
         email="";
-        rowid = 0L;
+        rowid = 0;
         xuhao = 0;
         name = "";
         age = 0;

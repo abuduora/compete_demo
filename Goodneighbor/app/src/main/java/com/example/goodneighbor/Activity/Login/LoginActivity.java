@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity
     private String mVerifyCode;
     private Button btn_VerifyCode;
     private Button btn_Login;
-        Intent intent = new Intent(this, PageActivity.class);
+
     UserInfo userInfo = new UserInfo();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +40,11 @@ public class LoginActivity extends AppCompatActivity
         prefManager=new PrefManager(this);
         //判断是否已经登录
         if(prefManager.isFirstTimeLaunch()){
-            prefManager.setFirstTimeLaunch(false);
+            ;
         }else{
+            Intent intent = new Intent(this, PageActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(new Intent(this,PageActivity.class));
+            startActivity(intent);
         }
         //初始化
         et_Email = findViewById(R.id.et_Email);
@@ -232,11 +233,13 @@ public class LoginActivity extends AppCompatActivity
         // 以下弹出提醒对话框，提示用户登录成功
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("登录成功");
+        prefManager.setFirstTimeLaunch(false);
         builder.setMessage(desc);
         builder.setPositiveButton("确定返回", (dialog, which) -> {
             mHelper.closeLink();
+            Intent intent = new Intent(this, PageActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(new Intent(this,PageActivity.class));// 结束当前的活动页面
+            startActivity(intent);// 结束当前的活动页面
         });
         builder.setNegativeButton("我再看看", null);
         AlertDialog alert = builder.create();

@@ -71,10 +71,7 @@ public class UserDBHelper extends SQLiteOpenHelper {
         String create_sql = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + " ("
                 + "email INTEGER PRIMARY KEY  AUTOINCREMENT NOT NULL,"
                 + "name VARCHAR NOT NULL," + "age INTEGER NOT NULL,"
-                + "height INTEGER NOT NULL," + "weight FLOAT NOT NULL,"
-                + "married INTEGER NOT NULL," + "update_time VARCHAR NOT NULL"
-                //演示数据库升级时要先把下面这行注释
-                + ",phone VARCHAR" + ",password VARCHAR"
+                + "update_time VARCHAR NOT NULL"
                 + ");";
         Log.d(TAG, "create_sql:" + create_sql);
         db.execSQL(create_sql); // 执行完整的SQL语句
@@ -132,7 +129,7 @@ public class UserDBHelper extends SQLiteOpenHelper {
             }
             // 如果存在同样的手机号码，则更新记录
             if (info.email != null && info.email.length() > 0) {
-                String condition = String.format("phone='%s'", info.email);
+                String condition = String.format("email='%s'", info.email);
                 tempList = query(condition);
                 if (tempList.size() > 0) {
                     update(info, condition);
@@ -173,8 +170,8 @@ public class UserDBHelper extends SQLiteOpenHelper {
 
     // 根据指定条件查询记录，并返回结果数据列表
     public List<UserInfo> query(String condition) {
-        String sql = String.format("select rowid,_id,name,age,height,weight,married,update_time," +
-                "phone,password from %s where %s;", TABLE_NAME, condition);
+        String sql = String.format("select rowid,name,age,update_time" +
+                " from %s where %s;", TABLE_NAME, condition);
         Log.d(TAG, "query sql: " + sql);
         List<UserInfo> infoList = new ArrayList<UserInfo>();
         // 执行记录查询动作，该语句返回结果集的游标
@@ -196,7 +193,6 @@ public class UserDBHelper extends SQLiteOpenHelper {
         return infoList;
     }
 
-    // 根据手机号码查询指定记录
     public UserInfo queryByPhone(String email) {
         UserInfo info = null;
         List<UserInfo> infoList = query(String.format("email='%s'", email));

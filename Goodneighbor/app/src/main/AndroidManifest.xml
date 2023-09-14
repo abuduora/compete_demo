@@ -20,6 +20,10 @@
         <activity
             android:name=".Activity.Login.LoginActivity"
             android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".Activity.Main.MainActivity"
@@ -29,12 +33,6 @@
         <activity
             android:name=".Activity.Main.PageActivity"
             android:exported="true">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <activity
@@ -51,6 +49,42 @@
             android:exported="true" />
         <activity
             android:name=".Activity.Share.ShareActivity"
+            android:exported="true" />
+        <activity
+            android:name=".bean.Adapter"
+            android:exported="true" />
+        <activity
+            android:name=".bean.BaseAdapter"
+            android:exported="true" />
+        <activity
+            android:name=".bean.CircleImageView"
+            android:exported="true" />
+        <activity
+            android:name=".bean.ImagePagerAdapter"
+            android:exported="true" />
+        <activity
+            android:name=".bean.MyBaseAdapter"
+            android:exported="true" />
+        <activity
+            android:name=".bean.ShareAdapter"
+            android:exported="true" />
+        <activity
+            android:name=".bean.UserInfo"
+            android:exported="true" />
+        <activity
+            android:name=".database.PrefManager"
+            android:exported="true" />
+        <activity
+            android:name=".database.UserDBHelper"
+            android:exported="true" />
+        <activity
+            android:name=".util.DateUtil"
+            android:exported="true" />
+        <activity
+            android:name=".util.HttpUtil"
+            android:exported="true" />
+        <activity
+            android:name=".util.ViewUtil"
             android:exported="true" />
     </application>
 

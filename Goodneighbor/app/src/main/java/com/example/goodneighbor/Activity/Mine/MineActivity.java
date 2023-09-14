@@ -35,7 +35,7 @@ public class MineActivity extends AppCompatActivity implements View.OnClickListe
         btn_exit.setOnClickListener(this);
         ib_imageAvatar=findViewById(R.id.ib_imageAvatar);
         ib_imageAvatar.setOnClickListener(this);
-        btn_Nickname.setText(userInfo.email);
+        //btn_Nickname.setText(userInfo.email);
         btn_message=findViewById(R.id.btn_message);
         btn_message.setOnClickListener(this);
         mHelper = UserDBHelper.getInstance(this, 1);
