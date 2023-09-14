@@ -5,8 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.ImageButton;
 
 import com.example.goodneighbor.Activity.Login.LoginActivity;
 import com.example.goodneighbor.R;
@@ -15,11 +14,12 @@ import com.example.goodneighbor.database.UserDBHelper;
 
 public class MineActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private int points = 0;
     private Button btn_Nickname;
     private Button btn_About,btn_exit;
     UserInfo userInfo = new UserInfo();
     private UserDBHelper mHelper;
+    private Button btn_message;
+    private ImageButton ib_imageAvatar;
     //底部四个按钮
     //private Button btn_circle,btn_main,btn_share,btn_mine;
 
@@ -33,7 +33,11 @@ public class MineActivity extends AppCompatActivity implements View.OnClickListe
         btn_About.setOnClickListener(this);
         btn_exit=findViewById(R.id.btn_exit);
         btn_exit.setOnClickListener(this);
+        ib_imageAvatar=findViewById(R.id.ib_imageAvatar);
+        ib_imageAvatar.setOnClickListener(this);
         btn_Nickname.setText(userInfo.email);
+        btn_message=findViewById(R.id.btn_message);
+        btn_message.setOnClickListener(this);
         mHelper = UserDBHelper.getInstance(this, 1);
         /*//底部四个选择按钮的监听器
         btn_main=findViewById(R.id.btn_main);
@@ -64,12 +68,16 @@ public class MineActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.btn_Nickname && btn_Nickname.getText().equals(userInfo.email)) {
+        if (v.getId() == R.id.btn_Nickname) {
             startActivity(new Intent(this,EditMessageActivity.class));
         } else if (v.getId()==R.id.btn_About) {
             startActivity(new Intent(this,AboutActivity.class));
         } else if (v.getId()==R.id.btn_exit) {
             startActivity(new Intent(this,LoginActivity.class));
+        }else if(v.getId()==R.id.btn_message){
+            startActivity(new Intent(this,EditMessageActivity.class));
+        }else if(v.getId()==R.id.ib_imageAvatar){
+            startActivity(new Intent(this,EditMessageActivity.class));
         }
   /*      else if(v.getId()==R.id.btn_About){startActivity(new Intent(this,AboutActivity.class));}
         else if(v.getId()==R.id.btn_main){startActivity(new Intent(this,MainActivity.class));}

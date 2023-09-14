@@ -132,62 +132,62 @@ public class PageActivity extends AppCompatActivity {
     private void share_init(){
         LinearLayout home_layout=(LinearLayout) LayoutInflater.from(getBaseContext()).inflate(R.layout.main_main, null);
 
-            //初始化ListView控件
-            ListView listView=findViewById(R.id.lv);
-            //创建一个Adapter的实例
-            MyBaseAdapter mAdapter=new MyBaseAdapter();
-            //设置Adapter
-            listView.setAdapter(mAdapter);
-        class MyBaseAdapter extends BaseAdapter{
-
-            @Override
-            public int getCount(){       //得到item的总数
-                return titles.length;
-            }
-
-            @Override
-            public Object getItem(int position){
-                return titles[position]; //返回item的数据对象
-            }
-            @Override
-            public long getItemId(int position){
-                return position;         //返回item的id
-            }
-            @Override
-            public View getView(int position, View convertView, ViewGroup parent){//获取item中的View视图
-                ViewHolder holder;
-                if(convertView==null){
-                    convertView=View.inflate(PageActivity.this,R.layout.share_share, null);
-                    holder=new ViewHolder();
-                    holder.title=convertView.findViewById(R.id.title);
-                    holder.price=convertView.findViewById(R.id.price);
-                    holder.iv=convertView.findViewById(R.id.iv);
-                    convertView.setTag(holder);
-                }else{
-                    holder=(ViewHolder)convertView.getTag();
-                }
-                holder.title.setText(titles[position]);
-                holder.price.setText(prices[position]);
-                holder.iv.setImageResource(icons[position]);
-                return convertView;
-            }
-
-        class ViewHolder{
-            TextView title;
-            TextView price;
-            ImageView iv;
-        }
-        }
+//            //初始化ListView控件
+//            ListView listView=findViewById(R.id.lv);
+//            //创建一个Adapter的实例
+//            MyBaseAdapter mAdapter=new MyBaseAdapter();
+//            //设置Adapter
+//            listView.setAdapter(mAdapter);
+//        class MyBaseAdapter extends BaseAdapter{
+//
+//            @Override
+//            public int getCount(){       //得到item的总数
+//                return titles.length;
+//            }
+//
+//            @Override
+//            public Object getItem(int position){
+//                return titles[position]; //返回item的数据对象
+//            }
+//            @Override
+//            public long getItemId(int position){
+//                return position;         //返回item的id
+//            }
+//            @Override
+//            public View getView(int position, View convertView, ViewGroup parent){//获取item中的View视图
+//                ViewHolder holder;
+//                if(convertView==null){
+//                    convertView=View.inflate(PageActivity.this,R.layout.share_share, null);
+//                    holder=new ViewHolder();
+//                    holder.title=convertView.findViewById(R.id.title);
+//                    holder.price=convertView.findViewById(R.id.price);
+//                    holder.iv=convertView.findViewById(R.id.iv);
+//                    convertView.setTag(holder);
+//                }else{
+//                    holder=(ViewHolder)convertView.getTag();
+//                }
+//                holder.title.setText(titles[position]);
+//                holder.price.setText(prices[position]);
+//                holder.iv.setImageResource(icons[position]);
+//                return convertView;
+//            }
+//
+//        class ViewHolder{
+//            TextView title;
+//            TextView price;
+//            ImageView iv;
+//        }
+//        }
     }
 
     private void circle_init(){
-        LinearLayout circle_layout=(LinearLayout) LayoutInflater.from(getBaseContext()).inflate(R.layout.circle_circle, null);
-        root.addView(circle_layout);
+//        LinearLayout circle_layout=(LinearLayout) LayoutInflater.from(getBaseContext()).inflate(R.layout.circle_circle, null);
+//        root.addView(circle_layout);
     }
 
      private void mine_init(){
-        LinearLayout mine_layout=(LinearLayout) LayoutInflater.from(getBaseContext()).inflate(R.layout.mine_mine, null);
-        root.addView(mine_layout);
+//        LinearLayout mine_layout=(LinearLayout) LayoutInflater.from(getBaseContext()).inflate(R.layout.mine_mine, null);
+//        root.addView(mine_layout);
     }
 
 

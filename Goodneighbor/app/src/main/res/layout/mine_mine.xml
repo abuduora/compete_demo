@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-        >
+    >
     <!-- 用户头像和昵称部分 -->
     <LinearLayout
         android:layout_width="match_parent"
@@ -57,6 +57,14 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/btn_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/information"
+            android:textColor="@color/black"
+            android:textSize="23dp" />
+
+        <Button
             android:id="@+id/btn_About"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -70,7 +78,7 @@
             android:layout_height="wrap_content"
             android:text="@string/exit"
             android:textColor="@color/black"
-            android:textSize="23dp"/>
+            android:textSize="23dp" />
 
     </LinearLayout>
 
