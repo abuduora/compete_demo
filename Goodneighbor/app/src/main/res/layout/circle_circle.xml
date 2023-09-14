@@ -30,7 +30,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="云端new守夜人"
+                android:text="我自己啊"
                 android:textSize="14dp"
                 android:textStyle="bold"/>
 
