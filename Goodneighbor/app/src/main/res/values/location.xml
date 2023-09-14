@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="spinner">
-        <item>全部</item>
-        <item>上海</item>
-        <item>天津</item>
-        <item>深圳</item>
+        <item>碧螺春小区</item>
+        <item>天通苑北</item>
+        <item>亚运豪宅</item>
+        <item>碧桂园五星上将</item>
     </string-array>
 </resources>

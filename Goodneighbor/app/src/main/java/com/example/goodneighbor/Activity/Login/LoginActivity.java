@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity
     private String mVerifyCode;
     private Button btn_VerifyCode;
     private Button btn_Login;
-       // Intent intent = new Intent(this, PageActivity.class);
+        Intent intent = new Intent(this, PageActivity.class);
     UserInfo userInfo = new UserInfo();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity
         if(prefManager.isFirstTimeLaunch()){
             prefManager.setFirstTimeLaunch(false);
         }else{
-            //intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(new Intent(this,PageActivity.class));
         }
         //初始化
@@ -235,7 +235,7 @@ public class LoginActivity extends AppCompatActivity
         builder.setMessage(desc);
         builder.setPositiveButton("确定返回", (dialog, which) -> {
             mHelper.closeLink();
-            //intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(new Intent(this,PageActivity.class));// 结束当前的活动页面
         });
         builder.setNegativeButton("我再看看", null);

@@ -61,10 +61,12 @@ public class PageActivity extends AppCompatActivity {
                 if(i==R.id.tv_message)
                 {
                     root.removeAllViews();
+                    circle_init();
                 }
                 if(i==R.id.tv_me)
                 {
                     root.removeAllViews();
+                    mine_init();
                 }
             }
         }
@@ -92,10 +94,6 @@ public class PageActivity extends AppCompatActivity {
         images.add(imageView2);
 
         home_init();
-        circle_init();
-        mine_init();
-        share_init();
-
     }
 
     private void home_init(){
@@ -181,14 +179,11 @@ public class PageActivity extends AppCompatActivity {
     }
 
     private void circle_init(){
-//        LinearLayout circle_layout=(LinearLayout) LayoutInflater.from(getBaseContext()).inflate(R.layout.circle_circle, null);
-//        root.addView(circle_layout);
+    LinearLayout circle_layout=(LinearLayout) LayoutInflater.from(getBaseContext()).inflate(R.layout.circle_circle, null);
+        root.addView(circle_layout);
     }
 
      private void mine_init(){
-//        LinearLayout mine_layout=(LinearLayout) LayoutInflater.from(getBaseContext()).inflate(R.layout.mine_mine, null);
-//        root.addView(mine_layout);
-    }
-
-
+        LinearLayout mine_layout=(LinearLayout) LayoutInflater.from(getBaseContext()).inflate(R.layout.mine_mine, null);
+        root.addView(mine_layout);}
 }
