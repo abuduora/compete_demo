@@ -46,7 +46,7 @@ public class MyBaseAdapter extends BaseAdapter{
         if(convertView==null){
             convertView=View.inflate(PageActivity,R.layout.share_share, null);
             holder=new ViewHolder();
-            holder.title=convertView.findViewById(R.id.title);
+            holder.title=convertView.findViewById(R.id.tv_title);
             holder.price=convertView.findViewById(R.id.price);
             holder.iv=convertView.findViewById(R.id.iv);
             convertView.setTag(holder);

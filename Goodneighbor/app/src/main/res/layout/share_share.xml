@@ -12,12 +12,12 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:text="共享物品"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textColor="#FFFFFF"
         android:background="#FF8F03"
         android:gravity="center"/>
-    <ListView
-        android:id="@+id/lv"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tv_share_recycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

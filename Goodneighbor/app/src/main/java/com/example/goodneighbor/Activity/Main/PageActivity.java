@@ -14,14 +14,19 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.goodneighbor.R;
 import com.example.goodneighbor.bean.ImagePagerAdapter;
 import com.example.goodneighbor.bean.MyBaseAdapter;
+import com.example.goodneighbor.bean.RecyclerAdapter;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class PageActivity extends AppCompatActivity {
     private LinearLayout root;
@@ -56,7 +61,7 @@ public class PageActivity extends AppCompatActivity {
                 if(i==R.id.tv_share)
                 {
                     root.removeAllViews();
-//                    share_init();
+                    share_init();
                 }
                 if(i==R.id.tv_message)
                 {
@@ -71,7 +76,6 @@ public class PageActivity extends AppCompatActivity {
             }
         }
         );
-
     }
     private void initView() {
         //初始化控件
@@ -114,8 +118,7 @@ public class PageActivity extends AppCompatActivity {
             }
         });
 
-
-//        //添加求助帖子页面
+        //添加求助帖子页面
         btn_postings=home_layout.findViewById(R.id.tv_publish_ActionButton);
 
         btn_postings.setOnClickListener(new View.OnClickListener(){
@@ -128,54 +131,20 @@ public class PageActivity extends AppCompatActivity {
         });
     }
     private void share_init(){
-        LinearLayout home_layout=(LinearLayout) LayoutInflater.from(getBaseContext()).inflate(R.layout.main_main, null);
-
-//            //初始化ListView控件
-//            ListView listView=findViewById(R.id.lv);
-//            //创建一个Adapter的实例
-//            MyBaseAdapter mAdapter=new MyBaseAdapter();
-//            //设置Adapter
-//            listView.setAdapter(mAdapter);
-//        class MyBaseAdapter extends BaseAdapter{
-//
-//            @Override
-//            public int getCount(){       //得到item的总数
-//                return titles.length;
-//            }
-//
-//            @Override
-//            public Object getItem(int position){
-//                return titles[position]; //返回item的数据对象
-//            }
-//            @Override
-//            public long getItemId(int position){
-//                return position;         //返回item的id
-//            }
-//            @Override
-//            public View getView(int position, View convertView, ViewGroup parent){//获取item中的View视图
-//                ViewHolder holder;
-//                if(convertView==null){
-//                    convertView=View.inflate(PageActivity.this,R.layout.share_share, null);
-//                    holder=new ViewHolder();
-//                    holder.title=convertView.findViewById(R.id.title);
-//                    holder.price=convertView.findViewById(R.id.price);
-//                    holder.iv=convertView.findViewById(R.id.iv);
-//                    convertView.setTag(holder);
-//                }else{
-//                    holder=(ViewHolder)convertView.getTag();
-//                }
-//                holder.title.setText(titles[position]);
-//                holder.price.setText(prices[position]);
-//                holder.iv.setImageResource(icons[position]);
-//                return convertView;
-//            }
-//
-//        class ViewHolder{
-//            TextView title;
-//            TextView price;
-//            ImageView iv;
-//        }
-//        }
+        setContentView(R.layout.share_share);
+            List<Map<String,String>>mapList=new ArrayList<>();
+            Map<String,String>map;
+            for(int i=0;i<10;i++)
+            {
+                map=new HashMap<>();
+                map.put("title","商品"+i);
+                map.put("price","价格"+i);
+                mapList.add(map);
+            }
+            RecyclerAdapter recyclerAdapter=new RecyclerAdapter(mapList, PageActivity.this);
+            RecyclerView recycleView=(RecyclerView) findViewById(R.id.tv_share_recycler);
+            recycleView.setLayoutManager(new LinearLayoutManager(this));
+            recycleView.setAdapter(recyclerAdapter);
     }
 
     private void circle_init(){
