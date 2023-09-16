@@ -40,8 +40,8 @@
 
     <!--更换头像，姓名，性别，楼号，电话-->
 
-    <ImageButton
-        android:id="@+id/ib_image"
+    <ImageView
+        android:id="@+id/iv_image"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center"
@@ -64,7 +64,7 @@
             android:id="@+id/et_name"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="@string/text_new_name"
+            android:hint="@string/text_new_name"
             android:gravity="center"/>
     </LinearLayout>
 
@@ -86,7 +86,7 @@
             android:id="@+id/et_sex"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="男"
+            android:hint="男"
             android:gravity="center"/>
     </LinearLayout>
     <LinearLayout
@@ -106,7 +106,7 @@
             android:id="@+id/et_buildingnumber"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="@string/text_new_buildnumber"
+            android:hint="@string/text_new_buildnumber"
             android:gravity="center"/>
     </LinearLayout>
     <LinearLayout
@@ -126,7 +126,7 @@
             android:id="@+id/et_phone"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="@string/text_new_phone"
+            android:hint="@string/text_new_phone"
             android:gravity="center"/>
     </LinearLayout>
 </LinearLayout>

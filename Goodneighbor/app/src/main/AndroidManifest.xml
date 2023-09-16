@@ -2,8 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" >
     <!-- 网络访问权限 -->
+    
+    
+    <!--相机-->
+    <uses-feature
+    android:name="android.hardware.camera"
+    android:required="false" />
     <uses-permission android:name="android.permission.INTERNET" />
-
+<uses-permission android:name="android.permission.CAMERA"/>
+    
+    
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -86,6 +94,16 @@
         <activity
             android:name=".util.ViewUtil"
             android:exported="true" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_path"/>
+        </provider>
     </application>
 
 </manifest>
