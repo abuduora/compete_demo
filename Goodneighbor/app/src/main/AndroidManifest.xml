@@ -27,8 +27,7 @@
         </activity>
         <activity
             android:name=".Activity.Main.MainActivity"
-            android:exported="false">
-
+            android:exported="true">
         </activity>
         <activity
             android:name=".Activity.Main.PageActivity"

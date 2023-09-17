@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -14,10 +15,14 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.goodneighbor.Activity.Share.ShareActivity;
 import com.example.goodneighbor.R;
 import com.example.goodneighbor.bean.ImagePagerAdapter;
 import com.example.goodneighbor.bean.MyBaseAdapter;
@@ -27,12 +32,27 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.StreamSupport;
+
+import kotlin.TuplesKt;
 
 public class PageActivity extends AppCompatActivity {
     private LinearLayout root;
     private RadioGroup mRadioGroup;
     private LinearLayout tv_window1;
+    private  FragmentManager mSupportFragmentManager;
     private TextView btn_postings;
+
+    private MainActivity homeFragment;
+    private FrameLayout mFrameLayout;
+    private ShareActivity shareFragment;
+    private RadioGroup mRg;
+    private RadioButton mRbHome;
+    private RadioButton mRbCommunity;
+    private RadioButton mRbMessage;
+    private RadioButton mRbMe;
+    private List<Fragment> mFragments = new ArrayList<>();
+    private FragmentTransaction mTransaction;
     private String[] titles={"桌子","苹果","蛋糕","线衣","猕猴桃","围巾"};
     private String[] prices={"1800元","10元/kg","300元","350元","10元/kg","280元"};
     private  int[] icons={R.drawable.user1,R.drawable.user2,R.drawable.user3,
@@ -47,21 +67,34 @@ public class PageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.global_bottom);
+        //初始化控件
+        mFrameLayout=findViewById(R.id.tv_frameLayout);
+        mRadioGroup=findViewById(R.id.tv_tab);
+        tab1=findViewById(R.id.tv_home);
+        tab2=findViewById(R.id.tv_share);
+        tab3=findViewById(R.id.tv_message);
+        tab4=findViewById(R.id.tv_me);
 
-        initView();//初始化数据
+        initView();
+
+        //初始化数据
         //对单选按钮进行监听，选中、未选中
         mRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup,int i) {
                 if(i==R.id.tv_home)
                 {
-                    root.removeAllViews();
-                    home_init();
+                    hideOthersFragment(homeFragment, false);
                 }
                 if(i==R.id.tv_share)
                 {
-                    root.removeAllViews();
-                    share_init();
+                    if (shareFragment == null) {
+                        shareFragment = new ShareActivity();
+                        mFragments.add(shareFragment);
+                        hideOthersFragment(shareFragment, true);
+                    } else {
+                        hideOthersFragment(shareFragment, false);
+                    }
                 }
                 if(i==R.id.tv_message)
                 {
@@ -78,14 +111,15 @@ public class PageActivity extends AppCompatActivity {
         );
     }
     private void initView() {
-        //初始化控件
-        mRadioGroup=findViewById(R.id.tv_tab);
-        tab1=findViewById(R.id.tv_home);
-        tab2=findViewById(R.id.tv_share);
-        tab3=findViewById(R.id.tv_message);
-        tab4=findViewById(R.id.tv_me);
-        root=findViewById(R.id.tv_root);
 
+        mSupportFragmentManager = getSupportFragmentManager();
+        mTransaction=mSupportFragmentManager.beginTransaction();
+
+        //默认首先加载主页
+        mRadioGroup.check(R.id.tv_home);
+        homeFragment = new MainActivity();
+        mFragments.add(homeFragment);
+        hideOthersFragment(homeFragment, true);
 
         //图片滚动效果
         ImageView imageView=new ImageView(getBaseContext());
@@ -98,6 +132,20 @@ public class PageActivity extends AppCompatActivity {
         images.add(imageView2);
 
         home_init();
+    }
+
+    private void hideOthersFragment(Fragment showFragment,boolean add){
+        mTransaction=mSupportFragmentManager.beginTransaction();
+        if(add){
+            mTransaction.add(R.id.tv_frameLayout,showFragment);
+        }
+        for(Fragment fragment:mFragments){
+            if(showFragment.equals(fragment)){
+                mTransaction.show(fragment);
+            }
+            else mTransaction.hide(fragment);
+        }
+        mTransaction.commit();
     }
 
     private void home_init(){
@@ -148,11 +196,10 @@ public class PageActivity extends AppCompatActivity {
     }
 
     private void circle_init(){
-    LinearLayout circle_layout=(LinearLayout) LayoutInflater.from(getBaseContext()).inflate(R.layout.circle_circle, null);
-        root.addView(circle_layout);
+        setContentView(R.layout.circle_circle);
     }
 
      private void mine_init(){
-        LinearLayout mine_layout=(LinearLayout) LayoutInflater.from(getBaseContext()).inflate(R.layout.mine_mine, null);
-        root.addView(mine_layout);}
+        setContentView(R.layout.mine_mine);
+     }
 }
