@@ -3,7 +3,6 @@ package com.example.goodneighbor.Activity.Mine;
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContract;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -39,7 +38,7 @@ public class EditMessageActivity extends AppCompatActivity implements View.OnCli
             @Override
             public void onClick(View v) {
                 Intent intent= new Intent();
-                intent.setClass(EditMessageActivity.this,MineActivity.class);
+                intent.setClass(EditMessageActivity.this, MineFragment.class);
                 startActivity(intent);
             }
         });
@@ -48,7 +47,7 @@ public class EditMessageActivity extends AppCompatActivity implements View.OnCli
             @Override
             public void onClick(View v) {
                 Intent intent= new Intent();
-                intent.setClass(EditMessageActivity.this,MineActivity.class);
+                intent.setClass(EditMessageActivity.this, MineFragment.class);
                 startActivity(intent);
             }
         });

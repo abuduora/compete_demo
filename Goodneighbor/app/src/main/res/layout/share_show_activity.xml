@@ -63,7 +63,6 @@
                         android:src="@drawable/share2">
                     </ImageView>
                 </LinearLayout>
-
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -81,7 +80,7 @@
                         android:layout_height="wrap_content"
                         android:background="#F5F5DC"
                         android:padding="5dp"
-                        android:src="@drawable/share1">
+                        android:src="@drawable/share3">
                     </ImageView>
                 </LinearLayout>
 
@@ -95,42 +94,7 @@
                         android:layout_height="wrap_content"
                         android:background="#F5F5DC"
                         android:padding="5dp"
-                        android:src="@drawable/share2">
-                    </ImageView>
-                </LinearLayout>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="150dp"
-                    android:layout_weight="1">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="#F5F5DC"
-                        android:padding="5dp"
-                        android:src="@drawable/share1">
-                    </ImageView>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="150dp"
-                    android:layout_weight="1">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="#F5F5DC"
-                        android:padding="5dp"
-                        android:src="@drawable/share2">
+                        android:src="@drawable/share4">
                     </ImageView>
                 </LinearLayout>
 
@@ -151,7 +115,7 @@
                         android:layout_height="wrap_content"
                         android:background="#F5F5DC"
                         android:padding="5dp"
-                        android:src="@drawable/share1">
+                        android:src="@drawable/share2">
                     </ImageView>
                 </LinearLayout>
 
@@ -165,7 +129,7 @@
                         android:layout_height="wrap_content"
                         android:background="#F5F5DC"
                         android:padding="5dp"
-                        android:src="@drawable/share2">
+                        android:src="@drawable/share4">
                     </ImageView>
                 </LinearLayout>
 
@@ -186,9 +150,30 @@
                         android:layout_height="wrap_content"
                         android:background="#F5F5DC"
                         android:padding="5dp"
-                        android:src="@drawable/share1">
+                        android:src="@drawable/share5">
                     </ImageView>
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#F5F5DC"
+                        android:padding="5dp"
+                        android:src="@drawable/share3">
+                    </ImageView>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -204,6 +189,19 @@
                     </ImageView>
                 </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#F5F5DC"
+                        android:padding="5dp"
+                        android:src="@drawable/share1">
+                    </ImageView>
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
         </ScrollView>

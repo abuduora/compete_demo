@@ -24,7 +24,7 @@ public class AboutActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent= new Intent();
-                intent.setClass(AboutActivity.this,MineActivity.class);
+                intent.setClass(AboutActivity.this, MineFragment.class);
                 startActivity(intent);
             }
         });

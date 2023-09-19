@@ -9,7 +9,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.goodneighbor.Activity.Main.MainActivity;
 import com.example.goodneighbor.Activity.Main.PageActivity;
 import com.example.goodneighbor.R;
 import com.example.goodneighbor.bean.UserInfo;

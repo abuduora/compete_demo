@@ -7,8 +7,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.goodneighbor.Activity.Main.MainActivity;
-import com.example.goodneighbor.Activity.Main.PageActivity;
 import com.example.goodneighbor.R;
 
 

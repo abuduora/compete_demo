@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="他人共享"
-            android:textSize="50sp" />
+            android:textSize="30dp" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="0dp"
@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="我要共享"
-            android:textSize="50sp" />
+            android:textSize="30sp" />
     </LinearLayout>
 </LinearLayout>
 
@@ -53,28 +53,28 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="共享柜一号"
-                    android:textSize="100dp"
+                    android:textSize="15sp"
                     android:gravity="center"
                     />
             <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="25dp"
                     android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="0dp"
-                        android:layout_height="50dp"
+                        android:layout_height="25dp"
                         android:layout_weight="1"
                         android:text="距离您：532m"
-                        android:textSize="30sp"/>
+                        android:textSize="15sp"/>
 
                     <TextView
                         android:layout_width="0dp"
-                        android:layout_height="50dp"
+                        android:layout_height="25dp"
                         android:layout_weight="1"
                         android:gravity="end"
                         android:text="共享柜目前满箱率：70%"
-                        android:textSize="30sp"/>
+                        android:textSize="15sp"/>
                 </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -88,28 +88,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="共享柜二号"
-                android:textSize="100dp"
+                android:textSize="50dp"
                 android:gravity="center"
                 />
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="25dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
+                    android:layout_height="25dp"
                     android:layout_weight="1"
                     android:text="距离您：1232m"
-                    android:textSize="30sp"/>
+                    android:textSize="15sp"/>
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
+                    android:layout_height="25dp"
                     android:layout_weight="1"
                     android:gravity="end"
                     android:text="共享柜目前满箱率：40%"
-                    android:textSize="30sp"/>
+                    android:textSize="15sp"/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -123,28 +123,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="共享柜三号"
-                android:textSize="100dp"
+                android:textSize="50dp"
                 android:gravity="center"
                 />
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="25dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
+                    android:layout_height="25dp"
                     android:layout_weight="1"
                     android:text="距离您：2232m"
-                    android:textSize="30sp"/>
+                    android:textSize="15sp"/>
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
+                    android:layout_height="25dp"
                     android:layout_weight="1"
                     android:gravity="end"
                     android:text="共享柜目前满箱率：60%"
-                    android:textSize="30sp"/>
+                    android:textSize="15sp"/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -158,28 +158,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="共享柜四号"
-                android:textSize="100dp"
+                android:textSize="50dp"
                 android:gravity="center"
                 />
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="25dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
+                    android:layout_height="25dp"
                     android:layout_weight="1"
                     android:text="距离您：832m"
-                    android:textSize="30sp"/>
+                    android:textSize="15sp"/>
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
+                    android:layout_height="25dp"
                     android:layout_weight="1"
                     android:gravity="end"
                     android:text="共享柜目前满箱率：90%"
-                    android:textSize="30sp"/>
+                    android:textSize="15sp"/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -193,28 +193,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="共享柜五号"
-                android:textSize="100dp"
+                android:textSize="50dp"
                 android:gravity="center"
                 />
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="25dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
+                    android:layout_height="25dp"
                     android:layout_weight="1"
                     android:text="距离您：1332m"
-                    android:textSize="30sp"/>
+                    android:textSize="15sp"/>
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
+                    android:layout_height="25dp"
                     android:layout_weight="1"
                     android:gravity="end"
                     android:text="共享柜目前满箱率：70%"
-                    android:textSize="30sp"/>
+                    android:textSize="15sp"/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -228,28 +228,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="共享柜六号"
-                android:textSize="100dp"
+                android:textSize="50dp"
                 android:gravity="center"
                 />
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="25dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
+                    android:layout_height="25dp"
                     android:layout_weight="1"
                     android:text="距离您：932m"
-                    android:textSize="30sp"/>
+                    android:textSize="15sp"/>
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
+                    android:layout_height="25dp"
                     android:layout_weight="1"
                     android:gravity="end"
                     android:text="共享柜目前满箱率：40%"
-                    android:textSize="30sp"/>
+                    android:textSize="15sp"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
