@@ -24,24 +24,14 @@
             android:textSize="20sp"
             android:textColor="#000000"/>
         <TextView
-            android:id="@+id/tv_price"
+            android:id="@+id/tv_share_boxNavagation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="价格："
+            android:text="共享柜位置"
             android:textSize="20sp"
             android:layout_marginTop="10dp"
             android:layout_below="@+id/tv_title"
             android:textColor="#FF8F03"
-            tools:ignore="UnknownId" />
-        <TextView
-            android:id="@+id/price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="1000"
-            android:textSize="20sp"
-            android:layout_below="@+id/tv_price"
-            android:textColor="#FF8F03"
-            android:layout_marginTop="10dp"
             tools:ignore="UnknownId" />
     </RelativeLayout>
 </RelativeLayout>

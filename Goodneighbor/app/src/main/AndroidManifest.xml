@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" >
+    xmlns:tools="http://schemas.android.com/tools">
     <!-- 网络访问权限 -->
-    
-    
-    <!--相机-->
+    <!-- 相机 -->
     <uses-feature
-    android:name="android.hardware.camera"
-    android:required="false" />
+        android:name="android.hardware.camera"
+        android:required="false" />
+
     <uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.CAMERA"/>
-    
-    
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -21,27 +19,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GoodNeighbor"
-        tools:targetApi="31" >
+        tools:targetApi="31">
         <activity
-            android:name=".Activity.Circle.CircleActivity"
+            android:name=".Activity.Circle.CircleFragment"
             android:exported="false" />
         <activity
             android:name=".Activity.Login.LoginActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
         <activity
-            android:name=".Activity.Main.MainActivity"
+            android:name=".Activity.Main.MainFragment"
             android:exported="true">
         </activity>
         <activity
             android:name=".Activity.Main.PageActivity"
             android:exported="true">
-        </activity>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Activity.Main.PostingsActivity"
             android:exported="false" />
@@ -52,10 +55,13 @@
             android:name=".Activity.Mine.EditMessageActivity"
             android:exported="true" />
         <activity
-            android:name=".Activity.Mine.MineActivity"
+            android:name=".Activity.Mine.MineFragment"
             android:exported="true" />
         <activity
-            android:name=".Activity.Share.ShareActivity"
+            android:name=".Activity.Share.ShareFragment"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.Share.SharePublish"
             android:exported="true" />
         <activity
             android:name=".bean.Adapter"
@@ -101,7 +107,7 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_path"/>
+                android:resource="@xml/file_path" />
         </provider>
     </application>
 

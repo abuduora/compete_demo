@@ -23,10 +23,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PageActivity extends AppCompatActivity {
-    private String[] titles={"桌子","苹果","蛋糕","线衣","猕猴桃","围巾"};
-    private String[] prices={"1800元","10元/kg","300元","350元","10元/kg","280元"};
-    private  int[] icons={R.drawable.user1,R.drawable.user2,R.drawable.user3,
-            R.drawable.user4,R.drawable.user1,R.drawable.user4};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +33,9 @@ public class PageActivity extends AppCompatActivity {
         RadioButton tab1 = findViewById(R.id.tv_home);
         RadioButton tab2 = findViewById(R.id.tv_share);
         RadioButton tab3 = findViewById(R.id.tv_message);
-        //四个单选按钮
+        //五个单选按钮
         RadioButton tab4 = findViewById(R.id.tv_me);
+        RadioButton tab5 = findViewById(R.id.tv_shop);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.tv_root,new MainFragment()).commit();
 
@@ -54,6 +51,10 @@ public class PageActivity extends AppCompatActivity {
                 getSupportFragmentManager().beginTransaction().replace(R.id.tv_root,new ShareFragment()).commit();
             }
             if(i==R.id.tv_message)
+            {
+                getSupportFragmentManager().beginTransaction().replace(R.id.tv_root,new CircleFragment()).commit();
+            }
+            if(i==R.id.tv_shop)
             {
                 getSupportFragmentManager().beginTransaction().replace(R.id.tv_root,new CircleFragment()).commit();
             }

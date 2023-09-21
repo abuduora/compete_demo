@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/tv_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/share_tab"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/postings_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/tv_postings_back"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:text="@string/text_back"
+                    android:textSize="8sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1">
+
+
+                <TextView
+                    android:text="@string/text_postings_publish"
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:textSize="22sp"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="end"
+                android:layout_weight="1">
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/tv_postings_publish"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:textSize="8sp"
+                    android:text="@string/text_postings_publish"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:src="@drawable/book"
+                    android:scaleType="centerInside"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Android App开发入门与项目实战"
+                    android:textSize="20dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="作者：欧阳燊"
+                    android:gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="价格：98元"
+                    android:gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="出版社：清华大学出版社"
+                    android:gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="共享日期：2023-9-10"
+                    android:gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="结束日期：2023-10-11"
+                    android:gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="共享积分：10"
+                    android:gravity="center"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:src="@drawable/lock"
+                    android:scaleType="centerInside"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="12V小型电磁阀锁"
+                    android:textSize="20dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="价格：5元"
+                    android:gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="共享日期：2023-9-18"
+                    android:gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="结束日期：2023-12-21"
+                    android:gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="共享积分：2"
+                    android:gravity="center"/>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/share_tab"
+        android:layout_width="fill_parent"
+        android:layout_height="55dp"
+        android:gravity="center_vertical"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="#ffffff">
+
+        <RadioButton
+            android:id="@+id/share_contact"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.4"
+            android:button="@null"
+            android:checked="true"
+            android:drawableTop="@drawable/message_check"
+            android:gravity="center"
+            android:text="联系社区" />
+        <RadioButton
+            android:id="@+id/share_test"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/share_check"
+            android:gravity="center"
+            android:text="测试按钮" />
+
+        <RadioButton
+            android:id="@+id/share_sharing"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/share_check"
+            android:gravity="center"
+            android:text="@string/text_share" />
+    </RadioGroup>
+</RelativeLayout>

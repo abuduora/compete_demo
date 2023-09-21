@@ -6,4 +6,10 @@
         <item>亚运豪宅</item>
         <item>碧桂园五星上将</item>
     </string-array>
+    <string-array name="box">
+        <item>一号共享柜</item>
+        <item>二号共享柜</item>
+        <item>三号共享柜</item>
+        <item>四号共享柜</item>
+    </string-array>
 </resources>

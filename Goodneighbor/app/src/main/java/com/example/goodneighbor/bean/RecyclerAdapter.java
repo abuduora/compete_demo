@@ -50,7 +50,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
             public MyViewHolder(View v){
             super(v);
             title=(TextView)v.findViewById(R.id.tv_title);
-            Price=(TextView)v.findViewById(R.id.tv_price);
+            Price=(TextView)v.findViewById(R.id.tv_share_boxNavagation);
             }
         }
 }

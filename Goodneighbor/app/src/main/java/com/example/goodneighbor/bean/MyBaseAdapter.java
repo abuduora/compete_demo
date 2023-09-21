@@ -7,20 +7,21 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.goodneighbor.Activity.Main.MainFragment;
+import com.example.goodneighbor.Activity.Main.PageActivity;
+import com.example.goodneighbor.Activity.Share.ShareFragment;
 import com.example.goodneighbor.R;
 
 
 public class MyBaseAdapter extends BaseAdapter{
     //共享数据适配
-    private String[] titles={"桌子","苹果","蛋糕","线衣","猕猴桃","围巾"};
-    private String[] prices={"1800元","10元/kg","300元","350元","10元/kg","280元"};
-    private  int[] icons={R.drawable.user1,R.drawable.user2,R.drawable.user3,
-            R.drawable.user4,R.drawable.user1,R.drawable.user4};
-
+    private String[] titles={"键盘","水杯","书","键盘","书签","键盘"};
+    private String[] shareBox={"一号共享柜","二号共享柜","三号共享柜"};
+    private int[] icons={R.drawable.share1,R.drawable.share2,R.drawable.share3,R.drawable.share4,R.drawable.share5};
     private int position;
     private View convertView;
     private ViewGroup parent;
-    private Context PageActivity;
+    private Context ShareFragment;
 
     @Override
     public int getCount(){       //得到item的总数
@@ -42,23 +43,23 @@ public class MyBaseAdapter extends BaseAdapter{
         this.parent = parent;
         ViewHolder holder;
         if(convertView==null){
-            convertView=View.inflate(PageActivity,R.layout.share_share, null);
+//            convertView=View.inflate(R.layout.share_share,null);
             holder=new ViewHolder();
             holder.title=convertView.findViewById(R.id.tv_title);
-            holder.price=convertView.findViewById(R.id.price);
+            holder.shareBox=convertView.findViewById(R.id.tv_share_boxNavagation);
             holder.iv=convertView.findViewById(R.id.iv);
             convertView.setTag(holder);
         }else{
             holder=(ViewHolder)convertView.getTag();
         }
         holder.title.setText(titles[position]);
-        holder.price.setText(prices[position]);
+        holder.shareBox.setText(shareBox[position]);
         holder.iv.setImageResource(icons[position]);
         return convertView;
     }
     class ViewHolder{
         TextView title;
-        TextView price;
+        TextView shareBox;
         ImageView iv;
     }
 }
