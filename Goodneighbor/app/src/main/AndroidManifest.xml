@@ -2,42 +2,51 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
     <!-- 网络访问权限 -->
-    <!-- 相机 -->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 相机 -->
     <uses-feature
         android:name="android.hardware.camera"
-        android:required="false" />
+        android:required="true" />
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/title"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/title"
         android:supportsRtl="true"
         android:theme="@style/Theme.GoodNeighbor"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".Activity.Main.MainMain2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Main.MainMain1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Shop.ShopTuGouActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Shop.ShopBijiaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Shop.ShopMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Share.ShareReleaseActivity"
+            android:exported="true" />
         <activity
             android:name=".Activity.Circle.CircleFragment"
             android:exported="false" />
         <activity
             android:name=".Activity.Login.LoginActivity"
-            android:exported="false">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-        </activity>
-        <activity
-            android:name=".Activity.Main.MainFragment"
-            android:exported="true">
-        </activity>
-        <activity
-            android:name=".Activity.Main.PageActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,10 +55,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activity.Main.PostingsActivity"
-            android:exported="false" />
+            android:name=".Activity.Main.MainFragment"
+            android:exported="true" />
         <activity
-            android:name=".Activity.Main.MainPosating"
+            android:name=".Activity.Main.PageActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.Main.PostingsActivity"
             android:exported="false" />
         <activity
             android:name=".Activity.Mine.AboutActivity"
@@ -62,15 +74,6 @@
             android:exported="true" />
         <activity
             android:name=".Activity.Share.ShareFragment"
-            android:exported="true" />
-        <activity
-            android:name=".Activity.Share.SharePublish"
-            android:exported="true" />
-        <activity
-            android:name=".Activity.Share.ShareGoods1"
-            android:exported="true" />
-        <activity
-            android:name=".Activity.Share.ShareGoods2"
             android:exported="true" />
         <activity
             android:name=".bean.Adapter"
