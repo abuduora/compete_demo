@@ -1,13 +1,5 @@
 package com.example.goodneighbor.Activity.Mine;
 
-import android.content.Intent;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
-
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,9 +7,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import com.example.goodneighbor.Activity.Login.LoginActivity;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 import com.example.goodneighbor.R;
-import com.example.goodneighbor.bean.RecyclerAdapter;
 import com.example.goodneighbor.bean.UserInfo;
 import com.example.goodneighbor.database.UserDBHelper;
 
@@ -83,8 +77,7 @@ public class MineFragment extends Fragment{
         btn_exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                requireActivity().finish();
+                getActivity().finish();
             }
         });
 

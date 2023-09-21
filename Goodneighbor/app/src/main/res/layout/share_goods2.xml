@@ -7,13 +7,13 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:id="@+id/tv_root"
+        android:id="@+id/tv_root2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/share_tab"
         android:orientation="vertical">
         <LinearLayout
-            android:id="@+id/postings_top"
+            android:id="@+id/postings_top2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -25,7 +25,7 @@
                 android:layout_weight="1">
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/tv_postings_back"
+                    android:id="@+id/tv_postings_back2"
                     android:layout_width="50dp"
                     android:layout_height="30dp"
                     android:text="@string/text_back"
@@ -40,7 +40,7 @@
 
 
                 <TextView
-                    android:text="@string/text_postings_publish"
+                    android:text="共享物品详情"
                     android:layout_width="100dp"
                     android:layout_height="30dp"
                     android:layout_gravity="center"
@@ -54,14 +54,6 @@
                 android:gravity="end"
                 android:layout_weight="1">
 
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/tv_postings_publish"
-                    android:layout_width="50dp"
-                    android:layout_height="30dp"
-                    android:textSize="8sp"
-                    android:text="@string/text_postings_publish"
-                    android:layout_gravity="center" />
             </LinearLayout>
 
 
@@ -114,38 +106,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="共享积分：10"
-                    android:gravity="center"/>
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:src="@drawable/lock"
-                    android:scaleType="centerInside"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="12V小型电磁阀锁"
-                    android:textSize="20dp"
-                    android:gravity="center"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="价格：5元"
-                    android:gravity="center"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="共享日期：2023-9-18"
-                    android:gravity="center"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="结束日期：2023-12-21"
-                    android:gravity="center"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="共享积分：2"
+                    android:text="所需共享积分：10"
                     android:gravity="center"/>
             </LinearLayout>
         </ScrollView>
@@ -161,7 +122,7 @@
         android:background="#ffffff">
 
         <RadioButton
-            android:id="@+id/share_contact"
+            android:id="@+id/share_contact2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1.4"
@@ -171,7 +132,7 @@
             android:gravity="center"
             android:text="联系社区" />
         <RadioButton
-            android:id="@+id/share_test"
+            android:id="@+id/share_test2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -181,7 +142,7 @@
             android:text="测试按钮" />
 
         <RadioButton
-            android:id="@+id/share_sharing"
+            android:id="@+id/share_sharing2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

@@ -1,26 +1,15 @@
 package com.example.goodneighbor.Activity.Main;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.example.goodneighbor.Activity.Circle.CircleFragment;
 import com.example.goodneighbor.Activity.Mine.MineFragment;
 import com.example.goodneighbor.Activity.Share.ShareFragment;
 import com.example.goodneighbor.R;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class PageActivity extends AppCompatActivity {
 
@@ -76,16 +65,16 @@ public class PageActivity extends AppCompatActivity {
 ////        mFragments.add(homeFragment);
 ////        hideOthersFragment(homeFragment, true);
 ////
-//////        //图片滚动效果
-//////        ImageView imageView=new ImageView(getBaseContext());
-//////        imageView.setImageResource(R.drawable.activity_1);
-//////
-//////        ImageView imageView2=new ImageView(getBaseContext());
-//////        imageView2.setImageResource(R.drawable.home_check);
-//////
-//////        images.add(imageView);
-//////        images.add(imageView2);
+//        //图片滚动效果
+//        ImageView imageView=new ImageView(getBaseContext());
+//        imageView.setImageResource(R.drawable.activity_1);
 //
+//        ImageView imageView2=new ImageView(getBaseContext());
+//        imageView2.setImageResource(R.drawable.home_check);
+//
+//        images.add(imageView);
+//        images.add(imageView2);
+////
 //    }
 //
 //    private void hideOthersFragment(Fragment showFragment,boolean add){

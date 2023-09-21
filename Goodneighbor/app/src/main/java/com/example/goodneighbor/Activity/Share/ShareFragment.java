@@ -46,6 +46,13 @@ public class ShareFragment extends Fragment {
                 startActivity(i);
             }
         });
+        share2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(getActivity(), ShareGoods2.class);
+                startActivity(i);
+            }
+        });
 
         return view;
     }

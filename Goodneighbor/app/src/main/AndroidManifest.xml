@@ -49,6 +49,9 @@
             android:name=".Activity.Main.PostingsActivity"
             android:exported="false" />
         <activity
+            android:name=".Activity.Main.MainPosating"
+            android:exported="false" />
+        <activity
             android:name=".Activity.Mine.AboutActivity"
             android:exported="true" />
         <activity
@@ -62,6 +65,12 @@
             android:exported="true" />
         <activity
             android:name=".Activity.Share.SharePublish"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.Share.ShareGoods1"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.Share.ShareGoods2"
             android:exported="true" />
         <activity
             android:name=".bean.Adapter"

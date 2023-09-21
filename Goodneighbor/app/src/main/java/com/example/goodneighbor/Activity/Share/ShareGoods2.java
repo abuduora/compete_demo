@@ -9,12 +9,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.goodneighbor.R;
 
-public class ShareGoods1 extends AppCompatActivity {
+public class ShareGoods2 extends AppCompatActivity {
+    @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.share_goods1);
+        setContentView(R.layout.share_goods2);
 
-        Button btn1=findViewById(R.id.tv_postings_back1);
+        Button btn1=findViewById(R.id.tv_postings_back2);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
