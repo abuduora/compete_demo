@@ -8,7 +8,7 @@ public class PrefManager {
     private static final String IS_FIRST_TIME_LAUNCH = "IsFirstTimeLaunch";
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
-    private Context context;
+    public Context context;
 
     public PrefManager(Context context) {
         this.context = context;
