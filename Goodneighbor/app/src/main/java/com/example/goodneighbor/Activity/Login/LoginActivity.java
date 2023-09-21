@@ -16,11 +16,24 @@ import com.example.goodneighbor.database.PrefManager;
 import com.example.goodneighbor.database.UserDBHelper;
 import com.example.goodneighbor.util.DateUtil;
 
+import java.io.IOException;
+import java.util.Properties;
 import java.util.Random;
 
-import javax.mail.*;
-import javax.mail.internet.*;
-import java.util.Properties;
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class LoginActivity extends AppCompatActivity
 {
@@ -85,6 +98,26 @@ public class LoginActivity extends AppCompatActivity
                         message.setText("您的验证码是: " + mVerifyCode);
                         Transport.send(message);
                         System.out.println("邮件已发送成功！");
+
+                        //发送请求
+                        OkHttpClient client = new OkHttpClient();
+                        Request request = new Request.Builder()
+                                .url("http://localhost:9776/user/userT")
+                                .build();
+                        client.newCall(request).enqueue(new Callback() {
+                            @Override
+                            public void onFailure(Call call, IOException e) {
+                                // 请求失败的处理逻辑
+                            }
+                            @Override
+                            public void onResponse(Call call, Response response) throws IOException {
+                                if (response.isSuccessful()) {
+                                    String responseData = response.body().string();
+                                    // 解析服务器响应数据并处理
+                                }
+                            }
+                        });
+
                         userInfo.email=Email;
                         userInfo.update_time= DateUtil.getNowTime();
                         mHelper.insert(userInfo);

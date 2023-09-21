@@ -2,17 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" >
     <!-- 网络访问权限 -->
-    
-    
-    <!--相机-->
-    <uses-feature
-    android:name="android.hardware.camera"
-    android:required="false" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.CAMERA"/>
-    
-    
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 相机 -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -23,7 +24,7 @@
         android:theme="@style/Theme.GoodNeighbor"
         tools:targetApi="31" >
         <activity
-            android:name=".Activity.Circle.CircleActivity"
+            android:name=".Activity.Circle.CircleFragment"
             android:exported="false" />
         <activity
             android:name=".Activity.Login.LoginActivity"
@@ -34,7 +35,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activity.Main.MainActivity"
+            android:name=".Activity.Main.MainFragment"
             android:exported="true">
         </activity>
         <activity
@@ -52,10 +53,10 @@
             android:name=".Activity.Mine.EditMessageActivity"
             android:exported="true" />
         <activity
-            android:name=".Activity.Mine.MineActivity"
+            android:name=".Activity.Mine.MineFragment"
             android:exported="true" />
         <activity
-            android:name=".Activity.Share.ShareActivity"
+            android:name=".Activity.Share.ShareFragment"
             android:exported="true" />
         <activity
             android:name=".bean.Adapter"
