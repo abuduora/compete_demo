@@ -1,26 +1,15 @@
 package com.example.goodneighbor.Activity.Main;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.example.goodneighbor.Activity.Circle.CircleFragment;
 import com.example.goodneighbor.Activity.Mine.MineFragment;
 import com.example.goodneighbor.Activity.Share.ShareFragment;
 import com.example.goodneighbor.R;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class PageActivity extends AppCompatActivity {
     private String[] titles={"桌子","苹果","蛋糕","线衣","猕猴桃","围巾"};

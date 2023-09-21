@@ -16,7 +16,6 @@ import com.example.goodneighbor.database.PrefManager;
 import com.example.goodneighbor.database.UserDBHelper;
 import com.example.goodneighbor.util.DateUtil;
 
-import java.io.IOException;
 import java.util.Properties;
 import java.util.Random;
 
@@ -28,12 +27,6 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
 
 public class LoginActivity extends AppCompatActivity
 {
@@ -99,7 +92,7 @@ public class LoginActivity extends AppCompatActivity
                         Transport.send(message);
                         System.out.println("邮件已发送成功！");
 
-                        //发送请求
+                        /*//发送请求
                         OkHttpClient client = new OkHttpClient();
                         Request request = new Request.Builder()
                                 .url("http://localhost:9776/user/userT")
@@ -116,7 +109,7 @@ public class LoginActivity extends AppCompatActivity
                                     // 解析服务器响应数据并处理
                                 }
                             }
-                        });
+                        });*/
 
                         userInfo.email=Email;
                         userInfo.update_time= DateUtil.getNowTime();
