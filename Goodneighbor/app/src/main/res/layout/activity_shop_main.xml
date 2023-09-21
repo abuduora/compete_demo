@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:text="超市精品"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:textColor="@color/golden"/>
+        <TextView
+            android:id="@+id/tv_bijia"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:text="比价"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:textColor="@color/golden"/>
+        <TextView
+            android:id="@+id/tv_tuangou"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:text="团购"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:textColor="@color/golden"/>
+    </LinearLayout>
+
+
+    <!-- 1-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp">
+
+                <ImageView
+                    android:layout_width="175dp"
+                    android:layout_height="160dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/c1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:gravity="center"
+                        android:text="双汇无淀粉火腿"
+                        android:textSize="20dp" />
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:gravity="center"
+                        android:text="单价：19.9元"
+                        android:textSize="20dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--2-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp">
+                <ImageView
+                    android:layout_width="175dp"
+                    android:layout_height="160dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/c2" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:gravity="center"
+                        android:text="鲜鸡蛋"
+                        android:textSize="20dp" />
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:gravity="center"
+                        android:text="单价：16.9元"
+                        android:textSize="20dp" />
+                </LinearLayout>
+            </LinearLayout>
+            <!--3-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp">
+
+                <ImageView
+                    android:layout_width="175dp"
+                    android:layout_height="160dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/c3"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:gravity="center"
+                        android:text="鲜精品猪五花肉"
+                        android:textSize="20dp" />
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:gravity="center"
+                        android:text="单价：18.88元"
+                        android:textSize="20dp" />
+                </LinearLayout>
+            </LinearLayout>
+            <!--4-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp">
+                <ImageView
+                    android:layout_width="175dp"
+                    android:layout_height="160dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/c4"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:gravity="center"
+                        android:text="西红柿"
+                        android:textSize="20dp" />
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:gravity="center"
+                        android:text="单价：2.88元"
+                        android:textSize="20dp" />
+                </LinearLayout>
+            </LinearLayout>
+            <!--5-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp">
+                <ImageView
+                    android:layout_width="175dp"
+                    android:layout_height="160dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/c5"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:gravity="center"
+                        android:text="菠菜"
+                        android:textSize="20dp" />
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:gravity="center"
+                        android:text="单价：3.5元"
+                        android:textSize="20dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--6-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp">
+                <ImageView
+                    android:layout_width="175dp"
+                    android:layout_height="160dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/c6"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:gravity="center"
+                        android:text="土豆"
+                        android:textSize="20dp" />
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:gravity="center"
+                        android:text="单价：1.89元"
+                        android:textSize="20dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
