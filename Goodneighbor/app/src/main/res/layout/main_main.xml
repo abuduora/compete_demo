@@ -28,11 +28,19 @@
             android:layout_weight="1"
             android:entries="@array/spinner" />
     </LinearLayout>
-
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/tv_home_viewPager"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="270dp"></androidx.viewpager.widget.ViewPager>
+        android:layout_height="270dp"
+        android:orientation="vertical">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/viewPager"
+            android:background="@color/teal_200" >
+        </androidx.viewpager2.widget.ViewPager2>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
