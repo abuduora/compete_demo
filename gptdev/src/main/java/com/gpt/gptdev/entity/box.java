@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName("box")
-public class box {
+public class Box {
     @TableId(value = "id",type = IdType.AUTO)
     private int box_number;
 

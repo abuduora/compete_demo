@@ -17,7 +17,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
 
     @Override
-    public List<User> getDiaryList(String id) {
+    public List<User> getUser(String user_id) {
         List<User> users = baseMapper.selectList(null);
         return users;
     }

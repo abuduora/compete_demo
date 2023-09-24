@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName("uc")
-public class uc {
+public class Uc {
     @TableId(value = "",type = IdType.NONE)
     private int user_id;
     private String Community;

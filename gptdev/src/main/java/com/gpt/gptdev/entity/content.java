@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName("content")
-public class content {
+public class Content {
     @TableId(value = "",type = IdType.NONE)
     private String ccontent;
     private int user_id;

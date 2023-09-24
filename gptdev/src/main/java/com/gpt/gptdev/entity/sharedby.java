@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName("sharedby")
-public class sharedby {
+public class Sharedby {
     @TableId(value = "sharesnumber",type = IdType.AUTO)
     private String shares;
     private String username;

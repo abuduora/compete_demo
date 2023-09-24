@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName("communities")
-public class communities {
+public class Communities {
     @TableId(value = "community",type = IdType.AUTO)
     private String communitiy;
 

@@ -12,13 +12,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @TableName("user")
 public class User {
-    @TableId(value = "id",type = IdType.AUTO)
-    private String user_id;
+    @TableId(value = "user_id",type = IdType.AUTO)
+    private int user_id;
     private String username;
-    private String password;
     private String email;
     private String avatar;
     private int age;
-    private  int Interagal;
+    private  int Integral;
 
 }

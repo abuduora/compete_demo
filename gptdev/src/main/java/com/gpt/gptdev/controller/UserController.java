@@ -18,9 +18,9 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/userT")
-    public void te(){
-        List<User> diaryList = userService.getDiaryList("222");
-        System.out.println(diaryList);
+    public void User(){
+        List<User> UserList = userService.getUser("1");
+        System.out.println(UserList);
         System.out.println("123");
     }
 }

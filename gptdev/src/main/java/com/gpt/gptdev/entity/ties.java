@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName("ties")
-public class ties {
+public class Ties {
     @TableId(value = "tiesnumber",type = IdType.AUTO)
    private int tiesnumber;
     private int user_id;
