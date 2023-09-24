@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.goodneighbor.Activity.Circle.CircleFragment;
 import com.example.goodneighbor.Activity.Mine.MineFragment;
 import com.example.goodneighbor.Activity.Share.ShareFragment;
+import com.example.goodneighbor.Activity.Shop.ShopFragment;
 import com.example.goodneighbor.R;
 
 public class PageActivity extends AppCompatActivity {
@@ -45,7 +46,7 @@ public class PageActivity extends AppCompatActivity {
             }
             if(i==R.id.tv_shop)
             {
-                getSupportFragmentManager().beginTransaction().replace(R.id.tv_root,new CircleFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.tv_root,new ShopFragment()).commit();
             }
             if(i==R.id.tv_me)
             {

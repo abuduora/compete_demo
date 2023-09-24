@@ -13,5 +13,7 @@
     <color name="pink">#FFC0CB</color>
     <color name="orange">#FFA500</color>
     <color name="blue_1">#87CEFA</color>
-    <color name="rad">#FF0000</color>
+    <color name="red">#FF0000</color>
+    <color name="silver">#939388</color>
+    <color name="coppery">#B87333</color>
 </resources>
