@@ -15,7 +15,9 @@ import com.example.goodneighbor.bean.UserInfo;
 import com.example.goodneighbor.database.PrefManager;
 import com.example.goodneighbor.database.UserDBHelper;
 import com.example.goodneighbor.util.DateUtil;
+import com.example.goodneighbor.util.HttpUtil;
 
+import java.util.HashMap;
 import java.util.Properties;
 import java.util.Random;
 
@@ -36,6 +38,7 @@ public class LoginActivity extends AppCompatActivity
     private String mVerifyCode;
     private Button btn_VerifyCode;
     private Button btn_Login;
+
 
     UserInfo userInfo = new UserInfo();
     @Override
@@ -66,10 +69,9 @@ public class LoginActivity extends AppCompatActivity
                 @Override
                 public void run() {
                     // 在这里执行网络请求
-                    String Email = et_Email.getText().toString();
                     final String senderEmail = "csy157486@163.com"; // 发件人邮箱
                     final String senderPassword = "VLMIHPHGOZEFELBE"; // 发件人邮箱密码
-
+                    String Email = et_Email.getText().toString();
                     Properties props = new Properties();
                     props.put("mail.smtp.auth", "true");
                    props.put("mail.smtp.starttls.enable", "false");
@@ -110,10 +112,7 @@ public class LoginActivity extends AppCompatActivity
                                 }
                             }
                         });*/
-
-                        userInfo.email=Email;
                         userInfo.update_time= DateUtil.getNowTime();
-                        mHelper.insert(userInfo);
                     } catch (MessagingException e) {
                         e.printStackTrace();
                     }
@@ -258,6 +257,12 @@ public class LoginActivity extends AppCompatActivity
         // 以下弹出提醒对话框，提示用户登录成功
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("登录成功");
+        new Thread(new Runnable(){
+            @Override
+            public void run() {
+                HttpUtil.post("http://172.20.10.2:9776/user/login",et_Email.getText().toString(),new HashMap<>());
+            }
+        }).start();
         prefManager.setFirstTimeLaunch(false);
         builder.setMessage(desc);
         builder.setPositiveButton("确定返回", (dialog, which) -> {

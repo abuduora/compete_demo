@@ -1,8 +1,11 @@
 package com.example.goodneighbor.Activity.Mine;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -15,7 +18,7 @@ import com.example.goodneighbor.R;
 public class EditMessageActivity extends AppCompatActivity implements View.OnClickListener {
 
     private View button;
-    private View iv_image;
+    private ImageView iv_image;
     private ActivityResultLauncher<Intent> mRresultLauncher;
 
     @Override
@@ -28,7 +31,14 @@ public class EditMessageActivity extends AppCompatActivity implements View.OnCli
         mRresultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
             @Override
             public void onActivityResult(ActivityResult result) {
-
+                if(result.getResultCode()==RESULT_OK){
+                    Intent intent=result.getData();
+                    Uri picUri=intent.getData();
+                    if(picUri !=null){
+                       iv_image.setImageURI(picUri);
+                        Log.d("image","picUri"+picUri.toString());
+                    }
+                }
             }
         });
 

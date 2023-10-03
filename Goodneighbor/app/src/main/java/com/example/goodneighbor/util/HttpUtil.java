@@ -114,7 +114,7 @@ public class HttpUtil {
         String resp = ""; // 应答内容
         try {
             Log.d(TAG, "请求地址："+callUrl+", 请求报文="+req);
-            compatibleSSL(callUrl); // 兼容https开头的调用地址
+            //compatibleSSL(callUrl); // 兼容https开头的调用地址
             URL url = new URL(callUrl); // 根据网址字符串构建URL对象
             // 打开URL对象的网络连接，并返回HttpURLConnection连接对象
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -131,10 +131,11 @@ public class HttpUtil {
                     conn.getHeaderField("Content-Length"), conn.getHeaderField("Content-Type"),
                     conn.getHeaderField("Content-Encoding")) );
             // 对输入流中的数据解压和字符编码，得到原始的应答字符串
-            resp = getUnzipString(conn);
+            //resp = getUnzipString(conn);
             // 打印HTTP调用的应答状态码和应答报文
             Log.d(TAG,  String.format("应答状态码=%d, 应答报文=%s", conn.getResponseCode(), resp) );
             conn.disconnect(); // 断开连接
+            Log.d(TAG,"断开连接成功");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -190,6 +191,7 @@ public class HttpUtil {
             // 打印HTTP上传的应答状态码和应答报文
             Log.d(TAG,  String.format("应答状态码=%d, 应答报文=%s", conn.getResponseCode(), resp) );
             conn.disconnect(); // 断开连接
+            Log.w(TAG,"我成功了");
         } catch (Exception e) {
             e.printStackTrace();
         }

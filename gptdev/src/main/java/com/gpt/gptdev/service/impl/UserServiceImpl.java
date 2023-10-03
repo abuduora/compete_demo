@@ -14,8 +14,6 @@ import java.util.List;
 
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
-
-
     @Override
     public List<User> getUser(String user_id) {
         List<User> users = baseMapper.selectList(null);
