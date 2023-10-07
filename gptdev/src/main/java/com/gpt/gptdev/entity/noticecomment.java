@@ -10,15 +10,13 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName("ties")
-public class Ties {
-    @TableId(value = "tiesnumber",type = IdType.AUTO)
-   private int tiesnumber;
-    private int user_id;
-    private  String Images;
-    private String Comomunity;
-    private String cntent;
-
-
+@TableName("noticecomment")
+public class noticecomment{
+    @TableId(value = "comment_id",type = IdType.AUTO)
+    private int comment_id;
+    private String user_email;
+    private String content;
+    private String notice_id;
+    private String parent_id;
+    private String date;
 }
-

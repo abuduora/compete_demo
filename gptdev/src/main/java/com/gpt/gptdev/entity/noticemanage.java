@@ -10,15 +10,11 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName("sharedby")
-public class Sharedby {
-    @TableId(value = "sharesnumber",type = IdType.AUTO)
-    private String shares;
-    private String username;
-    private String password;
-    private String user_id;
-    private int sharenumber;
-    private int returnshares;
-    private String photo;
-
+@TableName("noticemanage")
+public class noticemanage {
+    @TableId(value = "user_email",type = IdType.AUTO)
+    private int notice_id;
+    private String user_email;
+    private String notice_title;
+    private String notice_publisher;
 }

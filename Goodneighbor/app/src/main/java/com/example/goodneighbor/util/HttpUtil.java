@@ -14,6 +14,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.security.SecureRandom;
 import java.security.cert.X509Certificate;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.zip.GZIPInputStream;
 
@@ -28,8 +29,11 @@ public class HttpUtil {
     private final static String TAG = "HttpUtil";
     private final static int CONNECT_TIMEOUT = 15000;
     private final static int READ_TIMEOUT = 15000;
-
     // 兼容https开头的调用地址
+
+    public static void main(String []args){
+        HttpUtil.post("http://172.20.10.2:9776/user/login","树莓派",new HashMap<>());
+    }
     private static void compatibleSSL(String callUrl) throws Exception {
         if (callUrl.toLowerCase().startsWith("https")) {
             SSLContext sc = SSLContext.getInstance("TLS");
@@ -122,7 +126,7 @@ public class HttpUtil {
             setConnHeader(conn, headers);// 设置HTTP连接的头部信息
             conn.setRequestProperty("Content-Type", "application/json"); // 请求报文为json格式
             conn.setDoOutput(true); // 准备让连接执行输出操作。默认为false，POST方式需要设置为true
-            //conn.setDoInput(true); // 准备让连接执行输入操作。默认为true
+            conn.setDoInput(true); // 准备让连接执行输入操作。默认为true
             conn.connect(); // 开始连接
             OutputStream os = conn.getOutputStream(); // 从连接对象中获取输出流
             os.write(req.getBytes()); // 往输出流写入请求报文
@@ -131,7 +135,7 @@ public class HttpUtil {
                     conn.getHeaderField("Content-Length"), conn.getHeaderField("Content-Type"),
                     conn.getHeaderField("Content-Encoding")) );
             // 对输入流中的数据解压和字符编码，得到原始的应答字符串
-            //resp = getUnzipString(conn);
+            resp = getUnzipString(conn);
             // 打印HTTP调用的应答状态码和应答报文
             Log.d(TAG,  String.format("应答状态码=%d, 应答报文=%s", conn.getResponseCode(), resp) );
             conn.disconnect(); // 断开连接

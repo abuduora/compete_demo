@@ -10,9 +10,14 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName("communities")
-public class Communities {
-    @TableId(value = "community",type = IdType.AUTO)
-    private String communitiy;
-
+@TableName("postingspage")
+public class postingspage {
+    @TableId(value = "postings_id",type = IdType.AUTO)
+    private int postings_coins;
+    private String publish_id;
+    private String postings_content;
+    private String postings_id;
+    private String postings_image;
+    private String community;
 }
+

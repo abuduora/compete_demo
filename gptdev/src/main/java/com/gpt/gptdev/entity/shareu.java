@@ -10,10 +10,15 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName("uc")
-public class Uc {
-    @TableId(value = "",type = IdType.NONE)
-    private int user_id;
-    private String Community;
+@TableName("shareu")
+public class shareu {
+    @TableId(value = "user_email",type = IdType.AUTO)
+    private String user_email;
+    private int cabinetsnumbers;
+    private int share_return;
+    private long photo;//longblob
+
+
 
 }
+

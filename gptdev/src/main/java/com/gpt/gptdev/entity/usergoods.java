@@ -10,9 +10,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName("box")
-public class Box {
-    @TableId(value = "id",type = IdType.AUTO)
-    private int box_number;
+@TableName("usergoods")
+public class usergoods {
+    @TableId(value = "goods_id",type = IdType.AUTO)
+    private int goods_id;
+    private String user_email;
+    private String goods_name;
 
 }
+
