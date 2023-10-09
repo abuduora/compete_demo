@@ -11,11 +11,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.goodneighbor.Activity.Main.PageActivity;
 import com.example.goodneighbor.R;
-import com.example.goodneighbor.bean.UserInfo;
 import com.example.goodneighbor.database.PrefManager;
-import com.example.goodneighbor.database.UserDBHelper;
-import com.example.goodneighbor.util.DateUtil;
+import com.example.goodneighbor.util.HttpUtil;
 
+import java.util.HashMap;
 import java.util.Properties;
 import java.util.Random;
 
@@ -32,12 +31,9 @@ public class LoginActivity extends AppCompatActivity
 {
     private PrefManager prefManager;
     private EditText et_Email, et_VerifyCode;
-    private UserDBHelper mHelper;
     private String mVerifyCode;
     private Button btn_VerifyCode;
     private Button btn_Login;
-
-    UserInfo userInfo = new UserInfo();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,9 +52,6 @@ public class LoginActivity extends AppCompatActivity
         et_VerifyCode = findViewById(R.id.et_VerifyCode);
         btn_VerifyCode=findViewById(R.id.btn_VerifyCode);
         btn_Login=findViewById(R.id.btn_Login);
-        // 获得用户数据库帮助器的实例
-        mHelper = UserDBHelper.getInstance(this, 1);
-        mHelper.openWriteLink(); //打开数据库连接
 
         //验证码按钮设置监听器
         btn_VerifyCode.setOnClickListener((v)->{
@@ -66,10 +59,9 @@ public class LoginActivity extends AppCompatActivity
                 @Override
                 public void run() {
                     // 在这里执行网络请求
-                    String Email = et_Email.getText().toString();
                     final String senderEmail = "csy157486@163.com"; // 发件人邮箱
                     final String senderPassword = "VLMIHPHGOZEFELBE"; // 发件人邮箱密码
-
+                    String Email = et_Email.getText().toString();
                     Properties props = new Properties();
                     props.put("mail.smtp.auth", "true");
                    props.put("mail.smtp.starttls.enable", "false");
@@ -110,10 +102,6 @@ public class LoginActivity extends AppCompatActivity
                                 }
                             }
                         });*/
-
-                        userInfo.email=Email;
-                        userInfo.update_time= DateUtil.getNowTime();
-                        mHelper.insert(userInfo);
                     } catch (MessagingException e) {
                         e.printStackTrace();
                     }
@@ -231,25 +219,6 @@ public class LoginActivity extends AppCompatActivity
         }*/
 
 
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        et_VerifyCode.setText("");
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        mHelper = UserDBHelper.getInstance(this, 1); // 获得用户数据库帮助器的实例
-        mHelper.openWriteLink(); // 恢复页面，则打开数据库连接
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        mHelper.closeLink(); // 暂停页面，则关闭数据库连接
-    }
-
     //登录成功
     private void loginSuccess()
     {
@@ -258,13 +227,23 @@ public class LoginActivity extends AppCompatActivity
         // 以下弹出提醒对话框，提示用户登录成功
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("登录成功");
+        new Thread(new Runnable(){
+            @Override
+            public void run() {
+                HttpUtil.post("http://172.20.10.2:9776/user/login",et_Email.getText().toString(),new HashMap<>());
+            }
+        }).start();
         prefManager.setFirstTimeLaunch(false);
         builder.setMessage(desc);
         builder.setPositiveButton("确定返回", (dialog, which) -> {
-            mHelper.closeLink();
-            Intent intent = new Intent(this, PageActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);// 结束当前的活动页面
+            Intent realname = new Intent(this,RealnameActivity.class);
+            Intent main=new Intent(this,PageActivity.class);
+            realname.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            if(prefManager.isFirstRealname())
+            startActivity(realname);
+            else{
+               startActivity(main);
+            }
         });
         builder.setNegativeButton("我再看看", null);
         AlertDialog alert = builder.create();

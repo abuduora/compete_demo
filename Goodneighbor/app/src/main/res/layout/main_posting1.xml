@@ -111,7 +111,7 @@
                         android:gravity="center"
                         android:text="2积分"
                         android:textSize="25sp"
-                        android:textColor="@color/rad"/>
+                        android:textColor="@color/red"/>
                 </LinearLayout>
             </LinearLayout>
 

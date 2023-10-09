@@ -33,12 +33,14 @@
         android:layout_height="270dp"
         android:orientation="vertical">
 
-        <androidx.viewpager2.widget.ViewPager2
+        <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/viewPager"
+            android:scaleType="fitXY"
+            android:src="@drawable/main_tatle"
             android:background="@color/teal_200" >
-        </androidx.viewpager2.widget.ViewPager2>
+        </ImageView>
 
     </LinearLayout>
 

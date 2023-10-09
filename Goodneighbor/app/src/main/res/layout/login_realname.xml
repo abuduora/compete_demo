@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="实名认证"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:background="@color/green"
+        android:textColor="@color/white"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="       姓名*       "
+            android:textSize="20dp"
+            android:gravity="center"/>
+        <EditText
+            android:id="@+id/et_realname"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="请输入真实姓名"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="       身份证号*"
+            android:textSize="20dp"
+            android:gravity="center"/>
+        <EditText
+            android:id="@+id/et_ID"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="请输入真实身份证号"/>
+    </LinearLayout>
+    <Button
+        android:id="@+id/btn_authentication"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="确认"
+        android:textSize="30dp"
+        android:shadowColor="@color/green"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="请务必是同人同认证进行实名认证。否则不会通过认证"
+        android:gravity="center"
+        android:textColor="#847C74"/>
+
+
+</LinearLayout>

@@ -25,6 +25,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.Login.RealnameActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.Main.MainMain2Activity"
             android:exported="false" />
         <activity
@@ -64,6 +67,9 @@
             android:name=".Activity.Main.PostingsActivity"
             android:exported="false" />
         <activity
+            android:name=".Activity.Main.MainPosating"
+            android:exported="false" />
+        <activity
             android:name=".Activity.Mine.AboutActivity"
             android:exported="true" />
         <activity
@@ -85,6 +91,12 @@
             android:name=".bean.CircleImageView"
             android:exported="true" />
         <activity
+            android:name=".Activity.Share.ShareGoods1"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.Share.ShareGoods2"
+            android:exported="true" />
+        <activity
             android:name=".bean.ImagePagerAdapter"
             android:exported="true" />
         <activity
@@ -94,7 +106,13 @@
             android:name=".bean.ShareAdapter"
             android:exported="true" />
         <activity
+            android:name=".Activity.Share.SharePublish"
+            android:exported="true" />
+        <activity
             android:name=".bean.UserInfo"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.Main.MainRanking"
             android:exported="true" />
         <activity
             android:name=".database.PrefManager"

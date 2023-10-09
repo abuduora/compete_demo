@@ -66,7 +66,12 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:src="@drawable/lock"
+                    android:src="@drawable/a44"
+                    android:scaleType="centerInside"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:src="@drawable/a55"
                     android:scaleType="centerInside"/>
                 <TextView
                     android:layout_width="match_parent"

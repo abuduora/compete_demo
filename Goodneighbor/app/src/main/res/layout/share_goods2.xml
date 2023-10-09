@@ -70,7 +70,12 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:src="@drawable/book"
+                    android:src="@drawable/a771"
+                    android:scaleType="centerInside"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:src="@drawable/a66666"
                     android:scaleType="centerInside"/>
                 <TextView
                     android:layout_width="match_parent"

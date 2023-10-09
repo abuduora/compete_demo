@@ -2,7 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="green">#085E56</color>
+    <color name="green">#1DCD4B</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -13,5 +13,7 @@
     <color name="pink">#FFC0CB</color>
     <color name="orange">#FFA500</color>
     <color name="blue_1">#87CEFA</color>
-    <color name="rad">#FF0000</color>
+    <color name="red">#FF0000</color>
+    <color name="silver">#939388</color>
+    <color name="coppery">#B87333</color>
 </resources>

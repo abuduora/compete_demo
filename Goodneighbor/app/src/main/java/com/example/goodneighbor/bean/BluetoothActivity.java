@@ -1,3 +1,4 @@
+/*
 package com.example.goodneighbor.bean;
 
 import android.Manifest;
@@ -170,3 +171,4 @@ public class BluetoothActivity extends AppCompatActivity {
         }
     });
 }
+*/

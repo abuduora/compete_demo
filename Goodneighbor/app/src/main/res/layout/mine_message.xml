@@ -99,14 +99,14 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="@string/text_buildnumber"
+            android:text="小区"
             android:textSize="25dp"/>
 
         <EditText
             android:id="@+id/et_buildingnumber"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="@string/text_new_buildnumber"
+            android:hint="请输入所住小区"
             android:gravity="center"/>
     </LinearLayout>
     <LinearLayout
@@ -119,7 +119,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="@string/text_phone"
+            android:text="楼号"
             android:textSize="25dp"/>
 
         <EditText
