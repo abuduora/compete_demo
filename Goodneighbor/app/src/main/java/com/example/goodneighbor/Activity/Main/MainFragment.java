@@ -1,19 +1,21 @@
 package com.example.goodneighbor.Activity.Main;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.goodneighbor.R;
+import com.example.goodneighbor.bean.ViewPagerAdapter;
 
 import java.util.List;
 
@@ -25,8 +27,11 @@ public class MainFragment extends Fragment {
     private LinearLayout tv_window3;
     private LinearLayout tv_window4;
     private List<Integer> images ;
-    private ImageView viewPager;
+    private ViewPager viewPager;
+    private ViewPager viewPager2;
+    private int[] imageIds=new int[]{R.drawable.main_tatle, R.drawable.notice1,R.drawable.notice2,R.drawable.notice3,R.drawable.arrow};
 
+    @SuppressLint("MissingInflatedId")
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -34,11 +39,11 @@ public class MainFragment extends Fragment {
         View view2=inflater.inflate(R.layout.main_posting1,null);
 
         //图片滚动效果
-//        ViewPager2 viewPager=view.findViewById(R.id.viewPager);
-//        ViewPagerAdapter viewpagerAdater=new ViewPagerAdapter(images);
-//        viewPager.setAdapter(viewpagerAdater);
+        viewPager2=view.findViewById(R.id.main_title_viewPager);
+        ViewPagerAdapter adapter=new ViewPagerAdapter(getContext(),imageIds);
+        viewPager2.setAdapter(adapter);
 
-        viewPager=view.findViewById(R.id.viewPager);
+        viewPager=view.findViewById(R.id.main_title_viewPager);
         viewPager.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

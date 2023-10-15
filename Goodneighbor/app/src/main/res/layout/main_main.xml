@@ -11,7 +11,8 @@
         android:id="@+id/tv_home_location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFA500">
+        android:background="#FFA500"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="0dp"
@@ -33,14 +34,14 @@
         android:layout_height="270dp"
         android:orientation="vertical">
 
-        <ImageView
+        <androidx.viewpager.widget.ViewPager
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/viewPager"
+            android:id="@+id/main_title_viewPager"
             android:scaleType="fitXY"
-            android:src="@drawable/main_tatle"
             android:background="@color/teal_200" >
-        </ImageView>
+
+        </androidx.viewpager.widget.ViewPager>
 
     </LinearLayout>
 
@@ -103,7 +104,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="张三"
+                        android:text="热心邻居小美"
                         android:textSize="20dp" />
 
                     <TextView
@@ -139,7 +140,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="李四"
+                        android:text="困困o"
                         android:textSize="20dp" />
 
                     <TextView
@@ -175,7 +176,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="王二"
+                        android:text="球场硬汉"
                         android:textSize="20dp" />
 
                     <TextView
@@ -211,7 +212,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="麻子"
+                        android:text="上善若水"
                         android:textSize="20dp" />
 
                     <TextView
@@ -225,7 +226,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="14dp"
-                    android:text="惊天晚上有雨，记得收床单" />
+                    android:text="今天晚上有雨，记得收床单" />
             </LinearLayout>
 
         </LinearLayout>

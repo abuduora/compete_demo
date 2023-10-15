@@ -41,7 +41,6 @@ public class LoginActivity extends AppCompatActivity
         prefManager=new PrefManager(this);
         //判断是否已经登录
         if(prefManager.isFirstTimeLaunch()){
-            ;
         }else{
             Intent intent = new Intent(this, PageActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -227,10 +226,11 @@ public class LoginActivity extends AppCompatActivity
         // 以下弹出提醒对话框，提示用户登录成功
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("登录成功");
+        prefManager.setemail(et_Email.getText().toString());
         new Thread(new Runnable(){
             @Override
             public void run() {
-                HttpUtil.post("http://172.20.10.2:9776/user/login",et_Email.getText().toString(),new HashMap<>());
+                HttpUtil.post("http://[240e:404:b701:8df3:3ec0:d27f:3969:5455]:9776/user/login",et_Email.getText().toString(),new HashMap<>());
             }
         }).start();
         prefManager.setFirstTimeLaunch(false);

@@ -21,8 +21,8 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     private Button btn_Nickname;
     private Button btn_About, btn_exit;
     private Button btn_message;
+    private  Button btn_share_wite;
     private ImageButton ib_imageAvatar;
-    private PrefManager prefManager;
 
     @Nullable
     @Override
@@ -33,17 +33,20 @@ public class MineFragment extends Fragment implements View.OnClickListener {
         btn_message = view.findViewById(R.id.btn_message);
         btn_About = view.findViewById(R.id.btn_About);
         btn_exit = view.findViewById(R.id.btn_exit);
+        btn_share_wite=view.findViewById(R.id.btn_share_wite);
 
         ib_imageAvatar.setOnClickListener(this);
         btn_Nickname.setOnClickListener(this);
         btn_exit.setOnClickListener(this);
         btn_message.setOnClickListener(this);
         btn_About.setOnClickListener(this);
+        btn_share_wite.setOnClickListener(this);
         return view;
     }
 
     @Override
     public void onClick(View v) {
+        PrefManager prefManager = new PrefManager(getActivity());
         if (v.getId() == R.id.btn_Nickname) {
             startActivity(new Intent(getActivity(), EditMessageActivity.class));
         } else if (v.getId() == R.id.btn_About) {
@@ -56,7 +59,8 @@ public class MineFragment extends Fragment implements View.OnClickListener {
             startActivity(new Intent(getActivity(), EditMessageActivity.class));
         } else if (v.getId() == R.id.ib_imageAvatar) {
             startActivity(new Intent(getActivity() , EditMessageActivity.class));
-
+        }else if(v.getId()==R.id.btn_share_wite){
+            startActivity(new Intent(getActivity() , ReadyShare.class));
         }
     }
 }

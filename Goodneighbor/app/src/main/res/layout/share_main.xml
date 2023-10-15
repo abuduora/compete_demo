@@ -36,8 +36,9 @@
                         android:layout_height="wrap_content"
                         android:background="#F5F5DC"
                         android:padding="5dp"
-                        android:src="@drawable/share1">
+                        android:src="@drawable/camera1">
                     </ImageView>
+
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="150dp"

@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.activity.result.ActivityResult;
@@ -14,12 +15,16 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.goodneighbor.R;
+import com.example.goodneighbor.util.HttpUtil;
+
+import java.util.HashMap;
 
 public class EditMessageActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private View button;
+    private Button btn_back,btn_finish;
     private ImageView iv_image;
     private ActivityResultLauncher<Intent> mRresultLauncher;
+    private  Uri picUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +38,7 @@ public class EditMessageActivity extends AppCompatActivity implements View.OnCli
             public void onActivityResult(ActivityResult result) {
                 if(result.getResultCode()==RESULT_OK){
                     Intent intent=result.getData();
-                    Uri picUri=intent.getData();
+                   picUri=intent.getData();
                     if(picUri !=null){
                        iv_image.setImageURI(picUri);
                         Log.d("image","picUri"+picUri.toString());
@@ -43,25 +48,27 @@ public class EditMessageActivity extends AppCompatActivity implements View.OnCli
         });
 
         //跳转到我的
-        button = findViewById(R.id.btn_back);
-        button.setOnClickListener(new View.OnClickListener() {
+       btn_back = findViewById(R.id.btn_back);
+        btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent();
-                intent.setClass(EditMessageActivity.this, MineFragment.class);
-                startActivity(intent);
+              finish();
             }
         });
-        button = findViewById(R.id.btn_flish);
-        button.setOnClickListener(new View.OnClickListener() {
+       btn_finish = findViewById(R.id.btn_finish);
+        btn_finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent();
-                intent.setClass(EditMessageActivity.this, MineFragment.class);
-                startActivity(intent);
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                       //HttpUtil.post("http://172.20.10.2:9776/mine/",picUri,new HashMap<>());
+                       HttpUtil.getImage("http://[240e:404:b701:8df3:3ec0:d27f:3969:5455]:9776/mine/avatar",new HashMap<>());
+                    }
+                }).start();
+                finish();
             }
         });
-
     }
     //添加头像
     @Override

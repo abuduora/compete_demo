@@ -14,7 +14,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.security.SecureRandom;
 import java.security.cert.X509Certificate;
-import java.util.HashMap;
+import java.sql.Blob;
 import java.util.Map;
 import java.util.zip.GZIPInputStream;
 
@@ -30,10 +30,6 @@ public class HttpUtil {
     private final static int CONNECT_TIMEOUT = 15000;
     private final static int READ_TIMEOUT = 15000;
     // 兼容https开头的调用地址
-
-    public static void main(String []args){
-        HttpUtil.post("http://172.20.10.2:9776/user/login","树莓派",new HashMap<>());
-    }
     private static void compatibleSSL(String callUrl) throws Exception {
         if (callUrl.toLowerCase().startsWith("https")) {
             SSLContext sc = SSLContext.getInstance("TLS");
@@ -130,6 +126,71 @@ public class HttpUtil {
             conn.connect(); // 开始连接
             OutputStream os = conn.getOutputStream(); // 从连接对象中获取输出流
             os.write(req.getBytes()); // 往输出流写入请求报文
+            // 打印HTTP调用的应答内容长度、内容类型、压缩方式
+            Log.d(TAG,  String.format("应答内容长度=%s, 内容类型=%s, 压缩方式=%s",
+                    conn.getHeaderField("Content-Length"), conn.getHeaderField("Content-Type"),
+                    conn.getHeaderField("Content-Encoding")) );
+            // 对输入流中的数据解压和字符编码，得到原始的应答字符串
+            resp = getUnzipString(conn);
+            // 打印HTTP调用的应答状态码和应答报文
+            Log.d(TAG,  String.format("应答状态码=%d, 应答报文=%s", conn.getResponseCode(), resp) );
+            conn.disconnect(); // 断开连接
+            Log.d(TAG,"断开连接成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return resp;
+    }
+
+    public static String share(String callUrl, String req, Map<String, String> headers) {
+        String resp = ""; // 应答内容
+        try {
+            Log.d(TAG, "请求地址："+callUrl+", 请求报文="+req);
+            //compatibleSSL(callUrl); // 兼容https开头的调用地址
+            URL url = new URL(callUrl); // 根据网址字符串构建URL对象
+            // 打开URL对象的网络连接，并返回HttpURLConnection连接对象
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("POST"); // 设置请求方式
+            setConnHeader(conn, headers);// 设置HTTP连接的头部信息
+            conn.setRequestProperty("Content-Type", "application/json"); // 请求报文为json格式
+            conn.setDoOutput(true); // 准备让连接执行输出操作。默认为false，POST方式需要设置为true
+            conn.setDoInput(true); // 准备让连接执行输入操作。默认为true
+            conn.connect(); // 开始连接
+            OutputStream os = conn.getOutputStream(); // 从连接对象中获取输出流
+            os.write(req.getBytes()); // 往输出流写入请求报文
+            // 打印HTTP调用的应答内容长度、内容类型、压缩方式
+            Log.d(TAG,  String.format("应答内容长度=%s, 内容类型=%s, 压缩方式=%s",
+                    conn.getHeaderField("Content-Length"), conn.getHeaderField("Content-Type"),
+                    conn.getHeaderField("Content-Encoding")) );
+            // 对输入流中的数据解压和字符编码，得到原始的应答字符串
+            resp = getUnzipString(conn);
+            // 打印HTTP调用的应答状态码和应答报文
+            Log.d(TAG,  String.format("应答状态码=%d, 应答报文=%s", conn.getResponseCode(), resp) );
+            conn.disconnect(); // 断开连接
+            Log.d(TAG,"断开连接成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return resp;
+    }
+
+
+    public static String post(String callUrl, Blob req, Map<String, String> headers) {
+        String resp = ""; // 应答内容
+        try {
+            Log.d(TAG, "请求地址："+callUrl+", 请求报文="+req);
+            //compatibleSSL(callUrl); // 兼容https开头的调用地址
+            URL url = new URL(callUrl); // 根据网址字符串构建URL对象
+            // 打开URL对象的网络连接，并返回HttpURLConnection连接对象
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("POST"); // 设置请求方式
+            setConnHeader(conn, headers);// 设置HTTP连接的头部信息
+            conn.setRequestProperty("Content-Type", "application/json"); // 请求报文为json格式
+            conn.setDoOutput(true); // 准备让连接执行输出操作。默认为false，POST方式需要设置为true
+            conn.setDoInput(true); // 准备让连接执行输入操作。默认为true
+            conn.connect(); // 开始连接
+            OutputStream os = conn.getOutputStream(); // 从连接对象中获取输出流
+            os.write(req.getBytes(1,0)); // 往输出流写入请求报文
             // 打印HTTP调用的应答内容长度、内容类型、压缩方式
             Log.d(TAG,  String.format("应答内容长度=%s, 内容类型=%s, 压缩方式=%s",
                     conn.getHeaderField("Content-Length"), conn.getHeaderField("Content-Type"),

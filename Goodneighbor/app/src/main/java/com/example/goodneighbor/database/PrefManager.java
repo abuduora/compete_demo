@@ -8,6 +8,7 @@ public class PrefManager {
     private static final String IS_FIRST_TIME_LAUNCH = "IsFirstTimeLaunch";
     private static final String IS_FIRST_Realname = "IsFirstRealname";
     private SharedPreferences sharedPreferences;
+    private String Email;
     private SharedPreferences.Editor editor;
     public Context context;
 
@@ -33,5 +34,13 @@ public class PrefManager {
     public void setFirstTimeLaunch(boolean isFirstTime) {
         editor.putBoolean(IS_FIRST_TIME_LAUNCH, isFirstTime);
         editor.apply();
+    }
+
+    public void setemail(String email) {
+        this.Email=email;
+    }
+
+    public String getemail(){
+        return Email;
     }
 }

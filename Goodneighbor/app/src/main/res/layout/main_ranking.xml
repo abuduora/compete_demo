@@ -23,11 +23,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:background="@drawable/radius_border"
                 android:text="积分排名"
-                android:textColor="@color/gray"
+                android:textColor="@color/orange"
                 android:textSize="40dp" />
             <!--1-->
             <LinearLayout
+                android:background="@drawable/radius_border"
+                android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:orientation="horizontal">
@@ -74,10 +77,13 @@
 
 <!--2-->
     <LinearLayout
+        android:background="@drawable/radius_border"
         android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
         android:layout_height="200dp"
         android:orientation="horizontal">
         <LinearLayout
+
             android:layout_width="140dp"
             android:layout_height="200dp"
             android:orientation="vertical">
@@ -118,8 +124,10 @@
     </LinearLayout>
     <!--3-->
     <LinearLayout
+        android:background="@drawable/radius_border"
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal">
         <LinearLayout
             android:layout_width="140dp"
@@ -162,7 +170,9 @@
     </LinearLayout>
     <!--4-->
     <LinearLayout
+        android:background="@drawable/radius_border"
         android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
         android:layout_height="200dp"
         android:orientation="horizontal">
         <LinearLayout
@@ -206,7 +216,9 @@
     </LinearLayout>
             <!--5-->
             <LinearLayout
+                android:background="@drawable/radius_border"
                 android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
                 android:layout_height="200dp"
                 android:orientation="horizontal">
                 <LinearLayout

@@ -39,7 +39,7 @@
                 android:layout_weight="1">
 
                 <TextView
-                    android:text="@string/text_postings_publish"
+                    android:text="@string/text_share"
                     android:layout_width="100dp"
                     android:layout_height="30dp"
                     android:layout_gravity="center"
@@ -68,23 +68,23 @@
                     android:layout_height="400dp"
                     android:scaleType="fitXY"
                     android:layout_marginTop="10dp"
-                    android:src="@drawable/camera1" />
+                    android:src="@drawable/share1" />
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="400dp"
                     android:layout_marginTop="10dp"
                     android:scaleType="fitXY"
-                    android:src="@drawable/camera2" />
+                    android:src="@drawable/a44" />
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="400dp"
                     android:layout_marginTop="10dp"
                     android:scaleType="fitXY"
-                    android:src="@drawable/camera3" />
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
-                            </LinearLayout>
+                    android:src="@drawable/a55" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -95,14 +95,14 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="智能监控器"
+                        android:text="电磁锁"
                         android:textSize="30sp"
                         android:layout_marginTop="5dp"
                         android:gravity="center"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="价格：269元"
+                        android:text="价格：29元"
                         android:layout_marginTop="5dp"
                         android:textSize="25sp"
                         android:gravity="center"/>
@@ -125,7 +125,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="25sp"
                         android:layout_marginTop="5dp"
-                        android:text="所需共享积分：20"
+                        android:text="所需共享积分：15"
                         android:gravity="center"/>
                 </LinearLayout>
 
@@ -152,15 +152,15 @@
             android:drawableTop="@drawable/message_check"
             android:gravity="center"
             android:text="联系社区" />
-       <!-- <RadioButton
-            android:id="@+id/share_test1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:button="@null"
-            android:drawableTop="@drawable/share_check"
-            android:gravity="center"
-            android:text="测试按钮" />-->
+        <!-- <RadioButton
+             android:id="@+id/share_test1"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"
+             android:button="@null"
+             android:drawableTop="@drawable/share_check"
+             android:gravity="center"
+             android:text="测试按钮" />-->
 
         <RadioButton
             android:id="@+id/share_sharing1"

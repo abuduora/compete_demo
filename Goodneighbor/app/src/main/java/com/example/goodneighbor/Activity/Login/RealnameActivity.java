@@ -23,22 +23,28 @@ public class RealnameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_realname);
+        PrefManager prefManager = new PrefManager(this);
+        if(prefManager.isFirstRealname()){
+        }else{
+            Intent intent = new Intent(this, PageActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        }
         btn_authentication=findViewById(R.id.btn_authentication);
         et_realname=findViewById(R.id.et_realname);
         et_ID=findViewById(R.id.et_ID);
-        PrefManager prefManager = new PrefManager(this);
         btn_authentication.setOnClickListener(v -> {
             Intent intent = new Intent(this, PageActivity.class);
         String id = et_ID.getText().toString();
             if (id.length() != 18) {
-                Toast.makeText(this, "请输入正确的手机号", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "请输入正确的身份证号", Toast.LENGTH_SHORT).show();
                 return;}
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
             new Thread(new Runnable(){
                 public void run(){
-                    HttpUtil.post("http://172.20.10.2:9776/user/real",et_realname.getText().toString(),new HashMap<>());
-                    HttpUtil.post("http://172.20.10.2:9776/user/real",et_ID.getText().toString(),new HashMap<>());
+                    HttpUtil.post("http://[240e:404:b701:8df3:3ec0:d27f:3969:5455]:9776/user/real",et_realname.getText().toString(),new HashMap<>());
+                    HttpUtil.post("http://[240e:404:b701:8df3:3ec0:d27f:3969:5455]:9776/user/real",et_ID.getText().toString(),new HashMap<>());
                 }
             }).start();
             prefManager.setFirstRealname(false);
