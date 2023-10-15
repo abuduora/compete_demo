@@ -25,6 +25,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.Share.ShareGoods3"
+            android:exported="false" />
+        <activity
             android:name=".Activity.Login.RealnameActivity"
             android:exported="false" />
         <activity
@@ -35,6 +38,9 @@
             android:exported="false" />
         <activity
             android:name=".Activity.Shop.ShopTuGouActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Mine.ReadyShare"
             android:exported="false" />
         <activity
             android:name=".Activity.Shop.ShopBijiaActivity"
