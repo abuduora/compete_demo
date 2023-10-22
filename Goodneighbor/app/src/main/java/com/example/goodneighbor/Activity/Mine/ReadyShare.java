@@ -7,7 +7,6 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.goodneighbor.Activity.Share.ShareGoods1;
 import com.example.goodneighbor.R;
 
 public class ReadyShare extends AppCompatActivity implements View.OnClickListener{
@@ -22,6 +21,6 @@ public class ReadyShare extends AppCompatActivity implements View.OnClickListene
 
     @Override
     public void onClick(View v) {
-        startActivity(new Intent(this, ShareGoods1.class));
+        startActivity(new Intent(this, MineGoods1.class));
     }
 }

@@ -17,25 +17,25 @@ import org.springframework.web.bind.annotation.*;
 public class LoginController extends ServiceImpl<UserMapper, userinformation>{
     @Autowired
     private LoginService loginService;
-    private String Email;
+    private String userEmail;
 
     @PostMapping("/login")
     public ResponseEntity<String> loginRequest(@RequestBody String email) {
         loginService.saveemail(email);
         System.out.println(email);
-        Email=email;
+        userEmail=email;
         return new ResponseEntity<>("接受邮箱成功", HttpStatus.OK);
     }
     @PostMapping("/real")
     public ResponseEntity<String> Request(@RequestBody String realname) {
-        userinformation list = baseMapper.selectById(Email);
+        userinformation list = baseMapper.selectById(userEmail);
         list.setRealname(realname);
         baseMapper.updateById(list);
         System.out.println(realname);
         return new ResponseEntity<>("接受真实姓名成功", HttpStatus.OK);
     }
     public ResponseEntity<Integer> handleRequest(@RequestBody int id) {
-        userinformation list = baseMapper.selectById(Email);
+        userinformation list = baseMapper.selectById(userEmail);
         list.setId(id);
         baseMapper.updateById(list);
         System.out.println(id);

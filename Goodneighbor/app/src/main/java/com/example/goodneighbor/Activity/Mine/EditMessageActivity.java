@@ -49,12 +49,7 @@ public class EditMessageActivity extends AppCompatActivity implements View.OnCli
 
         //跳转到我的
        btn_back = findViewById(R.id.btn_back);
-        btn_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-              finish();
-            }
-        });
+        btn_back.setOnClickListener(v -> finish());
        btn_finish = findViewById(R.id.btn_finish);
         btn_finish.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,7 +58,7 @@ public class EditMessageActivity extends AppCompatActivity implements View.OnCli
                     @Override
                     public void run() {
                        //HttpUtil.post("http://172.20.10.2:9776/mine/",picUri,new HashMap<>());
-                       HttpUtil.getImage("http://[240e:404:b701:8df3:3ec0:d27f:3969:5455]:9776/mine/avatar",new HashMap<>());
+                       HttpUtil.getImage("http://[240e:404:100:77a:a9b8:be81:40e5:e79c]:9776/mine/avatar",new HashMap<>());
                     }
                 }).start();
                 finish();

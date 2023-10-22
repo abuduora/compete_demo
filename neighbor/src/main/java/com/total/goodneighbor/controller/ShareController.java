@@ -20,10 +20,8 @@ public class ShareController extends ServiceImpl<UserMapper, userinformation> {
     private ShareService shareService;
 
     @PostMapping("/opendoor")
-    public String opendoor(@RequestBody String email) {
-        int i=1;
-        String data = Integer.toString(i);
-        return HttpUtil.post("http://[240e:404:b701:8df3:cd23:aeb6:46a9:f112]:8080/receive_data",data,new HashMap<>());
+    public String opendoor(@RequestBody String box_id) {
+        return HttpUtil.post("http://[240e:404:b701:8df3:cd23:aeb6:46a9:f112]:8080/receive_data",box_id,new HashMap<>());
     }
 
     @PostMapping("/justopendoor")

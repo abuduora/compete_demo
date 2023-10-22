@@ -43,8 +43,8 @@ public class RealnameActivity extends AppCompatActivity {
             startActivity(intent);
             new Thread(new Runnable(){
                 public void run(){
-                    HttpUtil.post("http://[240e:404:b701:8df3:3ec0:d27f:3969:5455]:9776/user/real",et_realname.getText().toString(),new HashMap<>());
-                    HttpUtil.post("http://[240e:404:b701:8df3:3ec0:d27f:3969:5455]:9776/user/real",et_ID.getText().toString(),new HashMap<>());
+                    HttpUtil.post("http://[240e:404:100:77a:a9b8:be81:40e5:e79c]:9776/user/real",et_realname.getText().toString(),new HashMap<>());
+                    HttpUtil.post("http://[240e:404:100:77a:a9b8:be81:40e5:e79c]:9776/user/real",et_ID.getText().toString(),new HashMap<>());
                 }
             }).start();
             prefManager.setFirstRealname(false);

@@ -226,11 +226,11 @@ public class LoginActivity extends AppCompatActivity
         // 以下弹出提醒对话框，提示用户登录成功
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("登录成功");
-        prefManager.setemail(et_Email.getText().toString());
+
         new Thread(new Runnable(){
             @Override
             public void run() {
-                HttpUtil.post("http://[240e:404:b701:8df3:3ec0:d27f:3969:5455]:9776/user/login",et_Email.getText().toString(),new HashMap<>());
+                HttpUtil.post("http://[240e:404:b810:f41d:b3f9:b8d4:d4a3:7a7]:9776/user/login",et_Email.getText().toString(),new HashMap<>());
             }
         }).start();
         prefManager.setFirstTimeLaunch(false);

@@ -20,7 +20,7 @@ public class ShareFragment extends Fragment {
     @Override
     @SuppressLint("MissingInflatedId")
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.share_show,null);
+        View view=inflater.inflate(R.layout.share_share,null);
 //        ListView listView=view.findViewById(R.id.tv_share_recycler);
         TextView window1=view.findViewById(R.id.share_publish);
 
@@ -39,7 +39,7 @@ public class ShareFragment extends Fragment {
         share1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(getActivity(), ShareGoods3.class);
+                Intent i=new Intent(getActivity(), ShareGoods1.class);
                 startActivity(i);
             }
         });

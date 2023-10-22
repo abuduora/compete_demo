@@ -152,7 +152,7 @@
             android:drawableTop="@drawable/message_check"
             android:gravity="center"
             android:text="联系社区" />
-       <!-- <RadioButton
+       <RadioButton
             android:id="@+id/share_test1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -160,7 +160,7 @@
             android:button="@null"
             android:drawableTop="@drawable/share_check"
             android:gravity="center"
-            android:text="测试按钮" />-->
+            android:text="测试按钮" />
 
         <RadioButton
             android:id="@+id/share_sharing1"

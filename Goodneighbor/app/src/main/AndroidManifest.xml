@@ -25,16 +25,13 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".Activity.Share.ShareGoods3"
+            android:name=".Activity.Share.ShareGoods1"
             android:exported="false" />
         <activity
             android:name=".Activity.Login.RealnameActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.Main.MainMain2Activity"
-            android:exported="false" />
-        <activity
-            android:name=".Activity.Main.MainMain1Activity"
+            android:name=".Activity.Share.Capture"
             android:exported="false" />
         <activity
             android:name=".Activity.Shop.ShopTuGouActivity"
@@ -97,16 +94,7 @@
             android:name=".bean.CircleImageView"
             android:exported="true" />
         <activity
-            android:name=".Activity.Share.ShareGoods1"
-            android:exported="true" />
-        <activity
-            android:name=".Activity.Share.ShareGoods2"
-            android:exported="true" />
-        <activity
-            android:name=".bean.ImagePagerAdapter"
-            android:exported="true" />
-        <activity
-            android:name=".bean.MyBaseAdapter"
+            android:name=".Activity.Mine.MineGoods1"
             android:exported="true" />
         <activity
             android:name=".bean.ShareAdapter"
