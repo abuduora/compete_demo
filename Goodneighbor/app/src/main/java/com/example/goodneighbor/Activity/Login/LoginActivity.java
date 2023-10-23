@@ -230,7 +230,7 @@ public class LoginActivity extends AppCompatActivity
         new Thread(new Runnable(){
             @Override
             public void run() {
-                HttpUtil.post("http://[240e:404:b810:f41d:b3f9:b8d4:d4a3:7a7]:9776/user/login",et_Email.getText().toString(),new HashMap<>());
+                HttpUtil.post("http://[240e:404:2521:9cb7:494f:2883:4f34:1ee]:9776/user/login",et_Email.getText().toString(),new HashMap<>());
             }
         }).start();
         prefManager.setFirstTimeLaunch(false);
