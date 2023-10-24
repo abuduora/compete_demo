@@ -3,28 +3,24 @@ package com.total.goodneighbor;
 import com.corundumstudio.socketio.Configuration;
 import com.corundumstudio.socketio.SocketIOClient;
 import com.corundumstudio.socketio.SocketIOServer;
-import com.total.goodneighbor.bean.*;
 import com.total.goodneighbor.bean.ImageMessage;
+import com.total.goodneighbor.bean.JoinInfo;
+import com.total.goodneighbor.bean.MessageInfo;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.ComponentScan;
+import com.alibaba.fastjson.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
-
-import com.alibaba.fastjson.JSONObject;
-import com.corundumstudio.socketio.AckRequest;
-import com.corundumstudio.socketio.listener.ConnectListener;
-import com.corundumstudio.socketio.listener.DataListener;
-import com.corundumstudio.socketio.listener.DisconnectListener;
 
 @SpringBootApplication
 @ComponentScan({"com.total"})
 @MapperScan("com.total.goodneighbor.mapper")
 @ServletComponentScan
-public class GptdevApplication {
+public class NeighborApplication {
 
 	// 客户端映射
 	private static Map<String, SocketIOClient> clientMap = new HashMap<>();
@@ -34,7 +30,7 @@ public class GptdevApplication {
 	private static Map<String, Map<String, String>> groupMap = new HashMap<>();
 
 	public static void main(String[] args) {
-		SpringApplication.run(GptdevApplication.class, args);
+		SpringApplication.run(NeighborApplication.class, args);
 			Configuration config = new Configuration();
 			// 如果调用了setHostname方法，就只能通过主机名访问，不能通过IP访问
 			//config.setHostname("localhost");

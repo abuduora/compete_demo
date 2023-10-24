@@ -1,3 +1,4 @@
+/*
 package com.total.goodneighbor.controller;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -17,7 +18,7 @@ public class ChatController extends ServiceImpl<UserMapper, userinformation> {
     @Autowired
     private MineService mineService;
 
-    @PostMapping
+    @PostMapping       
 
 
     @GetMapping("/sendavatar")
@@ -25,3 +26,4 @@ public class ChatController extends ServiceImpl<UserMapper, userinformation> {
         return null;
     }
 }
+*/
