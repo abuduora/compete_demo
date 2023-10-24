@@ -11,7 +11,6 @@
         android:required="true" />
 
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -24,6 +23,9 @@
         android:theme="@style/Theme.GoodNeighbor"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".Activity.Circle.FriendChatActivity"
+            android:exported="false" />
         <activity
             android:name=".Activity.Share.ShareGoods1"
             android:exported="false" />
@@ -105,6 +107,41 @@
         <activity
             android:name=".bean.UserInfo"
             android:exported="true" />
+        <!--chat-->
+        <activity
+            android:name=".bean.ArticleInfo"
+            android:exported="true" />
+        <activity
+            android:name=".bean.EntityInfo"
+            android:exported="true" />
+        <activity
+            android:name=".bean.ImageDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".bean.ImageMessage"
+            android:exported="true" />
+        <activity
+            android:name=".bean.ImagePart"
+            android:exported="true" />
+        <activity
+            android:name=".bean.JoinInfo"
+            android:exported="true" />
+        <activity
+            android:name=".bean.MainApplication"
+            android:exported="true" />
+        <activity
+            android:name=".bean.MessageInfo"
+            android:exported="true" />
+        <activity
+            android:name=".bean.NetConst"
+            android:exported="true" />
+        <activity
+            android:name=".bean.ReceiveFile"
+            android:exported="true" />
+        <activity
+            android:name=".bean.RoundDrawable"
+            android:exported="true" />
+
         <activity
             android:name=".Activity.Main.MainRanking"
             android:exported="true" />
@@ -122,6 +159,31 @@
             android:exported="true" />
         <activity
             android:name=".util.ViewUtil"
+            android:exported="true" />
+        <!--chat-->
+        <activity
+            android:name=".util.BitmapUtil"
+            android:exported="true" />
+        <activity
+            android:name=".util.ChatUtil"
+            android:exported="true" />
+        <activity
+            android:name=".util.DateUtil2"
+            android:exported="true" />
+        <activity
+            android:name=".util.MD5Util"
+            android:exported="true" />
+        <activity
+            android:name=".util.QRCodeUtil"
+            android:exported="true" />
+        <activity
+            android:name=".util.SocketUtil"
+            android:exported="true" />
+        <activity
+            android:name=".util.Utils"
+            android:exported="true" />
+        <activity
+            android:name=".util.ViewUtil2"
             android:exported="true" />
 
         <provider

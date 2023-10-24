@@ -59,7 +59,7 @@ public class LoginActivity extends AppCompatActivity
                 public void run() {
                     // 在这里执行网络请求
                     final String senderEmail = "csy157486@163.com"; // 发件人邮箱
-                    final String senderPassword = "VLMIHPHGOZEFELBE"; // 发件人邮箱密码
+                    final String senderPassword = "BTJKBCGTCILSVUHR"; // 发件人邮箱密码
                     String Email = et_Email.getText().toString();
                     Properties props = new Properties();
                     props.put("mail.smtp.auth", "true");
