@@ -75,6 +75,7 @@ public class ShareGoods1 extends AppCompatActivity {
             } else {
                 // 扫描成功，result.getContents() 包含了扫描的内容
                 String scannedData = result.getContents();
+
                 Toast.makeText(this, "扫描结果: " + scannedData, Toast.LENGTH_SHORT).show();
             }
 
@@ -119,23 +120,3 @@ public class ShareGoods1 extends AppCompatActivity {
     }*/
 
         }
-
-
-
-
-        /*AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        if(request=="图片相似度比对通过，请关紧箱门") {
-            builder.setTitle("成功！");
-            builder.setMessage(request);
-            builder.setPositiveButton("确定返回", (dialog, which) -> {
-                AlertDialog alert = builder.create();
-                alert.show();
-            });
-        }else{
-            builder.setTitle("错误！");
-            builder.setMessage(request);
-            builder.setPositiveButton("确定返回", (dialog, which) -> {
-                AlertDialog alert = builder.create();
-                alert.show();
-            });
-        }*/

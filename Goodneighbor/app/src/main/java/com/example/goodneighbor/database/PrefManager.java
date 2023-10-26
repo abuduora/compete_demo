@@ -9,7 +9,7 @@ public class PrefManager {
     private static final String IS_FIRST_Realname = "IsFirstRealname";
     private SharedPreferences sharedPreferences;
     private String Email;
-    private SharedPreferences.Editor editor;
+    public SharedPreferences.Editor editor;
     public Context context;
 
     public PrefManager(Context context) {
@@ -17,6 +17,8 @@ public class PrefManager {
         sharedPreferences = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
     }
+
+
 
     public boolean isFirstRealname() {
         return sharedPreferences.getBoolean(IS_FIRST_Realname, true);

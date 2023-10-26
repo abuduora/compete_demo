@@ -2,6 +2,7 @@ package com.example.goodneighbor.Activity.Login;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,8 +12,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.goodneighbor.Activity.Main.PageActivity;
 import com.example.goodneighbor.R;
+import com.example.goodneighbor.bean.NetConst;
 import com.example.goodneighbor.database.PrefManager;
 import com.example.goodneighbor.util.HttpUtil;
+import com.example.goodneighbor.util.SocketUtil;
 
 import java.util.HashMap;
 import java.util.Properties;
@@ -221,6 +224,11 @@ public class LoginActivity extends AppCompatActivity
     //登录成功
     private void loginSuccess()
     {
+        SharedPreferences shared=getSharedPreferences("share",MODE_PRIVATE);
+        SharedPreferences.Editor editor=shared.edit();
+        editor.putString("email",et_Email.getText().toString());
+        editor.commit();
+        SocketUtil.checkSocketAvailable(this, NetConst.CHAT_IP, NetConst.CHAT_PORT);
         String desc = String.format("您的电子邮箱是%s，恭喜你通过登录验证，点击“确定”按钮返回上个页面",
                et_Email.getText().toString());
         // 以下弹出提醒对话框，提示用户登录成功
@@ -230,7 +238,7 @@ public class LoginActivity extends AppCompatActivity
         new Thread(new Runnable(){
             @Override
             public void run() {
-                HttpUtil.post("http://[ 240e:404:2521:9cb7:494f:2883:4f34:1ee]:9776/user/login",et_Email.getText().toString(),new HashMap<>());
+                HttpUtil.post("http://[240e:404:2521:9cb7:494f:2883:4f34:1ee]:9776/user/login",et_Email.getText().toString(),new HashMap<>());
             }
         }).start();
         prefManager.setFirstTimeLaunch(false);

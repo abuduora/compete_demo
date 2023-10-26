@@ -1,6 +1,8 @@
 package com.example.goodneighbor.Activity.Mine;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,7 +36,8 @@ public class MineFragment extends Fragment implements View.OnClickListener {
         btn_About = view.findViewById(R.id.btn_About);
         btn_exit = view.findViewById(R.id.btn_exit);
         btn_share_wite=view.findViewById(R.id.btn_share_wite);
-
+        SharedPreferences shared= getActivity().getSharedPreferences("share", Context.MODE_PRIVATE);
+        btn_Nickname.setText(shared.getString("share",""));
         ib_imageAvatar.setOnClickListener(this);
         btn_Nickname.setOnClickListener(this);
         btn_exit.setOnClickListener(this);

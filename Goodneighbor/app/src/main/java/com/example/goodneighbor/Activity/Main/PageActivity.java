@@ -11,9 +11,12 @@ import com.example.goodneighbor.Activity.Mine.MineFragment;
 import com.example.goodneighbor.Activity.Share.ShareFragment;
 import com.example.goodneighbor.Activity.Shop.ShopFragment;
 import com.example.goodneighbor.R;
+import com.example.goodneighbor.bean.MainApplication;
+
+import io.socket.client.Socket;
 
 public class PageActivity extends AppCompatActivity {
-
+    Socket mSocket;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +31,9 @@ public class PageActivity extends AppCompatActivity {
         RadioButton tab5 = findViewById(R.id.tv_shop);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.tv_root,new MainFragment()).commit();
+
+        mSocket = MainApplication.getInstance().getSocket();
+        mSocket.connect();
 
         //初始化数据
         //对单选按钮进行监听，选中、未选中

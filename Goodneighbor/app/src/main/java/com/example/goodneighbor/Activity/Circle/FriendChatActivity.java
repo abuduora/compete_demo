@@ -1,26 +1,6 @@
 package com.example.goodneighbor.Activity.Circle;
 
 
-import com.example.goodneighbor.bean.ImageMessage;
-import com.example.goodneighbor.bean.ImagePart;
-import com.example.goodneighbor.bean.MainApplication;
-import com.example.goodneighbor.bean.MessageInfo;
-import com.example.goodneighbor.util.BitmapUtil;
-import com.example.goodneighbor.util.ChatUtil;
-import com.example.goodneighbor.util.DateUtil2;
-import com.example.goodneighbor.util.SocketUtil;
-import com.example.goodneighbor.util.Utils;
-import com.example.goodneighbor.util.ViewUtil2;
-import com.google.gson.Gson;
-
-import org.json.JSONObject;
-
-import java.io.ByteArrayOutputStream;
-
-import io.socket.client.Socket;
-
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -39,7 +19,26 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.goodneighbor.R;
+import com.example.goodneighbor.bean.ImageMessage;
+import com.example.goodneighbor.bean.ImagePart;
+import com.example.goodneighbor.bean.MainApplication;
+import com.example.goodneighbor.bean.MessageInfo;
+import com.example.goodneighbor.util.BitmapUtil;
+import com.example.goodneighbor.util.ChatUtil;
+import com.example.goodneighbor.util.DateUtil2;
+import com.example.goodneighbor.util.SocketUtil;
+import com.example.goodneighbor.util.Utils;
+import com.example.goodneighbor.util.ViewUtil2;
+import com.google.gson.Gson;
+
+import org.json.JSONObject;
+
+import java.io.ByteArrayOutputStream;
+
+import io.socket.client.Socket;
 
 public class FriendChatActivity extends AppCompatActivity {
     private static final String TAG = "FriendChatActivity";
@@ -61,7 +60,12 @@ public class FriendChatActivity extends AppCompatActivity {
             mSelfName = getIntent().getStringExtra("self_name");
             mFriendName = getIntent().getStringExtra("friend_name");
             initView(); // 初始化视图
-            initSocket(); // 初始化套接字
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                initSocket(); // 初始化套接字
+            }
+        }).start();
         }
 
         // 初始化视图
@@ -85,7 +89,12 @@ public class FriendChatActivity extends AppCompatActivity {
 
         // 初始化套接字
         private void initSocket () {
-            mSocket = MainApplication.getInstance().getSocket();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                mSocket = MainApplication.getInstance().getSocket();
+            }
+        }).start();
             // 等待接收好友消息
             mSocket.on("receive_friend_message", (args) -> {
                 JSONObject json = (JSONObject) args[0];

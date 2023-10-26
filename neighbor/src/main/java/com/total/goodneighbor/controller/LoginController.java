@@ -17,13 +17,11 @@ import org.springframework.web.bind.annotation.*;
 public class LoginController extends ServiceImpl<UserMapper, userinformation>{
     @Autowired
     private LoginService loginService;
-    private String userEmail;
 
     @PostMapping("/login")
     public ResponseEntity<String> loginRequest(@RequestBody String email) {
         loginService.saveemail(email);
         System.out.println(email);
-        userEmail=email;
         return new ResponseEntity<>("接受邮箱成功", HttpStatus.OK);
     }
     @PostMapping("/real")
