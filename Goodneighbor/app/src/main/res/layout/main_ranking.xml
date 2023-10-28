@@ -41,6 +41,7 @@
         <com.example.goodneighbor.bean.CircleImageView
             android:layout_width="140dp"
             android:layout_height="140dp"
+            android:id="@+id/firstimage"
             android:src="@drawable/user1" />
             <TextView
                 android:layout_width="140dp"

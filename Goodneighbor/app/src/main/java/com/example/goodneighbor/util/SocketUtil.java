@@ -13,7 +13,6 @@ import java.net.SocketAddress;
 import io.socket.client.Socket;
 
 public class SocketUtil {
-
     // 把对象数据转换为json串，然后发给Socket服务器
     public static void emit(Socket socket, String event, Object obj) {
         try {
@@ -38,5 +37,4 @@ public class SocketUtil {
             }
         }).start();
     }
-
 }

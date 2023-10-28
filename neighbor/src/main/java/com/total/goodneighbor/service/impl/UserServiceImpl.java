@@ -1,0 +1,64 @@
+package com.total.goodneighbor.service.impl;
+
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.total.goodneighbor.entity.userinformation;
+import com.total.goodneighbor.mapper.UserMapper;
+import com.total.goodneighbor.service.UserService;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserServiceImpl extends ServiceImpl<UserMapper,userinformation> implements UserService {
+    @Override
+    public boolean saveemail(String email) {
+        QueryWrapper<userinformation> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("user_email", email);
+        Long integer = baseMapper.selectCount(queryWrapper);
+        if(integer>0){
+            return true;
+        }
+
+        userinformation user = new userinformation();
+        user.setUser_email(email);
+        user.setNickname(email);
+        user.setId("0");
+        int insert = baseMapper.insert(user);
+        if (insert==1){
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public userinformation saverealname(String email,String realname,String id) {
+        userinformation list = baseMapper.selectById(email);
+        list.setRealname(realname);
+        list.setId(id);
+        baseMapper.updateById(list);
+        System.out.println(id);
+        System.out.println(id);
+        return list;
+    }
+
+    @Override
+    public userinformation savemessage(String email, String uri, String nickname, String sex, String phone,String buildingnumber,String address) {
+        userinformation list = baseMapper.selectById(email);
+        list.setAvatar(uri);
+        list.setNickname(nickname);
+        list.setSex(sex);
+        list.setPhone(phone);
+        list.setBuilding_number(buildingnumber);
+        list.setUser_address(address);
+        baseMapper.updateById(list);
+        System.out.println(list);
+        return list;
+    }
+
+    @Override
+    public int integral(String email) {
+        LambdaQueryWrapper<userinformation> emailLambdaQueryWrapper = new LambdaQueryWrapper<>();
+        emailLambdaQueryWrapper.eq(userinformation::getUser_email,email);
+        return baseMapper.selectOne(emailLambdaQueryWrapper).getIntegral();
+    }
+}

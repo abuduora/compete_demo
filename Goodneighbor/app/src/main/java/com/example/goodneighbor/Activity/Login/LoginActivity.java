@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.goodneighbor.Activity.Main.PageActivity;
@@ -15,8 +16,10 @@ import com.example.goodneighbor.R;
 import com.example.goodneighbor.bean.NetConst;
 import com.example.goodneighbor.database.PrefManager;
 import com.example.goodneighbor.util.HttpUtil;
+import com.example.goodneighbor.util.OkHttp;
 import com.example.goodneighbor.util.SocketUtil;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Properties;
 import java.util.Random;
@@ -29,6 +32,11 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public class LoginActivity extends AppCompatActivity
 {
@@ -228,7 +236,7 @@ public class LoginActivity extends AppCompatActivity
         SharedPreferences.Editor editor=shared.edit();
         editor.putString("email",et_Email.getText().toString());
         editor.commit();
-        SocketUtil.checkSocketAvailable(this, NetConst.CHAT_IP, NetConst.CHAT_PORT);
+        SocketUtil.checkSocketAvailable(this, NetConst.IP, NetConst.chat_port);
         String desc = String.format("您的电子邮箱是%s，恭喜你通过登录验证，点击“确定”按钮返回上个页面",
                et_Email.getText().toString());
         // 以下弹出提醒对话框，提示用户登录成功
@@ -239,6 +247,20 @@ public class LoginActivity extends AppCompatActivity
             @Override
             public void run() {
                 HttpUtil.post("http://[240e:404:2521:9cb7:494f:2883:4f34:1ee]:9776/user/login",et_Email.getText().toString(),new HashMap<>());
+
+                RequestBody requestBody=RequestBody.create(shared.getString("email",""),OkHttp.JSON);
+                OkHttp.Post("http://[ 240e:404:b830:a118:61ce:6331:f25f:c199]:9776/user/getintegral", requestBody,new Callback() {
+                    @Override
+                    public void onFailure(@NonNull Call call, @NonNull IOException e) {
+                        Toast.makeText(LoginActivity.this, "获取积分失败", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+                        String resp=response.body().string();
+                        editor.putInt("integral", Integer.parseInt(resp));
+                    }
+                });
             }
         }).start();
         prefManager.setFirstTimeLaunch(false);

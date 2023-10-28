@@ -10,19 +10,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName("userinformation")
-public class userinformation {
+@TableName("integral")
+public class integral {
     @TableId(value = "user_email",type = IdType.AUTO)
     private String user_email;
-    private String id;
-    private String realname;
-    private String nickname;
-    private int integral;
     private String community_name;
-    private String user_address;
-    private String building_number;
-    private String sex;
-    private int user_age;
-    private String avatar;//longblob
-    private String phone;
+    private int integral;
 }

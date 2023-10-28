@@ -57,14 +57,14 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="@string/text_name"
+            android:text="名字"
             android:textSize="25dp"/>
 
         <EditText
             android:id="@+id/et_name"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="@string/text_new_name"
+            android:hint="快来给自己取一个好听的名字吧！"
             android:gravity="center"/>
     </LinearLayout>
 
@@ -95,18 +95,18 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tv_buildingnumber"
+            android:id="@+id/tv_phone"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="小区"
+            android:text="手机号"
             android:textSize="25dp"/>
 
         <EditText
-            android:id="@+id/et_buildingnumber"
+            android:id="@+id/et_phone"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="请输入所住小区"
+            android:hint="请输入手机号"
             android:gravity="center"/>
     </LinearLayout>
     <LinearLayout
@@ -115,7 +115,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tv_phone"
+            android:id="@+id/tv_buildingnumber"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center"
@@ -123,10 +123,30 @@
             android:textSize="25dp"/>
 
         <EditText
-            android:id="@+id/et_phone"
+            android:id="@+id/et_buildingnumber"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="@string/text_new_phone"
+            android:hint="请输入楼号"
+            android:gravity="center"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="地址"
+            android:textSize="25dp"/>
+
+        <EditText
+            android:id="@+id/et_address"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="请输入地址"
             android:gravity="center"/>
     </LinearLayout>
 </LinearLayout>

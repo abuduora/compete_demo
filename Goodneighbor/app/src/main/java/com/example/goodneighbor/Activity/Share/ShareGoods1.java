@@ -54,6 +54,7 @@ public class ShareGoods1 extends AppCompatActivity {
             @Override
             public void run() {
                     request = HttpUtil.share("http://[240e:404:b701:8df3:3ec0:d27f:3969:5455]:9776/share/justopendoor", "开门", new HashMap<>());
+
             }
         }).start();
                 builder.setTitle("请取出物品，关好箱门!");

@@ -3,12 +3,14 @@ package com.example.goodneighbor.Activity.Mine;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -25,19 +27,32 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     private Button btn_message;
     private  Button btn_share_wite;
     private ImageButton ib_imageAvatar;
+    private TextView tv_integral;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.mine_mine, null);
+        SharedPreferences shared= getActivity().getSharedPreferences("share", Context.MODE_PRIVATE);
+        //获取头像
         ib_imageAvatar = view.findViewById(R.id.ib_imageAvatar);
+        Bundle bundle=getActivity().getIntent().getExtras();
+        String uri = bundle.getString("uri");
+        String nickname=bundle.getString("nickname");
+        //获取积分
+        tv_integral=view.findViewById(R.id.tv_integral);
+        tv_integral.setText(shared.getInt("integral",0)+"积分");
+        ib_imageAvatar.setImageURI(Uri.parse(uri));
+        //获取昵称
         btn_Nickname = view.findViewById(R.id.btn_Nickname);
+        String name="快来给自己取一个好听的名字吧！";
+        if(nickname!=name)
+        btn_Nickname.setText(nickname);
         btn_message = view.findViewById(R.id.btn_message);
         btn_About = view.findViewById(R.id.btn_About);
         btn_exit = view.findViewById(R.id.btn_exit);
         btn_share_wite=view.findViewById(R.id.btn_share_wite);
-        SharedPreferences shared= getActivity().getSharedPreferences("share", Context.MODE_PRIVATE);
-        btn_Nickname.setText(shared.getString("share",""));
+        btn_Nickname.setText(shared.getString("email",""));
         ib_imageAvatar.setOnClickListener(this);
         btn_Nickname.setOnClickListener(this);
         btn_exit.setOnClickListener(this);
