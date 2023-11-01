@@ -35,6 +35,7 @@ import javax.mail.internet.MimeMessage;
 
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.FormBody;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
@@ -235,7 +236,7 @@ public class LoginActivity extends AppCompatActivity
         SharedPreferences shared=getSharedPreferences("share",MODE_PRIVATE);
         SharedPreferences.Editor editor=shared.edit();
         editor.putString("email",et_Email.getText().toString());
-        editor.commit();
+        editor.apply();
         SocketUtil.checkSocketAvailable(this, NetConst.IP, NetConst.chat_port);
         String desc = String.format("您的电子邮箱是%s，恭喜你通过登录验证，点击“确定”按钮返回上个页面",
                et_Email.getText().toString());
@@ -246,10 +247,12 @@ public class LoginActivity extends AppCompatActivity
         new Thread(new Runnable(){
             @Override
             public void run() {
-                HttpUtil.post("http://[240e:404:2521:9cb7:494f:2883:4f34:1ee]:9776/user/login",et_Email.getText().toString(),new HashMap<>());
+                HttpUtil.post("http://[240e:404:b830:a118:61ce:6331:f25f:c199]:9776/user/login",et_Email.getText().toString(),new HashMap<>());
 
-                RequestBody requestBody=RequestBody.create(shared.getString("email",""),OkHttp.JSON);
-                OkHttp.Post("http://[ 240e:404:b830:a118:61ce:6331:f25f:c199]:9776/user/getintegral", requestBody,new Callback() {
+                RequestBody requestbody = new FormBody.Builder()
+                        .add("email",et_Email.getText().toString())
+                        .build();
+                OkHttp.Post("http://[240e:404:b830:a118:61ce:6331:f25f:c199]:9776/user/getintegral", requestbody,new Callback() {
                     @Override
                     public void onFailure(@NonNull Call call, @NonNull IOException e) {
                         Toast.makeText(LoginActivity.this, "获取积分失败", Toast.LENGTH_SHORT).show();
@@ -258,7 +261,9 @@ public class LoginActivity extends AppCompatActivity
                     @Override
                     public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
                         String resp=response.body().string();
+                        System.out.println(resp);
                         editor.putInt("integral", Integer.parseInt(resp));
+                        editor.apply();
                     }
                 });
             }

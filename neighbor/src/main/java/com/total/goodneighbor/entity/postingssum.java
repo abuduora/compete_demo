@@ -16,6 +16,5 @@ public class postingssum {
     @TableId(value = "PostingsName",type = IdType.AUTO)
     private int PostingsNumber;
     private Char PostingsName;
-
 }
 

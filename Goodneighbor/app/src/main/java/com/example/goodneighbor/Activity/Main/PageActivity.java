@@ -1,9 +1,12 @@
 package com.example.goodneighbor.Activity.Main;
 
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.goodneighbor.Activity.Circle.CircleFragment;
@@ -32,8 +35,19 @@ public class PageActivity extends AppCompatActivity {
 
         getSupportFragmentManager().beginTransaction().replace(R.id.tv_root,new MainFragment()).commit();
 
+        int id = getIntent().getIntExtra("id", 0);
+        if (id == 1) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.tv_root,new MineFragment())
+                    .addToBackStack(null)
+                    .commit();
+        }
+
+
         mSocket = MainApplication.getInstance().getSocket();
         mSocket.connect();
+        System.out.println("发起连接");
 
         //初始化数据
         //对单选按钮进行监听，选中、未选中
@@ -57,9 +71,34 @@ public class PageActivity extends AppCompatActivity {
             if(i==R.id.tv_me)
             {
                 getSupportFragmentManager().beginTransaction().replace(R.id.tv_root,new MineFragment()).commit();
+                /*int permission_write= ContextCompat.checkSelfPermission(PageActivity.this,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                if(permission_write!= PackageManager.PERMISSION_GRANTED){
+                    Toast.makeText(this, "正在请求权限", Toast.LENGTH_SHORT).show();
+                    //申请权限，特征码自定义为1，可在回调时进行相关判断
+                    ActivityCompat.requestPermissions(PageActivity.this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE},1);
+                }*/
             }
         }
         );
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode){
+            case 1:
+                if(grantResults.length>0 && grantResults[0]==PackageManager.PERMISSION_GRANTED){
+                    //权限已成功申请
+
+                }else{
+                    //用户拒绝授权
+                    Toast.makeText(this, "无法获取SD卡读写权限", Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+                break;
+            default:
+                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
     }
 //    private void initView() {
 //

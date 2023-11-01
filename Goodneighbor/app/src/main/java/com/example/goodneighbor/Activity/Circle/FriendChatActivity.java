@@ -1,6 +1,5 @@
 package com.example.goodneighbor.Activity.Circle;
 
-
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -89,14 +88,9 @@ public class FriendChatActivity extends AppCompatActivity {
 
         // 初始化套接字
         private void initSocket () {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                mSocket = MainApplication.getInstance().getSocket();
-            }
-        }).start();
+          mSocket = MainApplication.getInstance().getSocket();
             // 等待接收好友消息
-            mSocket.on("receive_friend_message", (args) -> {
+              mSocket.on("receive_friend_message", (args) -> {
                 JSONObject json = (JSONObject) args[0];
                 Log.d(TAG, "receive_friend_message:" + json.toString());
                 MessageInfo message = new Gson().fromJson(json.toString(), MessageInfo.class);

@@ -4,40 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#F8E8C1">
 
     <!-- 下拉页面控制-->
     <LinearLayout
         android:id="@+id/tv_home_location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFA500"
+        android:background="#F8E8C1"
         android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="小区位置："
+                android:textSize="25sp" />
 
-        <TextView
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:gravity="right|center"
-            android:text="小区位置："
-            android:textSize="25sp" />
-
-        <Spinner
-            android:id="@+id/Spiner_location"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:entries="@array/spinner" />
+            <Spinner
+                android:id="@+id/Spiner_location"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:entries="@array/spinner" />
+        </LinearLayout>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="270dp"
         android:orientation="vertical">
 
         <androidx.viewpager.widget.ViewPager
+            android:id="@+id/main_title_viewPager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/main_title_viewPager"
             android:scaleType="fitXY"
             android:background="@color/teal_200" >
 
@@ -53,23 +58,18 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:gravity="right">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:padding="10dp"
-                android:text="筛选"
+                android:background="@drawable/button_background"
+                android:text="发布"
                 android:textColor="#00AAff"
                 android:textSize="20sp" />
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/tv_publish_ActionButton"
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:background="@android:drawable/ic_input_add"
-            android:gravity="end" />
 
     </LinearLayout>
 
@@ -82,7 +82,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_margin="5dp">
+            android:layout_margin="5dp"
+            android:background="@drawable/search_box">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -125,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:background="#F0F0F0"
                 android:orientation="vertical"
-                android:padding="10dp">
+                android:padding="5dp">
 
                 <LinearLayout
                     android:id="@+id/tv_window2"

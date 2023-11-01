@@ -2,23 +2,34 @@ package com.example.goodneighbor.Activity.Share;
 
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.goodneighbor.R;
 import com.example.goodneighbor.database.PrefManager;
 import com.example.goodneighbor.util.HttpUtil;
+import com.example.goodneighbor.util.OkHttp;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
 import org.jetbrains.annotations.Nullable;
 
+import java.io.IOException;
 import java.util.HashMap;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.FormBody;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public class ShareGoods1 extends AppCompatActivity {
     public String request;
@@ -35,7 +46,7 @@ public class ShareGoods1 extends AppCompatActivity {
                 //Initialize intent integrator
                 IntentIntegrator intentIntegrator=new IntentIntegrator(ShareGoods1.this);
                 //Set prompt text
-                intentIntegrator.setPrompt("For flash ues volume up key");
+                intentIntegrator.setPrompt("点击音量+键打开闪光灯");
                 //Set beep
                 intentIntegrator.setBeepEnabled(true);
                 //Locked orientation
@@ -50,11 +61,25 @@ public class ShareGoods1 extends AppCompatActivity {
     }
     public void builder(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        SharedPreferences shared=this.getSharedPreferences("share", Context.MODE_PRIVATE);
         new Thread(new Runnable() {
             @Override
             public void run() {
-                    request = HttpUtil.share("http://[240e:404:b701:8df3:3ec0:d27f:3969:5455]:9776/share/justopendoor", "开门", new HashMap<>());
-
+                RequestBody requestBody=new FormBody.Builder()
+                        .add("email",shared.getString("email",""))
+                        .add("tname",)
+                        .add("box_id",)
+                        .build();
+                     OkHttp.Post("http://[240e:404:b830:a118:61ce:6331:f25f:c199]:9776/share/justopendoor", requestBody, new Callback() {
+                        @Override
+                        public void onFailure(@NonNull Call call, @NonNull IOException e) {
+                            Toast.makeText(ShareGoods1.this, "共享失败，请检查网络设置", Toast.LENGTH_SHORT).show();
+                        }
+                        @Override
+                        public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+                            request=response.body().string();
+                        }
+                    });
             }
         }).start();
                 builder.setTitle("请取出物品，关好箱门!");

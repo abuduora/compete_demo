@@ -32,19 +32,21 @@ public class UserServiceImpl extends ServiceImpl<UserMapper,userinformation> imp
 
     @Override
     public userinformation saverealname(String email,String realname,String id) {
+        System.out.println("实名接受email"+email);
         userinformation list = baseMapper.selectById(email);
+        System.out.println("刚查出来的list"+list);
         list.setRealname(realname);
         list.setId(id);
         baseMapper.updateById(list);
         System.out.println(id);
         System.out.println(id);
+        System.out.println("修改之后的list"+list);
         return list;
     }
 
     @Override
-    public userinformation savemessage(String email, String uri, String nickname, String sex, String phone,String buildingnumber,String address) {
+    public userinformation savemessage(String email, String nickname, String sex, String phone,String buildingnumber,String address) {
         userinformation list = baseMapper.selectById(email);
-        list.setAvatar(uri);
         list.setNickname(nickname);
         list.setSex(sex);
         list.setPhone(phone);
@@ -57,6 +59,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper,userinformation> imp
 
     @Override
     public int integral(String email) {
+        System.out.println("所查积分的邮箱为"+email);
         LambdaQueryWrapper<userinformation> emailLambdaQueryWrapper = new LambdaQueryWrapper<>();
         emailLambdaQueryWrapper.eq(userinformation::getUser_email,email);
         return baseMapper.selectOne(emailLambdaQueryWrapper).getIntegral();

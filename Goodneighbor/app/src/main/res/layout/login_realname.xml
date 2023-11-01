@@ -55,7 +55,8 @@
         android:layout_height="60dp"
         android:text="确认"
         android:textSize="30dp"
-        android:shadowColor="@color/green"/>
+        app:backgroundTint="@null"
+        android:background="@drawable/button_background"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

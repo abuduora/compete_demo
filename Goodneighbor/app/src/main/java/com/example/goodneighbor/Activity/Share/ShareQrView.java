@@ -10,6 +10,6 @@ import com.example.goodneighbor.R;
 public class ShareQrView extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.qr_view);
+        setContentView(R.layout.share_share);
     }
 }

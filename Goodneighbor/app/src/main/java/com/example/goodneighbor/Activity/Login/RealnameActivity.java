@@ -54,7 +54,7 @@ public class RealnameActivity extends AppCompatActivity {
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
             new Thread(new Runnable(){
-                String url="http://[240e:404:2521:9cb7:494f:2883:4f34:1ee]:9776/user/real";
+                String url="http://[240e:404:b830:a118:61ce:6331:f25f:c199]:9776/user/real";
                 public void run(){
                     RequestBody requestbody = new FormBody.Builder()
                             .add("email",shared.getString("email",""))

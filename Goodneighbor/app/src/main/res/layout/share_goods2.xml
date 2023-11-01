@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#F8E8C1">
 
     <LinearLayout
         android:id="@+id/tv_root2"
@@ -23,13 +24,12 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
-
-                <androidx.appcompat.widget.AppCompatButton
+                <Button
                     android:id="@+id/tv_postings_back2"
-                    android:layout_width="50dp"
-                    android:layout_height="30dp"
-                    android:text="@string/text_back"
-                    android:textSize="8sp"/>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:drawableLeft="@drawable/ic_back" />
             </LinearLayout>
 
             <LinearLayout
@@ -55,66 +55,74 @@
                 android:layout_weight="1">
 
             </LinearLayout>
-
-
-
         </LinearLayout>
-
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <LinearLayout
+            android:layout_height="wrap_content"
+            android:background="@drawable/search_box"
+            android:layout_margin="20dp">
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:src="@drawable/a771"
-                    android:scaleType="centerInside"/>
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:src="@drawable/a66666"
-                    android:scaleType="centerInside"/>
-                <TextView
+                android:layout_height="wrap_content">
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Android App开发入门与项目实战"
-                    android:textSize="20dp"
-                    android:gravity="center"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="作者：欧阳燊"
-                    android:gravity="center"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="价格：98元"
-                    android:gravity="center"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="出版社：清华大学出版社"
-                    android:gravity="center"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="共享日期：2023-9-10"
-                    android:gravity="center"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="结束日期：2023-10-11"
-                    android:gravity="center"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="所需共享积分：10"
-                    android:gravity="center"/>
-            </LinearLayout>
-        </ScrollView>
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:layout_height="200dp"
+                            android:src="@drawable/a771"
+                            android:scaleType="centerInside"/>
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:layout_height="200dp"
+                            android:src="@drawable/a66666"
+                            android:scaleType="centerInside"/>
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Android App开发入门与项目实战"
+                        android:textSize="20dp"
+                        android:gravity="center"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="作者：欧阳燊"
+                        android:gravity="center"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="价格：98元"
+                        android:gravity="center"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="出版社：清华大学出版社"
+                        android:gravity="center"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="共享日期：2023-9-10"
+                        android:gravity="center"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="结束日期：2023-10-11"
+                        android:gravity="center"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="所需共享积分：10"
+                        android:gravity="center"/>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
     </LinearLayout>
 
     <RadioGroup

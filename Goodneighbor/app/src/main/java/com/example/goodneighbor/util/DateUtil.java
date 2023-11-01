@@ -6,6 +6,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DateUtil {
+    // 获取当前的日期时间
+    public static String getNowDateTime_new() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
+        return sdf.format(new Date());
+    }
     public static String getNowDateTime(String formatStr) {
         String format = formatStr;
         if (TextUtils.isEmpty(format)) {

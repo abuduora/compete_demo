@@ -12,13 +12,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @TableName("shares")
 public class shares {
-    @TableId(value = "sharename",type = IdType.AUTO)
-    private int sharenumber;
-    private int cost;
-    private int returns;
-    private long photo;//longblob
-    private String sharename;
-    private String user_email;
-
+    @TableId(value = "share_id",type = IdType.AUTO)
+    private int share_id;
+    private String email;
+    private String share_name;
+    private int integral;
+    private String image;
 }
 

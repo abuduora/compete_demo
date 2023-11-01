@@ -2,9 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/orange"
+    android:background="#F6C842"
     android:orientation="vertical">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp">
@@ -14,11 +13,13 @@
             android:layout_height="50dp"
             android:layout_weight="1.2"
             android:orientation="horizontal">
-            <TextView
+            <!--悬浮按钮-->
+            <com.example.goodneighbor.bean.ButtonView
                 android:id="@+id/share_publish"
-                android:layout_width="50dp"
-                android:layout_height="40dp"
-                android:background="@drawable/share_publish" />
+                android:layout_width="60dp"
+                android:layout_height="60dp" />
+
+
         </LinearLayout>
 
         <LinearLayout
@@ -52,231 +53,274 @@
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="400dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:background="@drawable/search_box"
+        android:layout_marginBottom="10dp">
+
         <SearchView
             android:id="@+id/share_searchView"
+            style="@style/SearchViewStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/white"
             android:iconifiedByDefault="false"
             android:padding="10dp"
-            android:background="@color/white"
             android:queryHint="请输入搜索内容" />
     </LinearLayout>
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FF4500">
-
-
-        <LinearLayout
+        android:background="@drawable/rounded_corners"
+        android:orientation="vertical">
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="30dp">
+            android:layout_height="wrap_content"/><!--占格子用-->
 
-            <LinearLayout
+        <!--        下拉刷新-->
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/home_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_marginRight="2.5dp"
+                android:layout_weight="1" />
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="230dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:padding="5dp">
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-                    <ImageView
-                        android:id="@+id/share_picture1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="150dp"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/share1" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/radius_border"
-                        android:text="  锁的共享，没人能打开这个锁"
-                        android:textSize="15sp" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="230dp"
-                    android:layout_weight="1"
-                    android:padding="5dp"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/share_picture2"
-                        android:layout_width="wrap_content"
-                        android:scaleType="fitXY"
-                        android:layout_height="150dp"
-                        android:src="@drawable/share7" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/radius_border"
-                        android:text="  无敌的键盘，天好用"
-                        android:textSize="15sp" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="230dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:padding="5dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="150dp"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/user5" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/radius_border"
-                        android:text="  这一个遥控器真的，没得说，你不用，只能说你没眼光了"
-                        android:textSize="15sp" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="230dp"
-                    android:layout_weight="1"
-                    android:padding="5dp"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:scaleType="fitXY"
-                        android:layout_height="150dp"
-                        android:src="@drawable/user6" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/radius_border"
-                        android:text="  这一对键盘鼠标，你们先别提出意见，进来看看我花费积分就知道了"
-                        android:textSize="15sp" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="230dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:padding="5dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="150dp"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/user7" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/radius_border"
-                        android:text="  树莓派4B的板子，到后面估计用的不多，就共享出来用就行了"
-                        android:textSize="15sp" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="230dp"
-                    android:layout_weight="1"
-                    android:padding="5dp"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:scaleType="fitXY"
-                        android:layout_height="150dp"
-                        android:src="@drawable/user8" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/radius_border"
-                        android:text="  可爱小狗，共享美好"
-                        android:textSize="15sp" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="230dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:padding="5dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="150dp"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/share7" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/radius_border"
-                        android:text="  键盘，不想用了，想要的人就共享去用吧"
-                        android:textSize="15sp" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="230dp"
-                    android:layout_weight="1"
-                    android:padding="5dp"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:scaleType="fitXY"
-                        android:layout_height="150dp"
-                        android:src="@drawable/share3" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/radius_border"
-                        android:text="  鼠标用用看"
-                        android:textSize="15sp" />
-                </LinearLayout>
-            </LinearLayout>
+    <!--底部菜单栏的直线-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#333"
+        android:layout_gravity="bottom"/>
 
 
-        </LinearLayout>
+<!--        <ScrollView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            >-->
 
-    </ScrollView>
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="30dp"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="230dp"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:orientation="vertical"-->
+<!--                        android:padding="5dp">-->
+
+<!--                        <ImageView-->
+<!--                            android:id="@+id/share_picture1"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="150dp"-->
+<!--                            android:scaleType="fitXY"-->
+<!--                            android:src="@drawable/share1" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="50dp"-->
+<!--                            android:layout_marginTop="5dp"-->
+<!--                            android:background="@drawable/radius_border"-->
+<!--                            android:text="  锁的共享，没人能打开这个锁"-->
+<!--                            android:textSize="15sp" />-->
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="230dp"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:orientation="vertical"-->
+<!--                        android:padding="5dp">-->
+
+<!--                        <ImageView-->
+<!--                            android:id="@+id/share_picture2"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="150dp"-->
+<!--                            android:scaleType="fitXY"-->
+<!--                            android:src="@drawable/share7" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="50dp"-->
+<!--                            android:layout_marginTop="5dp"-->
+<!--                            android:background="@drawable/radius_border"-->
+<!--                            android:text="  无敌的键盘，天好用"-->
+<!--                            android:textSize="15sp" />-->
+<!--                    </LinearLayout>-->
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="230dp"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:orientation="vertical"-->
+<!--                        android:padding="5dp">-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="150dp"-->
+<!--                            android:scaleType="fitXY"-->
+<!--                            android:src="@drawable/user5" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="50dp"-->
+<!--                            android:layout_marginTop="5dp"-->
+<!--                            android:background="@drawable/radius_border"-->
+<!--                            android:text="  这一个遥控器真的，没得说，你不用，只能说你没眼光了"-->
+<!--                            android:textSize="15sp" />-->
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="230dp"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:orientation="vertical"-->
+<!--                        android:padding="5dp">-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="150dp"-->
+<!--                            android:scaleType="fitXY"-->
+<!--                            android:src="@drawable/user6" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="50dp"-->
+<!--                            android:layout_marginTop="5dp"-->
+<!--                            android:background="@drawable/radius_border"-->
+<!--                            android:text="  这一对键盘鼠标，你们先别提出意见，进来看看我花费积分就知道了"-->
+<!--                            android:textSize="15sp" />-->
+<!--                    </LinearLayout>-->
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="230dp"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:orientation="vertical"-->
+<!--                        android:padding="5dp">-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="150dp"-->
+<!--                            android:scaleType="fitXY"-->
+<!--                            android:src="@drawable/user7" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="50dp"-->
+<!--                            android:layout_marginTop="5dp"-->
+<!--                            android:background="@drawable/radius_border"-->
+<!--                            android:text="  树莓派4B的板子，到后面估计用的不多，就共享出来用就行了"-->
+<!--                            android:textSize="15sp" />-->
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="230dp"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:orientation="vertical"-->
+<!--                        android:padding="5dp">-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="150dp"-->
+<!--                            android:scaleType="fitXY"-->
+<!--                            android:src="@drawable/user8" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="50dp"-->
+<!--                            android:layout_marginTop="5dp"-->
+<!--                            android:background="@drawable/radius_border"-->
+<!--                            android:text="  可爱小狗，共享美好"-->
+<!--                            android:textSize="15sp" />-->
+<!--                    </LinearLayout>-->
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="230dp"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:orientation="vertical"-->
+<!--                        android:padding="5dp">-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="150dp"-->
+<!--                            android:scaleType="fitXY"-->
+<!--                            android:src="@drawable/share7" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="50dp"-->
+<!--                            android:layout_marginTop="5dp"-->
+<!--                            android:background="@drawable/radius_border"-->
+<!--                            android:text="  键盘，不想用了，想要的人就共享去用吧"-->
+<!--                            android:textSize="15sp" />-->
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="230dp"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:orientation="vertical"-->
+<!--                        android:padding="5dp">-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="150dp"-->
+<!--                            android:scaleType="fitXY"-->
+<!--                            android:src="@drawable/share3" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="50dp"-->
+<!--                            android:layout_marginTop="5dp"-->
+<!--                            android:background="@drawable/radius_border"-->
+<!--                            android:text="  鼠标用用看"-->
+<!--                            android:textSize="15sp" />-->
+<!--                    </LinearLayout>-->
+<!--                </LinearLayout>-->
+
+
+<!--            </LinearLayout>-->
+
+<!--        </ScrollView>-->
+
+    </LinearLayout>
 
 </LinearLayout>

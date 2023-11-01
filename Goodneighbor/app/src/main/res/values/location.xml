@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="spinner">
-        <item>碧螺春小区</item>
+        <item>幸福社区</item>
         <item>天通苑北</item>
         <item>亚运豪宅</item>
         <item>碧桂园五星上将</item>
@@ -11,5 +11,17 @@
         <item>二号共享柜</item>
         <item>三号共享柜</item>
         <item>四号共享柜</item>
+    </string-array>
+    <string-array name="icons">
+        <item>1积分</item>
+        <item>2积分</item>
+        <item>3积分</item>
+        <item>4积分</item>
+        <item>5积分</item>
+    </string-array>
+    <string-array name="share_box">
+        <item>1号柜</item>
+        <item>2号柜</item>
+        <item>3号柜</item>
     </string-array>
 </resources>

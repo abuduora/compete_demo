@@ -31,8 +31,8 @@ public class ChatUtil {
 
     // 根据昵称获取对应的头像
     public static Drawable getPortraitByName(Context ctx, String name) {
-        String md5 = MD5Util.encrypt(name);
-        char lastChar = md5.charAt(md5.length()-1);
+        //String md5 = MD5Util.encrypt(name);
+        char lastChar = name.charAt(name.length()-1);
         int pos = lastChar>='A' ? lastChar-'A'+10 : lastChar-'0';
         Bitmap bitmap = BitmapFactory.decodeResource(ctx.getResources(), mPortraitArray[pos]);
         RoundDrawable drawable = new RoundDrawable(ctx, bitmap);

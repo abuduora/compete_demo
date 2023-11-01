@@ -26,7 +26,7 @@ public class UserController extends ServiceImpl<UserMapper, userinformation>{
     @PostMapping("/login")
     public ResponseEntity<String> loginRequest(@RequestBody String email) {
         loginService.saveemail(email);
-        System.out.println(email);
+        System.out.println("登陆成功"+email);
         return new ResponseEntity<>("接受邮箱成功", HttpStatus.OK);
     }
     @PostMapping("/real")
@@ -39,21 +39,27 @@ public class UserController extends ServiceImpl<UserMapper, userinformation>{
 
     @PostMapping("/message")
     @ResponseBody
-    public userinformation message(String email,String uri,String nickname,String sex,String phone,String buildingnumber,String address){
-        userinformation user=this.loginService.savemessage(email,uri,nickname,sex,phone,buildingnumber,address);
-        return user;
+    public userinformation message(String email,String nickname,String sex,String phone,String buildingnumber,String address){
+        return this.loginService.savemessage(email,nickname,sex,phone,buildingnumber,address);
     }
+
+    /*@PostMapping("/avatar")
+    @ResponseBody
+    public void avatar(String email){
+        System.out.println("积分为"+loginService.integral(email));
+        return loginService.integral(email);
+    }*/
 
     @PostMapping("/getintegral")
     @ResponseBody
-    public int getintegral(String email){
-        System.out.println(loginService.integral(email));
+    public int integral(String email){
+        System.out.println("积分为"+loginService.integral(email));
         return loginService.integral(email);
     }
 
     @PostMapping("/rank")
     @ResponseBody
-    public List<Object> rank(String email){
-        return integralService.rank(email);
+    public List<Object> rank(String community){
+        return integralService.rank(community);
     }
 }
