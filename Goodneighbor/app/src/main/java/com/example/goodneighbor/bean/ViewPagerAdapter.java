@@ -1,45 +1,67 @@
 package com.example.goodneighbor.bean;
 
-import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
+import java.util.List;
 
 public class ViewPagerAdapter extends PagerAdapter {
+    private List<ImageView> images;
+    private ViewPager viewPager;
 
-    private Context context;
-    private int[] imageIds;
+    /**
+     * 构造方法，传入图片列表和ViewPager实例
+     *
+     * @param images
+     * @param viewPager
+     */
 
-    public ViewPagerAdapter(Context context, int[] imageIds) {
-        this.context = context;
-        this.imageIds = imageIds;
+    public ViewPagerAdapter(List<ImageView> images, ViewPager viewPager) {
+        this.images = images;
+        this.viewPager = viewPager;
     }
 
     @Override
     public int getCount() {
-        return imageIds.length;
+        return Integer.MAX_VALUE;//返回一个无限大的值，可以 无限循环
     }
 
+    /**
+     * 判断是否使用缓存, 如果返回的是true, 使用缓存. 不去调用instantiateItem方法创建一个新的对象
+     */
     @Override
-    public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
+    public boolean isViewFromObject(View view, Object object) {
         return view == object;
     }
 
-    @NonNull
+    /**
+     * 初始化一个条目
+     *
+     * @param container
+     * @param position  当前需要加载条目的索引
+     * @return
+     */
     @Override
-    public Object instantiateItem(@NonNull ViewGroup container, int position) {
-        ImageView imageView = new ImageView(context);
-        imageView.setImageResource(imageIds[position]);
-        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        container.addView(imageView);
-        return imageView;
+    public Object instantiateItem(ViewGroup container, int position) {
+        // 把position对应位置的ImageView添加到ViewPager中
+        ImageView iv = images.get(position % images.size());
+        viewPager.addView(iv);
+        // 把当前添加ImageView返回回去.
+        return iv;
     }
 
+    /**
+     * 销毁一个条目
+     * position 就是当前需要被销毁的条目的索引
+     */
     @Override
-    public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
-        container.removeView((ImageView) object);
+    public void destroyItem(ViewGroup container, int position, Object object) {
+        // 把ImageView从ViewPager中移除掉
+        viewPager.removeView(images.get(position % images.size()));
+
     }
 }

@@ -8,7 +8,6 @@
     android:orientation="vertical">
 
     <include layout="@layout/title_shopping" />
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -80,7 +79,47 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp">
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_weight="1"
+                        android:text="选择配送地址"
+                        android:textSize="20dp"
+                        android:gravity="center"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_box"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_weight="1"
+                        android:text="选择配送方式"
+                        android:textSize="20dp"
+                        android:gravity="center"/>
+                    <Spinner
+                        android:id="@+id/shoppingway"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:entries="@array/shoppingways"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right">
+                </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -93,8 +132,10 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="清空"
-                        android:textColor="@color/black"
-                        android:textSize="17sp" />
+                        android:textColor="@color/white"
+                        android:textSize="17sp"
+                        app:backgroundTint="@null"
+                        android:background="@drawable/button_background"/>
 
                     <TextView
                         android:layout_width="0dp"
@@ -120,8 +161,10 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="结算"
-                        android:textColor="@color/black"
-                        android:textSize="17sp" />
+                        android:textColor="@color/white"
+                        android:textSize="17sp"
+                        app:backgroundTint="@null"
+                        android:background="@drawable/button_background"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -149,9 +192,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="逛逛手机商场"
-                    android:textColor="@color/black"
-                    android:textSize="17sp" />
+                    android:text="逛逛商场"
+                    android:textColor="@color/white"
+                    android:textSize="17sp"
+                    app:backgroundTint="@null"
+                    android:background="@drawable/button_background"/>
             </LinearLayout>
         </RelativeLayout>
     </ScrollView>

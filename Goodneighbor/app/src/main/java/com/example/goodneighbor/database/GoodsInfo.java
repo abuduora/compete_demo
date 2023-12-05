@@ -1,4 +1,5 @@
 package com.example.goodneighbor.database;
+
 import com.example.goodneighbor.R;
 
 import java.util.ArrayList;
@@ -17,28 +18,28 @@ public class GoodsInfo{
     // 大图的资源编号
     public int pic;
 
-    // 声明一个手机商品的名称数组
+    // 声明一个商品的名称数组
     private static String[] mNameArray = {
-            "iPhone11", "Mate30", "小米10", "OPPO Reno3", "vivo X30", "荣耀30S"
+            "无淀粉火腿", "鸡蛋", "精选五花肉", "西红柿", "菠菜", "土豆"
     };
-    // 声明一个手机商品的描述数组
+    // 声明一个商品的描述数组
     private static String[] mDescArray = {
-            "Apple iPhone11 256GB 绿色 4G全网通手机",
-            "华为 HUAWEI Mate30 8GB+256GB 丹霞橙 5G全网通 全面屏手机",
-            "小米 MI10 8GB+128GB 钛银黑 5G手机 游戏拍照手机",
-            "OPPO Reno3 8GB+128GB 蓝色星夜 双模5G 拍照游戏智能手机",
-            "vivo X30 8GB+128GB 绯云 5G全网通 美颜拍照手机",
-            "荣耀30S 8GB+128GB 蝶羽红 5G芯片 自拍全面屏手机"
+            "无淀粉火腿 好吃不胖，美味绿色，精选肉类加工",
+            "鸡蛋 新鲜土鸡蛋，富含丰富蛋白质，严格把控除菌",
+            "精选五花肉 肥瘦相间，口感鲜嫩，适合煮、炖、炒等多种烹饪方式",
+            "西红柿 鲜红色，酸甜可口，富含维生素C，可生食、炒菜、做汤",
+            "菠菜 翠绿色，口感嫩滑，富含铁、维生素C等营养素，适合炒菜、做汤",
+            "土豆 富含淀粉，可烤、煮、炒等多种烹饪方式"
     };
-    // 声明一个手机商品的价格数组
-    private static float[] mPriceArray = {6299, 4999, 3999, 2999, 2998, 2399};
-    // 声明一个手机商品的大图数组
+    // 声明一个商品的价格数组
+    private static float[] mPriceArray = {19, 7, 13, 4, 3, 5};
+    // 声明一个商品的大图数组
     private static int[] mPicArray = {
-            R.drawable.iphone, R.drawable.huawei, R.drawable.xiaomi,
-            R.drawable.oppo, R.drawable.vivo, R.drawable.rongyao
+            R.drawable.c1, R.drawable.c2, R.drawable.c3,
+            R.drawable.c4, R.drawable.c5, R.drawable.c6
     };
 
-    // 获取默认的手机信息列表
+    // 获取默认的信息列表
     public static ArrayList<GoodsInfo> getDefaultList() {
         ArrayList<GoodsInfo> goodsList = new ArrayList<GoodsInfo>();
         for (int i = 0; i < mNameArray.length; i++) {

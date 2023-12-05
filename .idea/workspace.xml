@@ -2,9 +2,71 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="794edad0-6407-4af2-9347-b42e8a59f193" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Login/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Login/LoginActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Main/MainNotice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Main/MainPostingQR.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Share/BaiduMapNeed.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Share/ShareGoods2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/bean/MyRecycleViewAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/bean/PostingRecycleViewAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/bean/RecyclerOnclick.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/drawable/heead.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/drawable/qr_view_posting.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/drawable/rolling.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/drawable/share_switch.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/drawable/user_d.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/activity_share_switch.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/main_notice.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/main_posting_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/main_posting_qr.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/values/imgs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Circle/FriendChatActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Circle/FriendChatActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Main/MainFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Main/MainFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Main/MainPosating.java" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Main/MainPosating.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Main/MainRanking.java" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Main/MainRanking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Main/PostingsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Main/PostingsActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Mine/EditMessageActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Mine/EditMessageActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Mine/MineFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Mine/MineFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Mine/MineGoods1.java" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Mine/MineGoods1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Mine/ReadyShare.java" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Mine/ReadyShare.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Share/ShareFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Share/ShareFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Share/ShareGoods1.java" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Share/ShareGoods1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neighbor/src/main/java/com/total/goodneighbor/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/neighbor/src/main/java/com/total/goodneighbor/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Share/SharePublish.java" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Share/SharePublish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Share/ShareQrView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Share/ShareQrView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Shop/ShopFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Shop/ShopFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Shop/ShoppingCartActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Shop/ShoppingCartActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Shop/ShoppingDetailActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/Activity/Shop/ShoppingDetailActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/bean/ButtonView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/bean/ButtonView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/bean/ViewPagerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/bean/ViewPagerAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/database/GoodsInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/java/com/example/goodneighbor/database/GoodsInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/drawable/ting1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/drawable/ting2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/activity_friend_chat.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/activity_friend_chat.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/activity_shop_bijia.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/activity_shop_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/activity_shop_tu_gou.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/activity_shopping_cart.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/activity_shopping_cart.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/activity_shopping_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/activity_shopping_detail.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/item_goods.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/item_goods.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/main_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/main_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/main_posting1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/main_posting1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/main_ranking.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/main_ranking.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/mine_mine.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/mine_mine.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/share_commoddity_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/share_commoddity_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/share_goods2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/share_goods2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/share_goods3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/share_goods3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/share_publish.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/share_publish.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/share_share.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/share_share.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/title_chat.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/title_chat.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/title_shopping.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/layout/title_shopping.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/values/dimens.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/values/location.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Goodneighbor/app/src/main/res/values/location.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neighbor/src/main/java/com/total/goodneighbor/controller/ShareController.java" beforeDir="false" afterPath="$PROJECT_DIR$/neighbor/src/main/java/com/total/goodneighbor/controller/ShareController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neighbor/src/main/java/com/total/goodneighbor/service/ShareService.java" beforeDir="false" afterPath="$PROJECT_DIR$/neighbor/src/main/java/com/total/goodneighbor/service/ShareService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neighbor/src/main/java/com/total/goodneighbor/service/impl/IntegralServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/neighbor/src/main/java/com/total/goodneighbor/service/impl/IntegralServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neighbor/src/main/java/com/total/goodneighbor/service/impl/ShareServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/neighbor/src/main/java/com/total/goodneighbor/service/impl/ShareServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neighbor/src/main/java/com/total/goodneighbor/service/impl/ShareboxServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/neighbor/src/main/java/com/total/goodneighbor/service/impl/ShareboxServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neighbor/src/main/java/com/total/goodneighbor/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/neighbor/src/main/java/com/total/goodneighbor/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,24 +76,24 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2X0yzYIfv3kJAZKVrZfyXjglthT" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/github/compete_demo/neighbor",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/github/compete_demo/neighbor&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
@@ -41,6 +103,7 @@
       <option name="presentableId" value="Default" />
       <updated>1697780555008</updated>
       <workItem from="1697780556055" duration="17000" />
+      <workItem from="1700727249474" duration="17000" />
     </task>
     <servers />
   </component>

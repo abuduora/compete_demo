@@ -39,14 +39,48 @@
         android:layout_height="270dp"
         android:orientation="vertical">
 
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/main_title_viewPager"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitXY"
-            android:background="@color/teal_200" >
+            android:layout_height="270dp" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
 
-        </androidx.viewpager.widget.ViewPager>
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager_item"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" tools:layout_editor_absoluteY="0dp"
+                tools:layout_editor_absoluteX="8dp"/>
+
+            <LinearLayout
+                android:weightSum="10"
+                android:background="#33000000"
+                android:orientation="horizontal"
+                android:layout_gravity="bottom"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="35dip">
+                <TextView
+                    android:layout_weight="8"
+                    android:id="@+id/tv_pager_title"
+                    android:text="很长的标题。。。。。你懂我意思吧"
+                    android:paddingLeft="8dip"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/white"
+                    android:layout_width="0dp" android:layout_height="35dip"/>
+                <!--用来动态添加轮播小点-->
+                <LinearLayout
+                    android:id="@+id/lineLayout_dot"
+                    android:layout_weight="2"
+                    android:gravity="center|right"
+                    android:layout_marginRight="5dp"
+                    android:paddingLeft="3dp"
+                    android:paddingRight="3dp"
+                    android:orientation="horizontal"
+                    android:layout_width="0dp" android:layout_height="match_parent">
+                </LinearLayout>
+
+            </LinearLayout>
+        </FrameLayout>
 
     </LinearLayout>
 
@@ -59,13 +93,29 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="right">
+            android:gravity="left">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="100dp"
+                android:id="@+id/btn_main_QR"
+                android:layout_width="107dp"
                 android:layout_height="50dp"
-                android:padding="10dp"
                 android:background="@drawable/button_background"
+                android:padding="10dp"
+                android:text="扫码"
+                android:textColor="#00AAff"
+                android:textSize="20sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="right">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_main_publish"
+                android:layout_width="107dp"
+                android:layout_height="50dp"
+                android:background="@drawable/button_background"
+                android:padding="10dp"
                 android:text="发布"
                 android:textColor="#00AAff"
                 android:textSize="20sp" />
@@ -73,165 +123,34 @@
 
     </LinearLayout>
 
-    <!--滑动-->
-    <ScrollView
+    <!--中间存放item，这个RelativeLayout是为了展示item的地方占满屏，把菜单栏挤到最底端-->
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#f2f2f2">
 
-        <LinearLayout
+        <!--        下拉刷新-->
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout_posting"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="5dp"
-            android:background="@drawable/search_box">
+            android:layout_height="match_parent">
 
-            <LinearLayout
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/main_posting_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#F0F0F0"
-                android:orientation="vertical"
-                android:layout_margin="5dp">
+                android:layout_marginRight="2.5dp"
+                android:layout_weight="1" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-                <LinearLayout
-                    android:id="@+id/tv_window1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+    </RelativeLayout>
 
-                    <com.example.goodneighbor.bean.CircleImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:src="@drawable/user1" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="热心邻居小美"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="right"
-                        android:text="2023/9/12" />
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="14dp"
-                    android:text="高价回收酱油" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#F0F0F0"
-                android:orientation="vertical"
-                android:padding="5dp">
-
-                <LinearLayout
-                    android:id="@+id/tv_window2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <com.example.goodneighbor.bean.CircleImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:src="@drawable/user2" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="困困o"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="right"
-                        android:text="2023/9/11" />
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="14dp"
-                    android:text="回收电瓶、电视机、电冰箱" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#F0F0F0"
-                android:orientation="vertical"
-                android:layout_margin="5dp">
-
-                <LinearLayout
-                    android:id="@+id/tv_window3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <com.example.goodneighbor.bean.CircleImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:src="@drawable/user3" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="球场硬汉"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="right"
-                        android:text="2023/9/13" />
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="14dp"
-                    android:text="寻找篮球搭子" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#F0F0F0"
-                android:orientation="vertical"
-                android:layout_margin="5dp">
-
-                <LinearLayout
-                    android:id="@+id/tv_window4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <com.example.goodneighbor.bean.CircleImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:src="@drawable/user4" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="上善若水"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="right"
-                        android:text="2023/9/12" />
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="14dp"
-                    android:text="今天晚上有雨，记得收床单" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </ScrollView>
+    <!--底部菜单栏的直线-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#333"
+        android:layout_gravity="bottom"/>
 
 </LinearLayout>

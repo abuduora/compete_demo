@@ -31,5 +31,8 @@ public class ShareServiceImpl extends ServiceImpl<ShareMapper, things> implement
         return baseMapper.selectOne(emailLambdaQueryWrapper).getStatus();
     }
 
-
+    @Override
+    public String saveshare(String email, String tname) {
+        return null;
+    }
 }

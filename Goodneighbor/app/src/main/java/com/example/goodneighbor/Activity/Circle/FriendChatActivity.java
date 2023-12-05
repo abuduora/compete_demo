@@ -70,7 +70,7 @@ public class FriendChatActivity extends AppCompatActivity {
         // 初始化视图
         private void initView () {
             dip_margin = Utils.dip2px(this, 5);
-            TextView tv_title = findViewById(R.id.tv_title);
+           TextView tv_title = findViewById(R.id.tv_title);
             et_input = findViewById(R.id.et_input);
             sv_chat = findViewById(R.id.sv_chat);
             ll_show = findViewById(R.id.ll_show);
@@ -83,12 +83,12 @@ public class FriendChatActivity extends AppCompatActivity {
                 startActivityForResult(albumIntent, CHOOSE_CODE); // 打开系统相册
             });
             findViewById(R.id.btn_send).setOnClickListener(v -> sendMessage());
-            tv_title.setText(mFriendName);
+             tv_title.setText(mFriendName);
         }
 
         // 初始化套接字
         private void initSocket () {
-          mSocket = MainApplication.getInstance().getSocket();
+        mSocket = MainApplication.getInstance().getSocket();
             // 等待接收好友消息
               mSocket.on("receive_friend_message", (args) -> {
                 JSONObject json = (JSONObject) args[0];

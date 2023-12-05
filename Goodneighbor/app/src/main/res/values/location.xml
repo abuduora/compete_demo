@@ -24,4 +24,16 @@
         <item>2号柜</item>
         <item>3号柜</item>
     </string-array>
+
+    <string-array name="shoppingways">
+        <item>自取</item>
+        <item>积分配送</item>
+        <item>付费配送</item>
+    </string-array>
+    <string-array name="shopname">
+    <item>幸福社区超市</item>
+    <item>天通苑北超市</item>
+    <item>亚运豪宅超市</item>
+    <item>碧桂园五星上将超市</item>
+    </string-array>
 </resources>

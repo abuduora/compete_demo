@@ -23,7 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="350dp"
                 android:scaleType="fitCenter"
-                tools:src="@drawable/xiaomi" />
+                tools:src="@drawable/c1" />
 
             <TextView
                 android:id="@+id/tv_goods_price"
@@ -32,7 +32,7 @@
                 android:paddingLeft="5dp"
                 android:textColor="@color/red"
                 android:textSize="22sp"
-                tools:text="1990" />
+                tools:text="19" />
 
             <TextView
                 android:id="@+id/tv_goods_desc"
@@ -41,15 +41,17 @@
                 android:paddingLeft="5dp"
                 android:textColor="@color/black"
                 android:textSize="15sp"
-                tools:text="小米 MI10 8GB+128GB 钛银黑 5G手机 游戏拍照手机" />
+                tools:text="无淀粉火腿 好吃不胖，美味绿色，精选肉类加工" />
 
             <Button
                 android:id="@+id/btn_add_cart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="加入购物车"
-                android:textColor="@color/black"
-                android:textSize="17sp" />
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:backgroundTint="@null"
+                android:background="@drawable/button_background"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

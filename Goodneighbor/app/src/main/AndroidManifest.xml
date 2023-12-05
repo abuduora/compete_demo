@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <!--悬浮按钮-->
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <!-- 网络访问权限 -->
+    <!-- 悬浮按钮 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- 网络访问权限 -->
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WIFI_STATE"/>
-    <!-- 相机 -->
+    <uses-permission android:name="android.permission.WIFI_STATE" /> <!-- 相机 -->
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
 
-    <uses-permission android:name="android.permission.CAMERA" />
-
-    <!-- 百度地图需要的权限 -->
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- 百度地图需要的权限 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
@@ -25,40 +21,37 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 这个权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 访问网络，进行地图相关业务数据请求，包括地图数据，路线规划，POI检索等 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 获取网络状态，根据网络状态切换进行数据请求网络转换 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 读取外置存储。如果开发者使用了so动态加载功能并且把so文件放在了外置存储区域，则需要申请该权限，否则不需要 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- 写外置存储。如果开发者使用了离线地图，并且数据写在外置存储区域，则需要申请该权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <!-- 这个权限用于进行网络定位-->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
-    <!-- 这个权限用于访问GPS定位-->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
-    <!-- 用于读取手机当前的状态-->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
-
-    <!-- 访问网络，进行地图相关业务数据请求，包括地图数据，路线规划，POI检索等 -->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <!-- 获取网络状态，根据网络状态切换进行数据请求网络转换 -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
-    <!-- 读取外置存储。如果开发者使用了so动态加载功能并且把so文件放在了外置存储区域，则需要申请该权限，否则不需要 -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <!-- 写外置存储。如果开发者使用了离线地图，并且数据写在外置存储区域，则需要申请该权限 -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
 
     <application
-        android:networkSecurityConfig="@xml/network_security_config"
-        android:name="com.example.goodneighbor.bean.MainApplication"
+        android:name=".bean.MainApplication"
         android:allowBackup="true"
-        android:requestLegacyExternalStorage="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/title"
-        android:label="@string/app_name"
+        android:label="友邻宝"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@drawable/title"
         android:supportsRtl="true"
         android:theme="@style/Theme.GoodNeighbor"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+        <activity
+            android:name=".Activity.Main.ShareSwitchActivity"
+            android:exported="false" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
         <activity
             android:name=".Activity.Circle.FriendChatActivity"
             android:exported="false" />
@@ -69,13 +62,22 @@
             android:name=".Activity.Login.RealnameActivity"
             android:exported="false" />
         <activity
+            android:name=".Activity.Share.BaiduMapView"
+            android:exported="false" />
+        <activity
             android:name=".Activity.Share.Capture"
             android:exported="false" />
         <activity
             android:name=".Activity.Mine.ReadyShare"
             android:exported="false" />
         <activity
+            android:name=".Activity.Main.MainPostingQR"
+            android:exported="true" />
+        <activity
             android:name=".Activity.Share.ShareReleaseActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.Main.MainNotice"
             android:exported="true" />
         <activity
             android:name=".Activity.Circle.CircleFragment"
@@ -102,6 +104,9 @@
             android:name=".Activity.Main.MainPosating"
             android:exported="false" />
         <activity
+            android:name=".Activity.Shop.ShoppingCartActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.Mine.AboutActivity"
             android:exported="true" />
         <activity
@@ -112,6 +117,9 @@
             android:exported="true" />
         <activity
             android:name=".Activity.Share.ShareFragment"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.Shop.ShoppingDetailActivity"
             android:exported="true" />
         <activity
             android:name=".bean.Adapter"
@@ -133,8 +141,7 @@
             android:exported="true" />
         <activity
             android:name=".bean.UserInfo"
-            android:exported="true" />
-        <!--chat-->
+            android:exported="true" /> <!-- chat -->
         <activity
             android:name=".bean.ArticleInfo"
             android:exported="true" />
@@ -168,7 +175,6 @@
         <activity
             android:name=".bean.RoundDrawable"
             android:exported="true" />
-
         <activity
             android:name=".Activity.Main.MainRanking"
             android:exported="true" />
@@ -186,8 +192,7 @@
             android:exported="true" />
         <activity
             android:name=".util.ViewUtil"
-            android:exported="true" />
-        <!--chat-->
+            android:exported="true" /> <!-- chat -->
         <activity
             android:name=".util.BitmapUtil"
             android:exported="true" />
@@ -213,10 +218,7 @@
             android:name=".util.ViewUtil2"
             android:exported="true" />
 
-
-
-
-    <provider
+        <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"
             android:exported="false"
@@ -224,16 +226,15 @@
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_path" />
-        </provider>
-        <!--百度地图AK接口-->
+        </provider> <!-- 百度地图AK接口 -->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="paB7Fe7yF7DvOpLW2BeT5hkQxxSzsIiE" />
+            android:value="LjKz1DBFhYhFZeSbjU4HDBffLgwHZiFd" />
+
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
-            android:process=":remote" >
-        </service>
+            android:process=":remote" />
     </application>
 
 </manifest>

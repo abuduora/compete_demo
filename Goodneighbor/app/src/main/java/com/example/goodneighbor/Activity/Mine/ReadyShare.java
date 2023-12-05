@@ -1,3 +1,4 @@
+/*
 package com.example.goodneighbor.Activity.Mine;
 
 import android.content.Intent;
@@ -24,3 +25,4 @@ public class ReadyShare extends AppCompatActivity implements View.OnClickListene
         startActivity(new Intent(this, MineGoods1.class));
     }
 }
+*/

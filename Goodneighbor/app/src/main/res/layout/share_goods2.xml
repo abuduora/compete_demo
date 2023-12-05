@@ -1,132 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#F8E8C1">
-
-    <LinearLayout
-        android:id="@+id/tv_root2"
+    android:background="#fff"
+    >
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/share_tab"
-        android:orientation="vertical">
-        <LinearLayout
-            android:id="@+id/postings_top2"
-            android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/header_xiangqing"
+        android:backgroundTint="@color/pink"
+        android:background="#f9f4f4"
+        >
+
+        <TextView
+            android:id="@+id/xiangqingye"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:orientation="horizontal">
+            android:layout_centerInParent="true"
+            android:text="共享物品"
+            android:textColor="#000"
+            android:textSize="18sp" />
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:id="@+id/back_icons"
+            android:src="@drawable/share_back"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            />
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/zt"
+        android:background="#979696"
+        android:layout_below="@id/header_xiangqing"
+        />
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-                <Button
-                    android:id="@+id/tv_postings_back2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
-                    android:drawableLeft="@drawable/ic_back" />
-            </LinearLayout>
+    <ImageView
+        android:id="@+id/shop_icons_xiangqing"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@+id/zt"
+        android:layout_marginTop="-1dp"
+        android:src="@drawable/user1" />
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:layout_weight="1">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="2dp"
+        android:id="@+id/zt2"
+        android:layout_below="@id/shop_icons_xiangqing"
+        android:background="#979696"
+        />
 
+    <TextView
+        android:id="@+id/text_location"
+        android:layout_marginLeft="5dp"
+        android:layout_alignTop="@+id/zt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="消耗积分："
+        android:textSize="20sp"
+        />
 
-                <TextView
-                    android:text="共享物品详情"
-                    android:layout_width="100dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:textSize="22sp"
-                    android:gravity="center" />
-            </LinearLayout>
+    <TextView
+        android:id="@+id/price_xiangqing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/zt2"
+        android:layout_toRightOf="@+id/text_location"
+        android:layout_marginLeft="5dp"
+        android:text="119.00"
+        android:textColor="@color/pink"
+        android:textSize="20sp" />
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:gravity="end"
-                android:layout_weight="1">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="2dp"
+        android:id="@+id/zt3"
+        android:layout_below="@id/text_location"
+        android:background="#979696"
+        />
 
-            </LinearLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/search_box"
-            android:layout_margin="20dp">
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_weight="1"
-                            android:layout_height="200dp"
-                            android:src="@drawable/a771"
-                            android:scaleType="centerInside"/>
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_weight="1"
-                            android:layout_height="200dp"
-                            android:src="@drawable/a66666"
-                            android:scaleType="centerInside"/>
-                    </LinearLayout>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Android App开发入门与项目实战"
-                        android:textSize="20dp"
-                        android:gravity="center"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="作者：欧阳燊"
-                        android:gravity="center"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="价格：98元"
-                        android:gravity="center"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="出版社：清华大学出版社"
-                        android:gravity="center"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="共享日期：2023-9-10"
-                        android:gravity="center"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="结束日期：2023-10-11"
-                        android:gravity="center"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="所需共享积分：10"
-                        android:gravity="center"/>
-                </LinearLayout>
-            </ScrollView>
-        </LinearLayout>
-    </LinearLayout>
+    <TextView
+        android:id="@+id/text_time_finish"
+        android:layout_marginLeft="5dp"
+        android:layout_alignTop="@+id/zt3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="共享结束时间："
+        android:textSize="20sp"
+        />
+    <TextView
+        android:id="@+id/share_time_finish2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/zt3"
+        android:layout_toRightOf="@+id/text_time_finish"
+        android:text="结束时间"
+        android:textSize="20sp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="2dp"
+        android:id="@+id/zt4"
+        android:layout_below="@id/text_time_finish"
+        android:background="#979696"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tit_desc_xiangqing"
+        android:layout_below="@id/zt4"
+        android:text="商品详细介绍"
+        android:textColor="#000"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        />
 
     <RadioGroup
-        android:id="@+id/share_tab"
+        android:id="@+id/share_tab2"
         android:layout_width="fill_parent"
         android:layout_height="55dp"
         android:gravity="center_vertical"
@@ -135,7 +135,7 @@
         android:background="#ffffff">
 
         <RadioButton
-            android:id="@+id/share_contact2"
+            android:id="@+id/share_contact1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1.4"
@@ -144,15 +144,7 @@
             android:drawableTop="@drawable/message_check"
             android:gravity="center"
             android:text="联系社区" />
-        <RadioButton
-            android:id="@+id/share_test2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:button="@null"
-            android:drawableTop="@drawable/share_check"
-            android:gravity="center"
-            android:text="测试按钮" />
+
 
         <RadioButton
             android:id="@+id/share_sharing2"
@@ -162,6 +154,6 @@
             android:button="@null"
             android:drawableTop="@drawable/share_check"
             android:gravity="center"
-            android:text="@string/text_share" />
+            android:text="扫码开箱" />
     </RadioGroup>
 </RelativeLayout>

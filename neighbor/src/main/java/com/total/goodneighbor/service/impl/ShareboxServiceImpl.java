@@ -5,7 +5,9 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.total.goodneighbor.entity.share_box;
 import com.total.goodneighbor.mapper.ShareboxMapper;
 import com.total.goodneighbor.service.ShareboxService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ShareboxServiceImpl extends ServiceImpl<ShareboxMapper, share_box> implements ShareboxService {
     @Override
     public boolean have(String community, int box_id) {

@@ -24,26 +24,26 @@ public class IntegralServiceImpl extends ServiceImpl<IntegralMapper, integral> i
         LambdaQueryWrapper<userinformation> avatar= new LambdaQueryWrapper<>();
         LambdaQueryWrapper<userinformation> nickname= new LambdaQueryWrapper<>();
         LambdaQueryWrapper<userinformation> buildnumber = new LambdaQueryWrapper<>();
-        List<integral> List;
         List<String> email = new ArrayList<>();
         List<Integer> integrallist = new ArrayList<>();
         List<String> avatarlist = new ArrayList<>();
         List<String> nicknamelist = new ArrayList<>();
         List<String> buildnumerlist = new ArrayList<>();
         List<Object> total = new ArrayList<>();
-        for(int j=1000,count=0;j>=0;j--){
+        List<integral> list;
+        for(int j=1000,count=1;j>=0;j--){
             objectLambdaQueryWrapper.eq(integral::getIntegral,j);
             objectLambdaQueryWrapper.eq(integral::getCommunity_name,community);
             if(baseMapper.selectList(objectLambdaQueryWrapper)!=null){
-                List=baseMapper.selectList(objectLambdaQueryWrapper);
-                integrallist.add(List.get(count).getIntegral());
-                email.add(List.get(count).getUser_email());
+                list=baseMapper.selectList(objectLambdaQueryWrapper);
+                integrallist.add(list.get(count).getIntegral());
+                email.add(list.get(count).getUser_email());
                 count++;
-                if(count==4)
+                if(count==5)
                     break;
             }
         }
-        for(int i=0;i<=4;i++) {
+        for(int i=1;i<=5;i++) {
             avatar.eq(userinformation::getUser_email, email.get(i));
             avatarlist.add(userMapper.selectOne(avatar).getAvatar());
 
@@ -54,13 +54,13 @@ public class IntegralServiceImpl extends ServiceImpl<IntegralMapper, integral> i
             buildnumerlist.add(userMapper.selectOne(buildnumber).getBuilding_number());
         }
 
-        for(int i=0;i<=4;i++){
+        for(int i=1;i<=5;i++){
             total.add(avatarlist.get(i));
         }
-        for(int i=0;i<=4;i++){
+        for(int i=1;i<=5;i++){
             total.add(nicknamelist.get(i));
         }
-        for(int i=0;i<=4;i++){
+        for(int i=1;i<=5;i++){
             total.add(buildnumerlist.get(i));
         }
         return total;

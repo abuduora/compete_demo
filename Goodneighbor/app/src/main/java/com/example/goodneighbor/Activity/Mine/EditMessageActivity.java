@@ -16,7 +16,6 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.bumptech.glide.Glide;
 import com.example.goodneighbor.Activity.Main.PageActivity;
 import com.example.goodneighbor.R;
 import com.example.goodneighbor.util.BitmapUtil;
@@ -46,7 +45,7 @@ public class EditMessageActivity extends AppCompatActivity {
         setContentView(R.layout.mine_message);
         SharedPreferences shared=getSharedPreferences("share",MODE_PRIVATE);
         iv_image = findViewById(R.id.iv_image);
-        Glide.with(this).load(shared.getString("avatar","")).into(iv_image);
+        //Glide.with(this).load(shared.getString("avatar","")).into(iv_image);
         et_name=findViewById(R.id.et_name);
         et_sex=findViewById(R.id.et_sex);
         et_address=findViewById(R.id.et_address);

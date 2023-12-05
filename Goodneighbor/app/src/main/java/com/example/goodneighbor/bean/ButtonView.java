@@ -35,7 +35,7 @@ public class ButtonView extends View {
         // 初始化画笔
         paint = new Paint();
         paint.setAntiAlias(true);
-        paint.setColor(Color.RED);
+        paint.setColor(Color.WHITE);
     }
 
     @Override

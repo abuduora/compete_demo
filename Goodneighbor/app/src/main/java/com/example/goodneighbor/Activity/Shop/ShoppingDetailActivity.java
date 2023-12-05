@@ -15,7 +15,6 @@ import com.example.goodneighbor.database.GoodsInfo;
 import com.example.goodneighbor.database.ShoppingDBHelper;
 import com.example.goodneighbor.util.ToastUtil;
 public class ShoppingDetailActivity extends AppCompatActivity {
-    private TextView tv_title;
     private TextView tv_count;
     private TextView tv_goods_price;
     private TextView tv_goods_desc;
@@ -26,7 +25,6 @@ public class ShoppingDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shopping_detail);
-        tv_title = findViewById(R.id.tv_title);
         tv_count = findViewById(R.id.tv_count);
         tv_goods_price = findViewById(R.id.tv_goods_price);
         tv_goods_desc = findViewById(R.id.tv_goods_desc);
@@ -66,7 +64,6 @@ public class ShoppingDetailActivity extends AppCompatActivity {
         if (mGoodsId > 0) {
             // 根据商品编号查询商品数据库中的商品记录
             GoodsInfo info = mDBHelper.queryGoodsInfoById(mGoodsId);
-            tv_title.setText(info.name);
             tv_goods_desc.setText(info.description);
             tv_goods_price.setText(String.valueOf((int) info.price));
             iv_goods_pic.setImageURI(Uri.parse(info.picPath));

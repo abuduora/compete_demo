@@ -9,11 +9,12 @@
     android:background="@drawable/radius_border">
 
     <!--图片或视频区域，这个地方我还没改好，我的item背景是设置成圆角的，但是这里图片显示的时候盖住了那个圆角，所以显示出来的是直角，后面有时间再改改-->
+    <!--标题区域,最大行数为2-->
     <ImageView
         android:id="@+id/home_item_img"
         android:layout_width="200dp"
         android:layout_height="200dp" />
-    <!--标题区域,最大行数为2-->
+
     <TextView
         android:id="@+id/home_item_title"
         android:layout_width="match_parent"

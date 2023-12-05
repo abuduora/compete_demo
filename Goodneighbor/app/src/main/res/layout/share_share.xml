@@ -2,26 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#F6C842"
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp">
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_weight="1.2"
-            android:orientation="horizontal">
-            <!--悬浮按钮-->
-            <com.example.goodneighbor.bean.ButtonView
-                android:id="@+id/share_publish"
-                android:layout_width="60dp"
-                android:layout_height="60dp" />
-
-
-        </LinearLayout>
-
+                <TextView
+                    android:id="@+id/fab"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:text="我要共享"/>
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="50dp"
@@ -79,247 +72,36 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/><!--占格子用-->
 
-        <!--        下拉刷新-->
-        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-            android:id="@+id/swipeRefreshLayout"
+        <!--中间存放item，这个RelativeLayout是为了展示item的地方占满屏，把菜单栏挤到最底端-->
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="#f2f2f2">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/home_item"
+            <!--        下拉刷新-->
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipeRefreshLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="2.5dp"
-                android:layout_weight="1" />
+                android:layout_height="match_parent">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/home_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="2.5dp"
+                    android:layout_weight="1" />
 
-        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-    <!--底部菜单栏的直线-->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="#333"
-        android:layout_gravity="bottom"/>
+        </RelativeLayout>
 
-
-<!--        <ScrollView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            >-->
-
-
-<!--            <LinearLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginTop="30dp"-->
-<!--                android:orientation="vertical">-->
-
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:orientation="horizontal">-->
-
-<!--                    <LinearLayout-->
-<!--                        android:layout_width="0dp"-->
-<!--                        android:layout_height="230dp"-->
-<!--                        android:layout_weight="1"-->
-<!--                        android:orientation="vertical"-->
-<!--                        android:padding="5dp">-->
-
-<!--                        <ImageView-->
-<!--                            android:id="@+id/share_picture1"-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="150dp"-->
-<!--                            android:scaleType="fitXY"-->
-<!--                            android:src="@drawable/share1" />-->
-
-<!--                        <TextView-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="50dp"-->
-<!--                            android:layout_marginTop="5dp"-->
-<!--                            android:background="@drawable/radius_border"-->
-<!--                            android:text="  锁的共享，没人能打开这个锁"-->
-<!--                            android:textSize="15sp" />-->
-<!--                    </LinearLayout>-->
-
-<!--                    <LinearLayout-->
-<!--                        android:layout_width="0dp"-->
-<!--                        android:layout_height="230dp"-->
-<!--                        android:layout_weight="1"-->
-<!--                        android:orientation="vertical"-->
-<!--                        android:padding="5dp">-->
-
-<!--                        <ImageView-->
-<!--                            android:id="@+id/share_picture2"-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="150dp"-->
-<!--                            android:scaleType="fitXY"-->
-<!--                            android:src="@drawable/share7" />-->
-
-<!--                        <TextView-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="50dp"-->
-<!--                            android:layout_marginTop="5dp"-->
-<!--                            android:background="@drawable/radius_border"-->
-<!--                            android:text="  无敌的键盘，天好用"-->
-<!--                            android:textSize="15sp" />-->
-<!--                    </LinearLayout>-->
-<!--                </LinearLayout>-->
-
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:orientation="horizontal">-->
-
-<!--                    <LinearLayout-->
-<!--                        android:layout_width="0dp"-->
-<!--                        android:layout_height="230dp"-->
-<!--                        android:layout_weight="1"-->
-<!--                        android:orientation="vertical"-->
-<!--                        android:padding="5dp">-->
-
-<!--                        <ImageView-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="150dp"-->
-<!--                            android:scaleType="fitXY"-->
-<!--                            android:src="@drawable/user5" />-->
-
-<!--                        <TextView-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="50dp"-->
-<!--                            android:layout_marginTop="5dp"-->
-<!--                            android:background="@drawable/radius_border"-->
-<!--                            android:text="  这一个遥控器真的，没得说，你不用，只能说你没眼光了"-->
-<!--                            android:textSize="15sp" />-->
-<!--                    </LinearLayout>-->
-
-<!--                    <LinearLayout-->
-<!--                        android:layout_width="0dp"-->
-<!--                        android:layout_height="230dp"-->
-<!--                        android:layout_weight="1"-->
-<!--                        android:orientation="vertical"-->
-<!--                        android:padding="5dp">-->
-
-<!--                        <ImageView-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="150dp"-->
-<!--                            android:scaleType="fitXY"-->
-<!--                            android:src="@drawable/user6" />-->
-
-<!--                        <TextView-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="50dp"-->
-<!--                            android:layout_marginTop="5dp"-->
-<!--                            android:background="@drawable/radius_border"-->
-<!--                            android:text="  这一对键盘鼠标，你们先别提出意见，进来看看我花费积分就知道了"-->
-<!--                            android:textSize="15sp" />-->
-<!--                    </LinearLayout>-->
-<!--                </LinearLayout>-->
-
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:orientation="horizontal">-->
-
-<!--                    <LinearLayout-->
-<!--                        android:layout_width="0dp"-->
-<!--                        android:layout_height="230dp"-->
-<!--                        android:layout_weight="1"-->
-<!--                        android:orientation="vertical"-->
-<!--                        android:padding="5dp">-->
-
-<!--                        <ImageView-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="150dp"-->
-<!--                            android:scaleType="fitXY"-->
-<!--                            android:src="@drawable/user7" />-->
-
-<!--                        <TextView-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="50dp"-->
-<!--                            android:layout_marginTop="5dp"-->
-<!--                            android:background="@drawable/radius_border"-->
-<!--                            android:text="  树莓派4B的板子，到后面估计用的不多，就共享出来用就行了"-->
-<!--                            android:textSize="15sp" />-->
-<!--                    </LinearLayout>-->
-
-<!--                    <LinearLayout-->
-<!--                        android:layout_width="0dp"-->
-<!--                        android:layout_height="230dp"-->
-<!--                        android:layout_weight="1"-->
-<!--                        android:orientation="vertical"-->
-<!--                        android:padding="5dp">-->
-
-<!--                        <ImageView-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="150dp"-->
-<!--                            android:scaleType="fitXY"-->
-<!--                            android:src="@drawable/user8" />-->
-
-<!--                        <TextView-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="50dp"-->
-<!--                            android:layout_marginTop="5dp"-->
-<!--                            android:background="@drawable/radius_border"-->
-<!--                            android:text="  可爱小狗，共享美好"-->
-<!--                            android:textSize="15sp" />-->
-<!--                    </LinearLayout>-->
-<!--                </LinearLayout>-->
-
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:orientation="horizontal">-->
-
-<!--                    <LinearLayout-->
-<!--                        android:layout_width="0dp"-->
-<!--                        android:layout_height="230dp"-->
-<!--                        android:layout_weight="1"-->
-<!--                        android:orientation="vertical"-->
-<!--                        android:padding="5dp">-->
-
-<!--                        <ImageView-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="150dp"-->
-<!--                            android:scaleType="fitXY"-->
-<!--                            android:src="@drawable/share7" />-->
-
-<!--                        <TextView-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="50dp"-->
-<!--                            android:layout_marginTop="5dp"-->
-<!--                            android:background="@drawable/radius_border"-->
-<!--                            android:text="  键盘，不想用了，想要的人就共享去用吧"-->
-<!--                            android:textSize="15sp" />-->
-<!--                    </LinearLayout>-->
-
-<!--                    <LinearLayout-->
-<!--                        android:layout_width="0dp"-->
-<!--                        android:layout_height="230dp"-->
-<!--                        android:layout_weight="1"-->
-<!--                        android:orientation="vertical"-->
-<!--                        android:padding="5dp">-->
-
-<!--                        <ImageView-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="150dp"-->
-<!--                            android:scaleType="fitXY"-->
-<!--                            android:src="@drawable/share3" />-->
-
-<!--                        <TextView-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="50dp"-->
-<!--                            android:layout_marginTop="5dp"-->
-<!--                            android:background="@drawable/radius_border"-->
-<!--                            android:text="  鼠标用用看"-->
-<!--                            android:textSize="15sp" />-->
-<!--                    </LinearLayout>-->
-<!--                </LinearLayout>-->
-
-
-<!--            </LinearLayout>-->
-
-<!--        </ScrollView>-->
+        <!--底部菜单栏的直线-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#333"
+            android:layout_gravity="bottom"/>
 
     </LinearLayout>
 

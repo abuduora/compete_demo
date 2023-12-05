@@ -68,19 +68,19 @@
                     android:layout_height="400dp"
                     android:scaleType="fitXY"
                     android:layout_marginTop="10dp"
-                    android:src="@drawable/share1" />
+                    android:src="@drawable/pingpang1" />
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="400dp"
                     android:layout_marginTop="10dp"
                     android:scaleType="fitXY"
-                    android:src="@drawable/a44" />
+                    android:src="@drawable/pingpang2" />
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="400dp"
                     android:layout_marginTop="10dp"
                     android:scaleType="fitXY"
-                    android:src="@drawable/a55" />
+                    android:src="@drawable/pingpang3" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -95,14 +95,14 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="电磁锁"
+                        android:text="乒乓球拍"
                         android:textSize="30sp"
                         android:layout_marginTop="5dp"
                         android:gravity="center"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="价格：29元"
+                        android:text="价格：59元"
                         android:layout_marginTop="5dp"
                         android:textSize="25sp"
                         android:gravity="center"/>
@@ -111,14 +111,14 @@
                         android:layout_height="wrap_content"
                         android:textSize="25sp"
                         android:layout_marginTop="5dp"
-                        android:text="共享日期：2023-9-18"
+                        android:text="共享日期：2023-11-3"
                         android:gravity="center"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textSize="25sp"
                         android:layout_marginTop="5dp"
-                        android:text="结束日期：2023-12-21"
+                        android:text="结束日期：2023-12-1"
                         android:gravity="center"/>
                     <TextView
                         android:layout_width="match_parent"

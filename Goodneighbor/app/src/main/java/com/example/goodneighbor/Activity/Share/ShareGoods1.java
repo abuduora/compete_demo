@@ -15,7 +15,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.goodneighbor.R;
 import com.example.goodneighbor.database.PrefManager;
-import com.example.goodneighbor.util.HttpUtil;
 import com.example.goodneighbor.util.OkHttp;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
@@ -23,7 +22,8 @@ import com.google.zxing.integration.android.IntentResult;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
-import java.util.HashMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -32,6 +32,56 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class ShareGoods1 extends AppCompatActivity {
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        if (result != null) {
+            if (result.getContents() == null) {
+                // 扫描被取消
+                Toast.makeText(this, "扫描取消", Toast.LENGTH_SHORT).show();
+            } else {
+                // 扫描成功，result.getContents() 包含了扫描的内容
+                String scannedData = result.getContents();
+                String address = scannedData.substring(0, scannedData.indexOf(" "));
+                Pattern number= Pattern.compile("\\d+");
+                Matcher m = number.matcher(scannedData);
+                m.find();
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                SharedPreferences shared=this.getSharedPreferences("share", Context.MODE_PRIVATE);
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        RequestBody requestBody=new FormBody.Builder()
+                                .add("box_id",m.group())
+                                .build();
+                        OkHttp.Post("http://[240e:404:b830:a118:61ce:6331:f25f:c199]:9776/share/justopendoor", requestBody, new Callback() {
+                            @Override
+                            public void onFailure(@NonNull Call call, @NonNull IOException e) {
+                                Toast.makeText(ShareGoods1.this, "共享失败，请检查网络设置", Toast.LENGTH_SHORT).show();
+                            }
+                            @Override
+                            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+                                request=response.body().string();
+                            }
+                        });
+                    }
+                }).start();
+                builder.setTitle("请取出物品，关好箱门!");
+                builder.setMessage(request);
+                builder.setPositiveButton("确定返回", (dialog, which) -> {
+                    finish();
+                });
+                builder.setNegativeButton("我再看看", null);
+                AlertDialog alert = builder.create();
+                alert.show();
+
+                System.out.println("截取 之前字符串:"+address);
+                System.out.println("提取的数字："+m.group());
+                Toast.makeText(this, "扫描结果: " + scannedData, Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
+    }
     public String request;
     private Button btScan;
     protected void onCreate( Bundle savedInstanceState) {
@@ -55,62 +105,14 @@ public class ShareGoods1 extends AppCompatActivity {
                 intentIntegrator.setCaptureActivity(Capture.class);
                 //Initiate scan
                 intentIntegrator.initiateScan();
-                builder();
             }
         });
     }
-    public void builder(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        SharedPreferences shared=this.getSharedPreferences("share", Context.MODE_PRIVATE);
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                RequestBody requestBody=new FormBody.Builder()
-                        .add("email",shared.getString("email",""))
-                        .add("tname",)
-                        .add("box_id",)
-                        .build();
-                     OkHttp.Post("http://[240e:404:b830:a118:61ce:6331:f25f:c199]:9776/share/justopendoor", requestBody, new Callback() {
-                        @Override
-                        public void onFailure(@NonNull Call call, @NonNull IOException e) {
-                            Toast.makeText(ShareGoods1.this, "共享失败，请检查网络设置", Toast.LENGTH_SHORT).show();
-                        }
-                        @Override
-                        public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
-                            request=response.body().string();
-                        }
-                    });
-            }
-        }).start();
-                builder.setTitle("请取出物品，关好箱门!");
-                builder.setMessage(request);
-                builder.setPositiveButton("确定返回", (dialog, which) -> {
-                    finish();
-                });
-                builder.setNegativeButton("我再看看", null);
-                AlertDialog alert = builder.create();
-                alert.show();
-            }
 
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-        if (result != null) {
-            if (result.getContents() == null) {
-                // 扫描被取消
-                Toast.makeText(this, "扫描取消", Toast.LENGTH_SHORT).show();
-            } else {
-                // 扫描成功，result.getContents() 包含了扫描的内容
-                String scannedData = result.getContents();
 
-                Toast.makeText(this, "扫描结果: " + scannedData, Toast.LENGTH_SHORT).show();
-            }
 
-        } else {
-            super.onActivityResult(requestCode, resultCode, data);
-        }
-    }
-
-   /* @Override
+/*
+ @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         //Initialize intent result
@@ -143,6 +145,6 @@ public class ShareGoods1 extends AppCompatActivity {
                     ,"OOPS...You did not scan anything",Toast.LENGTH_SHORT
             ).show();
         }
-    }*/
-
-        }
+    }
+*/
+}

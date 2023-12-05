@@ -32,8 +32,7 @@ public class ShopFragment extends Fragment{
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_shopping_channel,null);
-        TextView tv_title = view.findViewById(R.id.tv_title);
-        tv_title.setText("商城");
+         //TextView tv_title = view.findViewById(R.id.tv_title);
 
         tv_count = view.findViewById(R.id.tv_count);
         gl_channel = view.findViewById(R.id.gl_channel);
@@ -127,7 +126,7 @@ public class ShopFragment extends Fragment{
         int count = ++MainApplication.getInstance().goodsCount;
         tv_count.setText(String.valueOf(count));
         mDBHelper.insertCartInfo(goodsId);
-        ToastUtil.show(getActivity(), "已添加一部" + goodsName + "到购物车");
+        ToastUtil.show(getActivity(), "已添加" + goodsName + "到购物车");
     }
 
     @Override

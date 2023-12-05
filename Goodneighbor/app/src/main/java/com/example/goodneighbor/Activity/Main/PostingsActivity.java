@@ -28,7 +28,6 @@ public class PostingsActivity extends AppCompatActivity {
         add_images=findViewById(R.id.tv_postings_add_images);
         show_images=findViewById(R.id.tv_postings_images_show);
 
-
         //返回上一级
         back.setOnClickListener(new View.OnClickListener() {
             @Override

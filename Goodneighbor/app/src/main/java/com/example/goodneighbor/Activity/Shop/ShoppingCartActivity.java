@@ -39,8 +39,6 @@ public class ShoppingCartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shopping_cart);
-        TextView tv_title = findViewById(R.id.tv_title);
-        tv_title.setText("购物车");
         ll_cart = findViewById(R.id.ll_cart);
         tv_total_price = findViewById(R.id.tv_total_price);
 

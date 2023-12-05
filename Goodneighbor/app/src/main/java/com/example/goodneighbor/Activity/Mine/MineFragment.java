@@ -49,12 +49,21 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     private TextView tv_integral;
     private ActivityResultLauncher<Intent> mRresultLauncher;
     private Uri picUri;
+    private TextView tv_share_things;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.mine_mine, null);
         SharedPreferences shared= getActivity().getSharedPreferences("share", Context.MODE_PRIVATE);
+        tv_share_things = view.findViewById(R.id.tv_share_things);
+        tv_share_things.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(getActivity(), MineGoods1.class);
+                startActivity(i);
+            }
+        });
         //获取头像
         iv_imageAvatar = view.findViewById(R.id.ib_imageAvatar);
         tv_integral=view.findViewById(R.id.tv_integral);
@@ -67,6 +76,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
                 Intent intent=result.getData();
                picUri=intent.getData();
                 if(picUri !=null){
+                    System.out.println(picUri);
                     Bitmap bitmap = null;
                     try {
                         bitmap = BitmapFactory.decodeStream(getActivity().getContentResolver().openInputStream(picUri));

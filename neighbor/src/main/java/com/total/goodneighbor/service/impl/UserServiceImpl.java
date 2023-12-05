@@ -35,6 +35,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper,userinformation> imp
         System.out.println("实名接受email"+email);
         userinformation list = baseMapper.selectById(email);
         System.out.println("刚查出来的list"+list);
+        list.setUser_email(email);
         list.setRealname(realname);
         list.setId(id);
         baseMapper.updateById(list);
@@ -47,6 +48,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper,userinformation> imp
     @Override
     public userinformation savemessage(String email, String nickname, String sex, String phone,String buildingnumber,String address) {
         userinformation list = baseMapper.selectById(email);
+        list.setUser_email(email);
         list.setNickname(nickname);
         list.setSex(sex);
         list.setPhone(phone);
